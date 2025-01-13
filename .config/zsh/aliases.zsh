@@ -10,7 +10,7 @@ alias fgrep='fgrep --color=auto'
 
 # settings for common commands
 alias nv="nvim"
-alias ya="flatpak run io.github.sxyazi.yazi" # "yazi" # for Arch-land 🙂
+alias ya="yazi"
 alias fetch="fastfetch"
 alias lg="lazygit"
 alias cp="cp -iv"
