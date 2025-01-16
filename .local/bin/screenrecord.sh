@@ -2,7 +2,7 @@
 
 time_stamp=$(date +"%d%m%y-%H%M%S%3N")
 
-path="$HOME/Videos/Screenrecords"
+path="$HOME/Videos/Screencasts"
 file="scrcpy-$time_stamp.mkv"
 record_format="mkv"
 vid_bitrate="8M"
