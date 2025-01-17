@@ -5,7 +5,10 @@ time_stamp=$(date +"%d%m%y-%H%M%S%3N")
 path="$HOME/Videos/Screencasts"
 file="scrcpy-$time_stamp.mkv"
 record_format="mkv"
+
 vid_bitrate="8M"
+max_fps="60"
+max_size="2400" # in px
 
 # Parse command line options
 while getopts "b:" opt; do
@@ -23,6 +26,8 @@ echo "Bitrate: $vid_bitrate"
 scrcpy \
   --record="$path/$file" \
   --record-format="$record_format" \
+  --max-fps "$max_fps" \
+  --max-size "$max_size" \
   --print-fps \
   --audio-dup \
   --video-bit-rate "$vid_bitrate"
