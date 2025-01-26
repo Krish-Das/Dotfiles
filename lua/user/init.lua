@@ -1,0 +1,8 @@
+require "user.options"
+require "user.highlight_yank"
+require "user.lazy"
+require "user.keymaps"
+require "user.set_theme"
+require "user.transparent_bg"
+require "user.diagnostics"
+require "user.usercommand"
