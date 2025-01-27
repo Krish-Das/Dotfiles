@@ -9,7 +9,9 @@ window-padding-balance=true
 
 font-feature = -calt,-liga,-dlig
 
-# theme = Aura
-# theme = iTerm2 Pastel Dark Background
-theme = tokyonight_night
 background-opacity = 1
+
+# --- THEMES ---
+# theme = iTerm2 Pastel Dark Background
+# theme = tokyonight_night
+theme = GitHub Dark
