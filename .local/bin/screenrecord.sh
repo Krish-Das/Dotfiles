@@ -9,6 +9,7 @@ record_format="mkv"
 vid_bitrate="8M"
 max_fps="60"
 max_size="2400" # in px
+audio_codec="aac"
 
 # Parse command line options
 while getopts "b:" opt; do
@@ -30,7 +31,8 @@ scrcpy \
   --max-size "$max_size" \
   --print-fps \
   --audio-dup \
-  --video-bit-rate "$vid_bitrate"
+  --video-bit-rate "$vid_bitrate" \
+  --audio-codec "$audio_codec"
 
 # Print warning message in black text on yellow background
 printf "\e[43;30m WARN: make -b argument typesafe. \e[0m\n"
