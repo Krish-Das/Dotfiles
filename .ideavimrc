@@ -1,0 +1,76 @@
+" leader key
+let mapleader = ' '
+
+" source config
+noremap <leader>cr :source ~/.ideavimrc<cr>:nohlsearch<cr>
+
+" paste from the + buffer
+noremap <leader>p "+p
+
+" jump between angle brackets
+set matchpairs+=<:>
+
+" smart line joining
+set ideajoin
+
+" highlight search results
+set hlsearch
+
+" remove search highlights
+nnoremap <Esc> :nohlsearch<cr>
+
+" case-insensitive search
+set ignorecase
+
+" enable case-sensitive search when uppercased letter is present
+set smartcase
+
+" search while typing
+set incsearch
+
+" ---
+" map <leader>fc <Action>()
+" ---
+
+" greatest remap ever: Paste and keep original in register
+xmap <leader>p "_dP
+
+" second greatest remap ever : asbjornHaland : Yank to system clipboard
+noremap <leader>Y "+Y
+noremap <leader>y "+y
+vmap <leader>y "+y
+
+" Select all with '<leader>a'
+noremap <leader>a ggVG
+
+" Move lines up/down
+noremap <A-j> :m .+1<CR>==
+noremap <A-k> :m .-2<CR>==
+
+noremap <leader>e :NERDTreeToggle<CR>
+
+" Goto next diagnostic
+noremap ]d :action GotoNextError<CR>zz
+noremap [d :action GotoPreviousError<CR>zz
+
+map <leader>fm <Action>(ReformatWithPrettierAction)
+
+map <leader>fc <Action>(GotoClass)
+map <leader>ff <Action>(GotoFile)
+map <leader>fs <Action>(GotoSymbol)
+map <leader>fa <Action>(GotoAction)
+
+map <leader>gD <Action>(GotoDeclaration)
+map <leader>gd <Action>(GotoDefinition)
+map <leader>gy <Action>(GotoTypeDeclaration)
+map <leader>gi <Action>(GotoImplementation)
+map <leader>gt <Action>(GotoTest)
+map <leader>gm <Action>(GotoSuperMethod)
+map <leader>gl <Action>(GotoLine)
+
+set mini-ai
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'machakann/vim-highlightedyank'
+Plug 'vim-scripts/argtextobj.vim'
