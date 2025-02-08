@@ -2,19 +2,18 @@
 TERM = "xterm-256color"
 
 [window]
-# opacity = 1.0
-opacity = 0.95
+opacity = 0.9
 padding.x = 12
 padding.y = 3
 dynamic_padding = true
-title = "Alacritty"
+decorations = "None" # "Full" | "None"
 
 [window.class]
 general = "Alacritty"
 instance = "Alacritty"
 
 [font]
-size = 12.0
+size = 11.0
 # SFMono Nerd Font
 # JetBrainsMono Nerd Font
 # Monaspace Argon Var
@@ -22,10 +21,9 @@ size = 12.0
 # Material Icons
 # Symbols Nerd Font
 
-
 [font.offset]
 x = 0
-y = 5
+y = 4
 
 [font.normal]
 family = "SFMono Nerd Font"
