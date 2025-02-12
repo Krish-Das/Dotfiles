@@ -37,7 +37,7 @@ conf() {
 }
 
 
-# Open codeground
+# Open Repos
 code() {
   file=$(find "$HOME/Repos" -maxdepth 1 -type d | grep -i "/Repos/" | fzf --cycle)
   [ -n "$file" ] && cd "$file"
@@ -55,37 +55,10 @@ icat() {
 
 silent () {
   if command -v "$1" > /dev/null; then
-    setsid "$1" > /dev/null 2>&1 &
+    "$1" > /dev/null 2>&1 & disown
     printf "\033[32mRan %s in background silently.\033[0m\n" "$1"
   else
     printf "\033[31mError: %s is not a valid command.\033[0m\n" "$1"
   fi
 }
 
-# Preview images in Downloads and Pictures directory
-fuzzy_image_search() {
-  printf "\033[1mThis function is not fully developed yet!\033[0m\n\n"
-
-  # local extensions=("\\.svg$" "\\.png$" "\\.jpg$" "\\.jpeg$" "\\.webp$" "\\.gif$" "\\.bmp$" "\\.tiff$" "\\.pbm$" "\\.pgm$" "\\.ppm$")
-  # local find_command="find \"$HOME/Downloads\" \"$HOME/Pictures\" -type f -iregex"
-  #
-  # for ext in "${extensions[@]}"
-  # do
-  #   find_command+=" -o -iregex \".*$ext\""
-  # done
-  #
-  # # Print fzf multi-select in one line, separated by a space
-  # local selected_file=$(eval "$find_command | fzf -m --print0" | tr '\0' ' ' | sed 's/ / /g')
-  #
-  # if [[ -n $selected_file ]]; then
-  #   echo "Viewing images ..."
-  #
-  #   for file in $selected_file 
-  #   do
-  #     echo -e "\e[1;94m$file\e[0m"
-  #   done
-  #
-  #   # View images using feh
-  #   feh -. $selected_file
-  # fi
-}
