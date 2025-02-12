@@ -1,0 +1,251 @@
+# vim:fileencoding=utf-8:ft=conf
+
+# INFO:
+# 🅿🆁🅾🅶🆁🅰🅼🆂      programs
+# See https://wiki.hyprland.org/Configuring/Keywords/
+
+$terminal = alacritty
+$fileManager = thunar
+$menu = tofi-drun
+
+
+# INFO:
+# 🅼🅾🅽🅸🆃🅾🆁🆂      monitors
+# See https://wiki.hyprland.org/Configuring/Monitors/
+monitor = HDMI-A-1,1366x768,0x0,1
+
+
+# INFO:
+# 🅰🆄🆃🅾🆂🆃🅰🆁🆃     autostarts
+exec-once = gsettings set org.gnome.desktop.interface color-scheme "prefer-dark" &
+exec-once = swww-daemon & waybar &
+exec-once = hyprctl setcursor "Phinger Cursors (light)" 24 &
+exec-once = wl-paste --type text --watch cliphist store & # Stores only text data
+exec-once = wl-paste --type image --watch cliphist store & # Stores only image data
+
+
+# INFO:
+# 🅴🅽🆅 🆅🅰🆁🅸🅰🅱🅻🅴🆂     env variables
+# See https://wiki.hyprland.org/Configuring/Environment-variables/
+
+env = GDK_BACKEND,wayland,x11,*
+
+env = QT_QPA_PLATFORM,wayland;xcb
+env = QT_QPA_PLATFORMTHEME,qt6ct
+
+env = XDG_CURRENT_DESKTOP,Hyprland
+env = XDG_SESSION_TYPE,wayland
+env = XDG_SESSION_DESKTOP,Hyprland
+
+env = LIBVA_DRIVER_NAME,nvidia
+env = XDG_SESSION_TYPE,wayland
+env = XDG_SESSION_DESKTOP,Hyprland
+env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+env = GBM_BACKEND,nvidia-drm
+env = WLR_DRM_NO_ATOMIC,1
+
+# Cursors
+env = HYPRCURSOR_THEME,Phinger Cursors (light)
+env = HYPRCURSOR_SIZE,24
+env = XCURSOR_THEME,Phinger Cursors (light)
+env = XCURSOR_SIZE,24
+cursor {
+    no_hardware_cursors = true
+    hide_on_key_press = true
+}
+
+
+# INFO:
+# 🅻🅾🅾🅺 🅰🅽🅳 🅵🅴🅴🅻     look and feel
+# https://wiki.hyprland.org/Configuring/Variables/#general
+general {
+    gaps_in = 3
+    gaps_out = 1
+
+    border_size = 1
+
+    # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
+    # col.active_border = rgb(D3CCE3) rgb(E9E4F0) 90deg
+    col.active_border = rgb(4D4D4D)
+    col.inactive_border = rgba(4D4D4D00)
+
+    # Set to true enable resizing windows by clicking and dragging on borders and gaps
+    resize_on_border = false
+
+    # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
+    allow_tearing = false
+
+    layout = dwindle
+}
+
+# https://wiki.hyprland.org/Configuring/Variables/#decoration
+decoration {
+    rounding = 6
+
+    active_opacity = 1.0
+    inactive_opacity = 0.9
+
+    # drop_shadow = true
+    # shadow_range = 20
+    # shadow_render_power = 3
+    # col.shadow = rgba(0000004D)
+    # col.shadow_inactive = rgba(00000000)
+
+    # https://wiki.hyprland.org/Configuring/Variables/#blur
+    blur {
+        enabled = true
+        size = 5
+        passes = 4
+        new_optimizations = true
+        ignore_opacity = true
+
+        contrast = 2
+        # brightness = 1.3 # 2
+
+        # floating windows will ignore tiled windows in their blur
+        xray = false
+
+        # blur popups (e.g. right-click menus)
+        popups = false
+    }
+}
+
+# https://wiki.hyprland.org/Configuring/Variables/#animations
+animations {
+    enabled = true
+
+    bezier = md3_decel, 0.05, 0.7, 0.1, 1
+    bezier = linear, 0.0, 0.0, 1.0, 1.0
+
+    animation = windowsIn, 1, 6, md3_decel, slide
+    animation = windowsOut, 1,6, md3_decel, slide
+    animation = windowsMove, 1,6, md3_decel, slide
+    animation = fade, 1, 10, md3_decel
+    animation = workspaces, 1, 7, md3_decel,slide
+    animation = specialWorkspace, 1, 8, md3_decel, slide
+
+    animation = border, 1, 10, default
+    animation = borderangle, 1, 8, default
+    # animation = borderangle, 1, 100, linear, loop
+
+    animation = fade, 1, 7, default
+    animation = workspaces, 1, 6, default
+}
+
+# See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
+dwindle {
+    pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+    preserve_split = true # You probably want this
+    force_split = 1
+    default_split_ratio = 1.23
+}
+
+# See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
+master {
+    new_status = master
+}
+
+# INFO:
+# 🅸🅽🅿🆄🆃     input
+# https://wiki.hyprland.org/Configuring/Variables/#input
+
+input {
+    kb_layout = us,us
+    kb_variant = dvorak,
+    kb_model =
+    kb_rules =
+
+    # Keyboard modification
+    kb_options = caps:escape_shifted_capslock
+    repeat_delay = 300
+    repeat_rate = 50
+
+    # Mouse follows focus
+    follow_mouse = 1
+
+    # Mouse acceleration
+    accel_profile = flat
+    force_no_accel = 1
+
+    sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+    touchpad {
+        natural_scroll = false
+    }
+}
+
+# https://wiki.hyprland.org/Configuring/Variables/#gestures
+gestures {
+    workspace_swipe = false
+}
+
+# Example per-device config
+# See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
+device {
+    name = epic-mouse-v1
+    sensitivity = 1
+}
+
+#  INFO:
+# 🅶🆁🅾🆄🅿     goroup
+# https://wiki.hyprland.org/Configuring/Variables/#groupbar
+group {
+    insert_after_current = false
+
+    col.border_active = rgb(AFC390)
+
+    groupbar {
+        enabled         = false
+        height          = 0
+        render_titles   = false
+        font_size       = 8
+        col.active      = rgba(B4FA72CC)
+        col.inactive    = rgba(00000000)
+    }
+}
+
+
+#  INFO:
+# 🅼🅸🆂🅲🅻🅴🅽🅸🅾🆄🆂   misclenious
+# https://wiki.hyprland.org/Configuring/Variables/#misc
+misc {
+  enable_swallow = true
+  swallow_regex = ^(Alacritty|kitty)$
+
+  force_default_wallpaper = 0 # Set to 0 or 1 to disable the anime mascot wallpapers
+  disable_hyprland_logo = true # If true disables the random hyprland logo / anime girl background. :(
+}
+
+
+# INFO:
+# 🆆🅸🅽🅳🅾🆆🆂 🅰🅽🅳 🆆🅾🆁🅺🆂🅿🅰🅲🅴🆂     windows and workspaces
+# See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
+# See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
+#
+windowrulev2 = suppressevent maximize, class:.*
+windowrulev2 = float, class:(thunar), title:(Thunar)
+windowrulev2 = float, class:(feh), title:(feh)
+windowrulev2 = noblur,class:^()$,title:^()$
+windowrulev2 = opacity 1.0 override 1.0 override,class:^()$,title:^()$
+windowrulev2 = float, class:(pavucontrol), title:(Volume Control)
+windowrulev2 = noblur, class:(Rofi), title:(rofi)
+windowrule = float, ^(nwg-look)$
+windowrule = size 70% 80%, ^(nwg-look)$
+windowrule = float, ^(org.gnome.Nautilus)$
+
+windowrulev2 = opacity 0.0 override 0.0 override, class:^(xwaylandvideobridge)$
+windowrulev2 = noanim, class:^(xwaylandvideobridge)$
+windowrulev2 = noinitialfocus, class:^(xwaylandvideobridge)$
+windowrulev2 = maxsize 1 1, class:^(xwaylandvideobridge)$
+windowrulev2 = noblur, class:^(xwaylandvideobridge)$
+windowrule=float, ^(imv)$
+windowrule=float, ^(mpv)$
+windowrule=center, ^(MuPDF)$
+windowrule=float, ^(MuPDF)$
+
+layerrule = blur, waybar # Blurs waybar background
+blurls = launcher # Blurs tofi layer
+
+
+# INFO:
+# 🅺🅴🆈🅱🅸🅽🅳🅸🅽🅶🆂   keybindings
+source = ~/.config/hypr/keybinds.conf
