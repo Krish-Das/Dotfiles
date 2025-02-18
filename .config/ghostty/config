@@ -10,8 +10,13 @@ window-padding-balance=true
 font-feature = -calt,-liga,-dlig
 
 background-opacity = 1
+confirm-close-surface = false
+cursor-invert-fg-bg = true
+mouse-hide-while-typing = true
 
 # --- THEMES ---
 # theme = iTerm2 Pastel Dark Background
 # theme = tokyonight_night
-theme = GitHub Dark
+# theme = GitHub Dark
+# latte, frappe, macchiato, mocha
+theme = catppuccin-mocha
