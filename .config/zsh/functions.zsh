@@ -1,4 +1,5 @@
 #!/bin/sh
+# vim:fileencoding=utf-8:ft=sh
 
 # █▀▀ █░█ █▄░█ █▀▀ ▀█▀ █ █▀█ █▄░█ █▀
 # █▀░ █▄█ █░▀█ █▄▄ ░█░ █ █▄█ █░▀█ ▄█
@@ -24,9 +25,9 @@ conf() {
   dotfiles_dir="$HOME/Dotfiles"
 
   # Find files in the Dotfiles directory with a max depth of 4
-  selected_files=$(find "$dotfiles_dir" -maxdepth 4 -type f \
-   | grep -v '^'"$dotfiles_dir"'/.git/' \
-   | fzf --cycle)
+  selected_files=$(find "$dotfiles_dir" -maxdepth 4 -type f |
+    grep -v '^'"$dotfiles_dir"'/.git/' |
+    fzf --cycle)
 
   # Open the selected files in nvim
   if [ -n "$selected_files" ]; then
@@ -35,7 +36,6 @@ conf() {
     echo "No files selected."
   fi
 }
-
 
 # Open Repos
 code() {
@@ -53,12 +53,12 @@ icat() {
   fi
 }
 
-silent () {
-  if command -v "$1" > /dev/null; then
-    "$1" > /dev/null 2>&1 & disown
-    printf "\033[32mRan %s in background silently.\033[0m\n" "$1"
+silent() {
+  if command -v "$1" >/dev/null; then
+    "$@" >/dev/null 2>&1 &
+    printf "\033[32mRan %s in background silently.\033[0m\n" "$*"
   else
     printf "\033[31mError: %s is not a valid command.\033[0m\n" "$1"
+    return 127
   fi
 }
-
