@@ -33,6 +33,8 @@ alias tpr="trash-restore"
 alias s='echo no-sirski!'
 alias H='Hyprland'
 
+alias proj='projects.sh'
+
 alias Trash="cd \$HOME/.local/share/Trash/files"
 # alias Hdd="cd /media/Hdd/" # for Arch-land 🙂
 alias run="cd /run/media/$USER"
