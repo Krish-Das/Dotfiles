@@ -8,10 +8,15 @@ window-padding-y = 5,0
 window-padding-balance=true
 
 font-feature = -calt,-liga,-dlig
-font-size = 11
-adjust-cell-height = 23%
+font-size = 18
+# adjust-cell-height = 23%
 
-background-opacity = 1
+font-family = "TX-02"
+font-family-italic= "TX-02 Oblique"
+font-family-bold = "TX-02"
+font-family-bold-italic = "TX-02 Oblique"
+
+background-opacity = 0.95
 confirm-close-surface = false
 cursor-invert-fg-bg = true
 mouse-hide-while-typing = true
