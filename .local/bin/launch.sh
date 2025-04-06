@@ -11,8 +11,9 @@ silent() {
   fi
 }
 
-silent ghostty &&
-  silent firefox &&
-  silent flatpak run com.google.Chrome &&
-  silent flatpak run app.zen_browser.zen &&
-  silent ghostty
+# ghostty -e sh -c 'tmux'
+silent ghostty
+silent ghostty
+silent firefox
+silent flatpak run com.google.Chrome
+silent flatpak run app.zen_browser.zen
