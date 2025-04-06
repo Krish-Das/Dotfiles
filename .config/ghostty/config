@@ -14,7 +14,7 @@ font-size = 18
 font-family = "TX-02"
 font-family-italic= "TX-02 Oblique"
 font-family-bold = "TX-02"
-font-family-bold-italic = "TX-02 Oblique"
+font-family-bold-italic = "TX-02 Bold Oblique"
 
 background-opacity = 0.95
 confirm-close-surface = false
