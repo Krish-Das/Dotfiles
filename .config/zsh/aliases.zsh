@@ -33,6 +33,7 @@ alias tpr="trash-restore"
 alias s='echo no-sirski!'
 alias H='Hyprland'
 
+alias notes='notes.sh'
 alias proj='projects.sh'
 
 alias Trash="cd \$HOME/.local/share/Trash/files"

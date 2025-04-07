@@ -42,12 +42,15 @@ fi
 
 # Create a new tmux session
 tmux new-session -d -s "$session_name" -c "$full_path"
+notify-send -a "TMUX" "New session created: $session_name"
 
-# Create the first window (it already exists by default)
+# Rename the first window and open nvim
 tmux rename-window -t "$session_name":1 "NVIM"
+tmux send-keys -t "$session_name":"NVIM" "nvim" C-m
 
-# Create the second window
+# Create the second window and open LazyGit
 tmux new-window -t "$session_name" -c "$full_path" -n "LazyGit"
+tmux send-keys -t "$session_name":"LazyGit" "lazygit" C-m
 
 # Create the third window
 tmux new-window -t "$session_name" -c "$full_path" -n "Terminal"
@@ -55,6 +58,4 @@ tmux new-window -t "$session_name" -c "$full_path" -n "Terminal"
 # Attach to the NVIM window of the new session
 tmux attach-session -t "$session_name":"NVIM"
 
-notify-send -a "TMUX" "New session created: $session_name"
-echo "Tmux session '$session_name' created in '$full_path'."
 exit 0
