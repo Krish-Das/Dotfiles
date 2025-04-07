@@ -117,7 +117,6 @@ end, { desc = "Open [D]iagnostic in [F]loating window" })
 
 -- Git keymaps --
 nnoremap("<leader>gt", ":Telescope git_status<CR>", { desc = "Telescope Git status" })
-nnoremap("<leader>gb", ":Gitsigns toggle_current_line_blame<cr>", { desc = "Toggle [G]it line [B]lame" })
 nnoremap("<leader>gf", function()
   local cmd = {
     "sort",
