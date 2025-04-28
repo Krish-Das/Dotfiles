@@ -8,8 +8,8 @@ return {
     styles = {
       comments = { "italic" },
       conditionals = { "italic" },
-      functions = { "bold" },
-      types = { "bold" },
+      -- functions = { "bold" },
+      -- types = { "bold" },
     },
   },
 }
