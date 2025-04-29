@@ -84,6 +84,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "storage" ];
     description = "Upsher aka Krish Das";
+    shell = pkgs.zsh;
     packages = with pkgs; [];
   };
 
@@ -97,6 +98,7 @@
   };
   programs.java.enable = true;
   programs.lazygit.enable = true;
+  programs.zsh.enable = true;
 
 
   # List packages installed in system profile. To search, run:
