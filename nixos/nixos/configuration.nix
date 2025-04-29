@@ -106,7 +106,7 @@
   programs.java.enable = true;
   programs.lazygit.enable = true;
   programs.zsh.enable = true;
-
+  programs.tmux.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -129,7 +129,6 @@
     fastfetch
     trash-cli
     trashy
-    tmux
     bottom
     procs
     yazi
