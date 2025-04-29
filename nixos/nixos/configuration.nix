@@ -63,7 +63,18 @@
   # XDG portal
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  
+
+  # Enable bluetooth
+  services.blueman.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        Enable = "Source,Sink,Media,Socket";
+        Experimental = true;  # Enable experimental features, useful for some devices
+      };
+    };
+  };
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
@@ -83,7 +94,6 @@
   # };
 
   # Enable sound with pipewire.
-  sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
