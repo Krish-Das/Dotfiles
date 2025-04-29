@@ -52,8 +52,15 @@
   hardware = {
     # opengl.enable = true;
     graphics.enable = true;
-    nvidia.modesetting.enable = true;
+    nvidia = {
+      open = false;  # Use the proprietary driver
+      nvidiaSettings = true;
+      modesetting.enable = true;
+      powerManagement.enable = false;
+    }
+    };
   };
+  services.xserver.videoDrivers = [ "nvidia" ];
   # XDG portal
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
