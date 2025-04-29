@@ -24,6 +24,23 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   networking.firewall.enable = true;
+  # Enable DNS
+  # Configure DNS servers (Cloudflare) for both IPv4 and IPv6
+  networking.nameservers = [
+    "1.1.1.1" "1.0.0.1"  # IPv4
+    "2606:4700:4700::1111" "2606:4700:4700::1001"  # IPv6
+  ];
+  # Enable DNS over TLS with systemd-resolved
+  services.resolved = {
+    enable = true;
+    dnssec = "true";
+    dnsovertls = "true";
+    # domains = [ "~." ];
+    # fallbackDns = [
+    #   "1.1.1.1" "1.0.0.1"  # IPv4
+    #   "2606:4700:4700::1111" "2606:4700:4700::1001"  # IPv6
+    # ];
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
