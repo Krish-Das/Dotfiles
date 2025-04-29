@@ -46,7 +46,7 @@
     xwayland.enable = true;
   };
   environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
+    WLR_NO_HARDWARE_CURSORS = "0";
     NIXOS_OZONE_WL = "1";
   };
   hardware = {
@@ -54,7 +54,9 @@
     graphics.enable = true;
     nvidia.modesetting.enable = true;
   };
-
+  # XDG portal
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   
 
   # Configure keymap in X11
