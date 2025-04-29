@@ -115,8 +115,20 @@
     alacritty
     ghostty
     kitty
-    tree
     stow
+    networkmanagerapplet
+    fzf
+    eza
+    fastfetch
+    trash-cli
+    trashy
+    tmux
+    bottom
+    procs
+    yazi
+    wl-clipboard
+    cliphist
+    bat
   ];
 
   nixpkgs.config.allowUnfree = true;
