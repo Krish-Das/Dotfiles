@@ -96,6 +96,7 @@
     enable = true;
   };
   programs.java.enable = true;
+  programs.lazygit.enable = true;
 
 
   # List packages installed in system profile. To search, run:
