@@ -200,6 +200,10 @@
     alejandra
     stylua
     gcc
+    scrcpy
+    fd
+    unzip
+    ripgrep
   ];
 
   nixpkgs.config.allowUnfree = true;
