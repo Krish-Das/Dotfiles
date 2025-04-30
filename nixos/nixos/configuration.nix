@@ -215,6 +215,10 @@
     fd
     unzip
     ripgrep
+    ffmpeg
+    wf-recorder
+    mpv
+    feh
   ];
 
   nixpkgs.config.allowUnfree = true;
