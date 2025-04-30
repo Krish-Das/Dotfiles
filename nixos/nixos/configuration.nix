@@ -33,13 +33,13 @@
   # Enable DNS over TLS with systemd-resolved
   services.resolved = {
     enable = true;
-    dnssec = "true";
+    dnssec = "allow-downgrade";
     dnsovertls = "true";
     # domains = [ "~." ];
-    # fallbackDns = [
-    #   "1.1.1.1" "1.0.0.1"  # IPv4
-    #   "2606:4700:4700::1111" "2606:4700:4700::1001"  # IPv6
-    # ];
+    fallbackDns = [
+      "1.1.1.1" "1.0.0.1"  # IPv4
+      "2606:4700:4700::1111" "2606:4700:4700::1001"  # IPv6
+    ];
   };
 
   # Set your time zone.
