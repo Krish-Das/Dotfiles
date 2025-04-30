@@ -159,7 +159,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.upsher = {
     isNormalUser = true;
-    extraGroups = ["wheel" "video" "audio" "networkmanager" "lp" "scanner" "storage"];
+    extraGroups = ["wheel" "video" "audio" "networkmanager" "lp" "scanner" "storage" "adbusers"];
     description = "Upsher aka Krish Das";
     shell = pkgs.zsh;
     packages = with pkgs; [];
@@ -177,6 +177,7 @@
   programs.lazygit.enable = true;
   programs.zsh.enable = true;
   programs.tmux.enable = true;
+  programs.adb.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
