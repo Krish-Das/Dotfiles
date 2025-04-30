@@ -198,6 +198,8 @@
     pavucontrol
     gh
     alejandra
+    stylua
+    gcc
   ];
 
   nixpkgs.config.allowUnfree = true;
