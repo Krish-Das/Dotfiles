@@ -185,6 +185,7 @@
     bat
     pavucontrol
     gh
+    alejandra
   ];
 
   nixpkgs.config.allowUnfree = true;
