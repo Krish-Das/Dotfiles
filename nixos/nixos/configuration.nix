@@ -1,14 +1,16 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.efi.canTouchEfiVariables = true;
@@ -22,13 +24,18 @@
   networking.hostName = "didact";
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
   networking.firewall.enable = true;
   # Enable DNS
   # Configure DNS servers (Cloudflare) for both IPv4 and IPv6
   networking.nameservers = [
-    "1.1.1.1" "1.0.0.1"  # IPv4
-    "2606:4700:4700::1111" "2606:4700:4700::1001"  # IPv6
+    # IPv4
+    "1.1.1.1"
+    "1.0.0.1"
+
+    #IPv6
+    "2606:4700:4700::1111"
+    "2606:4700:4700::1001"
   ];
   # Enable DNS over TLS with systemd-resolved
   services.resolved = {
@@ -37,8 +44,13 @@
     dnsovertls = "true";
     # domains = [ "~." ];
     fallbackDns = [
-      "1.1.1.1" "1.0.0.1"  # IPv4
-      "2606:4700:4700::1111" "2606:4700:4700::1001"  # IPv6
+      #IPv4
+      "1.1.1.1"
+      "1.0.0.1"
+
+      #IPv6
+      "2606:4700:4700::1111"
+      "2606:4700:4700::1001"
     ];
   };
 
@@ -70,17 +82,17 @@
   hardware = {
     graphics.enable = true;
     nvidia = {
-      open = false;  # Use the proprietary driver
+      open = false; # Use the proprietary driver
       nvidiaSettings = true;
       modesetting.enable = true;
       powerManagement.enable = false;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
   };
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
   # XDG portal
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   # Enable bluetooth
   services.blueman.enable = true;
@@ -89,7 +101,7 @@
     settings = {
       General = {
         Enable = "Source,Sink,Media,Socket";
-        Experimental = true;  # Enable experimental features, useful for some devices
+        Experimental = true; # Enable experimental features, useful for some devices
       };
     };
   };
@@ -137,7 +149,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.upsher = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "storage" ];
+    extraGroups = ["wheel" "video" "audio" "networkmanager" "lp" "scanner" "storage"];
     description = "Upsher aka Krish Das";
     shell = pkgs.zsh;
     packages = with pkgs; [];
@@ -233,4 +245,3 @@
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.05"; # Did you read the comment?
 }
-
