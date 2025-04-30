@@ -179,6 +179,8 @@
   programs.tmux.enable = true;
   programs.adb.enable = true;
 
+  fonts.packages = with pkgs; [jetbrains-mono];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
