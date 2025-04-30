@@ -184,6 +184,7 @@
     cliphist
     bat
     pavucontrol
+    gh
   ];
 
   nixpkgs.config.allowUnfree = true;
