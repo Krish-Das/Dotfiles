@@ -199,7 +199,6 @@
     eza
     fastfetch
     trash-cli
-    trashy
     bottom
     procs
     yazi
