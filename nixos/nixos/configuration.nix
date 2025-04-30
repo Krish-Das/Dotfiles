@@ -94,6 +94,15 @@
     };
   };
 
+  # Printers
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      brlaser # https://nixos.wiki/wiki/Printing
+      cups-brother-dcpt310 # from nix-os unstable packages
+    ];
+  };
+
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "dvorak";
