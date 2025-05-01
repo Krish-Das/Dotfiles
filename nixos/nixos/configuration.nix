@@ -146,6 +146,9 @@
     wireplumber.enable = true;
   };
 
+  # Enable media-controles with playerctl
+  services.playerctld.enable = true;
+
   # Enable flatpak
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
@@ -224,6 +227,11 @@
     wf-recorder
     mpv
     feh
+    nodejs
+    bun
+    grim
+    slurp
+    tofi
   ];
 
   nixpkgs.config.allowUnfree = true;
