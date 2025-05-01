@@ -168,10 +168,15 @@
   };
 
   # programs.firefox.enable = true;
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
+  # programs.neovim = {
+  #   enable = true;
+  #   defaultEditor = true;
+  #   configure = {
+  #     packages.myVimPackage = with pkgs.vimPlugins; {
+  #       start = [nvim-treesitter];
+  #     };
+  #   };
+  # };
   programs.thunar = {
     enable = true;
   };
@@ -189,6 +194,7 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
+    neovim
     firefox
     google-chrome
     git
