@@ -36,29 +36,21 @@
   # Enable DNS
   # Configure DNS servers (Cloudflare) for both IPv4 and IPv6
   networking.nameservers = [
-    # IPv4
-    "1.1.1.1"
-    "1.0.0.1"
-
-    #IPv6
-    "2606:4700:4700::1111"
-    "2606:4700:4700::1001"
+    "1.1.1.1#cloudflare-dns.com"
+    "8.8.8.8#dns.google"
+    "1.0.0.1#cloudflare-dns.com"
+    "8.8.4.4#dns.google"
+    "2606:4700:4700::1111#cloudflare-dns.com"
+    "2001:4860:4860::8888#dns.google"
+    "2606:4700:4700::1001#cloudflare-dns.com"
+    "2001:4860:4860::8844#dns.google"
   ];
-  # Enable DNS over TLS with systemd-resolved
   services.resolved = {
     enable = true;
-    dnssec = "false"; # allow-downgrade
-    dnsovertls = "true";
-    # domains = [ "~." ];
-    fallbackDns = [
-      #IPv4
-      "1.1.1.1"
-      "1.0.0.1"
-
-      #IPv6
-      "2606:4700:4700::1111"
-      "2606:4700:4700::1001"
-    ];
+    dnssec = "allow-downgrade";
+    dnsovertls = "opportunistic";
+    domains = ["~."]; # "use as default interface for all requests"
+    llmnr = "true";
   };
 
   # Set your time zone.
