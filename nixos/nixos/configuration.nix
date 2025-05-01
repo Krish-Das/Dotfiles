@@ -12,6 +12,8 @@
     ./hardware-configuration.nix
   ];
 
+  nix.settings.experimental-features = ["nix-command"];
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
@@ -21,6 +23,7 @@
     device = "nodev";
   };
 
+  system.name = "didact";
   networking.hostName = "didact";
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -178,6 +181,7 @@
   programs.zsh.enable = true;
   programs.tmux.enable = true;
   programs.adb.enable = true;
+  programs.nh.enable = true;
 
   fonts.packages = with pkgs; [jetbrains-mono];
 
