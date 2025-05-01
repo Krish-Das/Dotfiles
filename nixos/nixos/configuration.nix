@@ -200,7 +200,7 @@
     firefox
     google-chrome
     git
-    dunst
+    swaynotificationcenter
     libnotify
     swww
     alacritty
