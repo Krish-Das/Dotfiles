@@ -24,7 +24,7 @@
     efiSupport = true;
     configurationLimit = 8;
     device = "nodev";
-    useOSProber = true;
+    # useOSProber = true; # Increases rebuild time
   };
 
   system.name = "didact";
