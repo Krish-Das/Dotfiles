@@ -40,7 +40,7 @@
   # Enable DNS over TLS with systemd-resolved
   services.resolved = {
     enable = true;
-    dnssec = "allow-downgrade";
+    dnssec = "false"; # allow-downgrade
     dnsovertls = "true";
     # domains = [ "~." ];
     fallbackDns = [
