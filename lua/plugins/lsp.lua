@@ -18,15 +18,18 @@ local LSP = {
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for Neovim
     -- Setting up Mason as it must be loaded before its dependents
-    { "williamboman/mason.nvim", opts = {
-      ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "󰄠",
-          package_uninstalled = "✗",
+    {
+      "williamboman/mason.nvim",
+      opts = {
+        ui = {
+          icons = {
+            package_installed = "✓",
+            package_pending = "󰄠",
+            package_uninstalled = "✗",
+          },
         },
-      }
-    }},
+      },
+    },
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
 
@@ -34,12 +37,12 @@ local LSP = {
     { "j-hui/fidget.nvim", opts = {} },
 
     -- Allows extra capabilities provided by blink.cmp
-    "saghen/blink.cmp"
+    "saghen/blink.cmp",
   },
-  config = function ()
+  config = function()
     -- Diagnostic Config
     -- See :help vim.diagnostic.Opts
-    vim.diagnostic.config {
+    vim.diagnostic.config({
       severity_sort = true,
       float = { border = "rounded", source = "if_many" },
       underline = { severity = vim.diagnostic.severity.ERROR },
@@ -64,7 +67,7 @@ local LSP = {
           return diagnostic_message[diagnostic.severity]
         end,
       },
-    }
+    })
 
     local capabilities = require("blink.cmp").get_lsp_capabilities()
 
@@ -94,11 +97,11 @@ local LSP = {
       "bashls",
       "prettierd",
       "eslint_d",
-      "alejandra"
+      "alejandra",
     })
-    require("mason-tool-installer").setup { ensure_installed = ensure_installed }
+    require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
-    require("mason-lspconfig").setup {
+    require("mason-lspconfig").setup({
       ensure_installed = {}, -- explicitly set to an empty table (gets populated via mason-tool-installer)
       automatic_installation = false,
       handlers = {
@@ -111,8 +114,8 @@ local LSP = {
           require("lspconfig")[server_name].setup(server)
         end,
       },
-    }
-  end
+    })
+  end,
 }
 
-return {LSPPlugins, LSP}
+return { LSPPlugins, LSP }
