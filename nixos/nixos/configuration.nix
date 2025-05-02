@@ -187,6 +187,12 @@
   programs.adb.enable = true;
   programs.nh.enable = true;
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged
+    # programs here, NOT in environment.systemPackages
+  ];
+
   fonts.packages = with pkgs; [jetbrains-mono];
 
   # List packages installed in system profile. To search, run:
