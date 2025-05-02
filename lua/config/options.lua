@@ -13,6 +13,8 @@ vim.opt.fillchars = { eob = " " }
 -- Enable auto indenting and set it to spaces
 vim.opt.smartindent = true
 vim.opt.shiftwidth = 2
+vim.opt.smarttab = true
+vim.opt.autoindent = true
 
 -- Enable smart indenting
 -- (see https://stackoverflow.com/questions/1204149/smart-wrap-in-vim)
@@ -41,7 +43,7 @@ vim.opt.smartcase = true
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
 
--- Decrease updatetime to 200ms
+-- Decrease updatetime to 50ms
 vim.opt.updatetime = 50
 
 -- Set completeopt to have a better completion experience
@@ -71,7 +73,11 @@ vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 
 -- Always keep 8 lines above/below cursor unless at start/end of file
-vim.opt.scrolloff = 3
+vim.opt.scrolloff = 1
+
+-- Disable commandline until it is needed.
+-- This gives us a cleaner look and an extra line
+vim.opt.cmdheight = 0
 
 -- Enable persistent undo history
 vim.opt.undofile = true
@@ -80,8 +86,13 @@ vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir"
 vim.opt.swapfile = false
 vim.opt.backup = false
 
--- Don't show the mode, since it's already in the status line
-vim.opt.showmode = false
+vim.opt.showmode = true
 
 -- Disable the welcome message
 vim.opt.shortmess:append "I"
+
+-- Sets how neovim will display certain whitespace characters in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
