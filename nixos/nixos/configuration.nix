@@ -235,6 +235,7 @@
     slurp
     tofi
     tree-sitter
+    cargo
   ];
 
   nixpkgs.config.allowUnfree = true;
