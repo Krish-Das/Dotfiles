@@ -74,6 +74,14 @@ local LSP = {
           Lua = { completion = { callSnippet = "Replace" } },
         },
       },
+      cssls = {},
+      eslint = {},
+      html = {},
+      jsonls = {},
+      tailwindcss = {},
+      ts_ls = {},
+      emmet_ls = {},
+      nil_ls = {},
     }
 
     -- Ensure the servers and tools above are installed
@@ -81,6 +89,13 @@ local LSP = {
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       "stylua",
+      "lua_ls",
+      "shellcheck",
+      "shfmt",
+      "bashls",
+      "prettierd",
+      "eslint_d",
+      "alejandra"
     })
     require("mason-tool-installer").setup { ensure_installed = ensure_installed }
 
