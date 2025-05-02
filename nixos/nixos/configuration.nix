@@ -234,6 +234,7 @@
     grim
     slurp
     tofi
+    tree-sitter
   ];
 
   nixpkgs.config.allowUnfree = true;
