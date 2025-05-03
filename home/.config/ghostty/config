@@ -1,0 +1,30 @@
+# vim:fileencoding=utf-8:ft=conf
+
+# window-decoration=false
+gtk-titlebar = false
+
+window-padding-x = 5,5
+window-padding-y = 1,0
+window-padding-balance=true
+
+font-feature = -calt,-liga,-dlig
+font-size = 13
+adjust-cell-height = 23%
+
+# font-family = "TX-02"
+# font-family-italic= "TX-02 Oblique"
+# font-family-bold = "TX-02"
+# font-family-bold-italic = "TX-02 Bold Oblique"
+
+background-opacity = 0.8
+confirm-close-surface = false
+cursor-invert-fg-bg = true
+mouse-hide-while-typing = true
+
+# --- THEMES ---
+# theme = iTerm2 Pastel Dark Background
+# theme = tokyonight_night
+# theme = GitHub Dark
+# latte, frappe, macchiato, mocha
+# theme = rose-pine
+theme = catppuccin-mocha
