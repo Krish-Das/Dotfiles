@@ -81,7 +81,7 @@ vim.opt.cmdheight = 0
 
 -- Enable persistent undo history
 vim.opt.undofile = true
-vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -89,7 +89,7 @@ vim.opt.backup = false
 vim.opt.showmode = true
 
 -- Disable the welcome message
-vim.opt.shortmess:append "I"
+vim.opt.shortmess:append("I")
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`

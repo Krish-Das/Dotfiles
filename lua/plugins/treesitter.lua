@@ -4,10 +4,22 @@ local M = {
   main = "nvim-treesitter.configs", -- Sets main module to use for opts
   opts = {
     ensure_installed = {
-      "bash", "css", "javascript", "diff", "html", "lua",
-      "luadoc", "markdown", "markdown_inline", "query",
-      "vim", "vimdoc", "json",
-      "tsx", "typescript", "nix"
+      "bash",
+      "css",
+      "javascript",
+      "diff",
+      "html",
+      "lua",
+      "luadoc",
+      "markdown",
+      "markdown_inline",
+      "query",
+      "vim",
+      "vimdoc",
+      "json",
+      "tsx",
+      "typescript",
+      "nix",
     },
     auto_install = true,
     sync_install = false,
@@ -22,7 +34,7 @@ local M = {
         node_decremental = "<BS>",
       },
     },
-  }
+  },
 }
 
 return M
