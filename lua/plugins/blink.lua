@@ -17,16 +17,20 @@ return {
       nerd_font_variant = "mono",
     },
     completion = {
-      documentation = { auto_show = false },
       ghost_text = { enabled = true },
+      menu = { border = "rounded" },
+      documentation = { auto_show = false, window = { border = "rounded" } },
     },
-    signature = { enabled = true },
+    signature = { enabled = true, window = { border = "rounded" } },
     sources = {
       default = { "lsp", "path", "snippets", "lazydev", "buffer" },
       providers = {
         lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
       },
     },
-    fuzzy = { implementation = "lua" },
+    fuzzy = {
+      implementation = "lua",
+      sorts = { "exact", "score", "sort_text" },
+    },
   },
 }
