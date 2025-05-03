@@ -236,7 +236,6 @@
     mpv
     feh
     nodejs
-    bun
     grim
     slurp
     tofi
