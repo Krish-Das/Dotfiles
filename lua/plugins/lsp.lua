@@ -40,6 +40,10 @@ local LSP = {
     "saghen/blink.cmp",
   },
   config = function()
+    -- setup the lsp-bindings
+    -- dependencies: Telescope
+    require("config.lsp-bindings")
+
     -- Diagnostic Config
     -- See :help vim.diagnostic.Opts
     vim.diagnostic.config({
