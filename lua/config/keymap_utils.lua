@@ -6,7 +6,9 @@
 ---@return nil
 local function map(keys, func, desc, mode)
   mode = mode or "n"
-  vim.keymap.set(mode, keys, func, { desc = desc })
+  desc = desc or ""
+  local opts = { noremap = true, silent = true, desc = desc }
+  vim.keymap.set(mode, keys, func, opts)
 end
 
 return map

@@ -4,7 +4,7 @@ return {
   lazy = true,
 
   opts = {
-    transparent_background = false,
+    transparent_background = true,
     styles = {
       comments = { "italic" },
       conditionals = { "italic" },
