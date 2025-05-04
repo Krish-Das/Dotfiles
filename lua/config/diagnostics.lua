@@ -3,15 +3,18 @@ local map = require("config.keymap_utils")
 -- Disable virtual_text by default
 vim.diagnostic.config({
   virtual_text = false,
-  signs = true, -- Always show signs
-  underline = true, -- Always show underline
+  virtual_lines = false,
+  signs = true,
+  underline = true,
 })
 
 -- Toggle virtual text
 map("<leader>td", function()
-  local current_virtual_text = vim.diagnostic.config().virtual_text
+  -- local current_virtual_text = vim.diagnostic.config().virtual_text
+  local current_virtual_lines = vim.diagnostic.config().virtual_lines
   vim.diagnostic.config({
-    virtual_text = not current_virtual_text,
+    virtual_text = false,
+    virtual_lines = not current_virtual_lines,
     signs = true, -- Always show signs
     underline = true, -- Always show underline
   })
