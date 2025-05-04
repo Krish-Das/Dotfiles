@@ -209,7 +209,6 @@
     swww
     alacritty
     ghostty
-    kitty
     stow
     networkmanagerapplet
     fzf
