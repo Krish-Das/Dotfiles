@@ -1,7 +1,9 @@
 return {
   "echasnovski/mini.nvim",
   config = function()
-    require("mini.surround").setup()
+    require("mini.surround").setup({
+      event = { "BufReadPre", "BufNewFile" },
+    })
     require("mini.ai").setup({ n_lines = 500 })
     require("mini.jump").setup({
       delay = {
