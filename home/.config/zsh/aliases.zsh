@@ -37,6 +37,7 @@ alias proj="projects.sh"
 alias Trash="cd \$HOME/.local/share/Trash/files"
 # alias Hdd="cd /media/Hdd/" # for Arch-land 🙂
 alias run="cd /run/media/$USER"
+alias dots="cd \$HOME/dotfiles"
 
 # git aliases
 alias galias="bat ~/.config/zsh/aliases.zsh | grep 'alias g' | fzf --cycle"
