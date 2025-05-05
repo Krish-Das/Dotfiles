@@ -1,0 +1,55 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+opacity = 0.95
+padding.x = 12
+padding.y = 3
+dynamic_padding = true
+decorations = "None" # "Full" | "None"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[font]
+size = 14.0
+# SFMono Nerd Font
+# TX-02
+# JetBrainsMono Nerd Font
+# Monaspace Argon Var
+# feather
+# Material Icons
+# Symbols Nerd Font
+
+[font.offset]
+x = 0
+y = 3
+
+[font.normal]
+family = "TX-02"
+style = "Regular"
+
+[font.italic]
+family = "TX-02"
+style = "Oblique"
+
+[font.bold]
+family = "TX-02"
+style = "Bold"
+
+[font.bold_italic]
+family = "TX-02"
+style = "Bold Oblique"
+
+[cursor]
+blink_interval = 500
+unfocused_hollow = true
+thickness = 0.2
+
+[general]
+# Color-theme
+# import = ["~/.config/alacritty/themes/nightlify_mod.toml"]
+# import = ["~/.config/alacritty/themes/pastel.toml"]
+# import = ["~/.config/alacritty/themes/midnight-haze.toml"]
+import = ["~/.config/alacritty/themes/catppuccin_mocha.toml"]
