@@ -42,6 +42,7 @@ return {
     map("<leader>fr", builtin.resume, "[F]ind [R]esume")
     map("<leader>f.", builtin.oldfiles, ".")
     map("<leader><leader>", builtin.buffers, "[ ] Find existing buffers")
+    map("<leader>gst", builtin.git_status, "[G]it [S][T]atus")
 
     map("<leader>/", function()
       builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
