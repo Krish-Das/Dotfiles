@@ -33,6 +33,12 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
   networking.firewall.enable = true;
+  networking.firewall.allowedTCPPortRanges = [
+    {
+      from = 3000;
+      to = 3010;
+    }
+  ];
   # Enable DNS
   # Configure DNS servers (Cloudflare) for both IPv4 and IPv6
   networking.nameservers = [
