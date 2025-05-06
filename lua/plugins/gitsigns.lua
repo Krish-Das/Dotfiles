@@ -8,7 +8,7 @@ return {
       gitsigns.setup({
         on_attach = function(bufnr)
           local function map(mode, l, r, opts)
-            opts = opts or {}
+            opts = opts or { noremap = true, silent = true }
             opts.buffer = bufnr
             opts.desc = "GSigns: " .. opts.desc
             vim.keymap.set(mode, l, r, opts)

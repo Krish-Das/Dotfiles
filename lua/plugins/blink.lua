@@ -18,7 +18,7 @@ return {
     },
     completion = {
       ghost_text = { enabled = true },
-      menu = { border = "rounded" },
+      menu = { auto_show = false },
       documentation = { auto_show = false, window = { border = "rounded" } },
     },
     signature = { enabled = true, window = { border = "rounded" } },
