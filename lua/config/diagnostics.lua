@@ -10,12 +10,10 @@ vim.diagnostic.config({
 
 -- Toggle virtual text
 map("<leader>td", function()
-  -- local current_virtual_text = vim.diagnostic.config().virtual_text
-  local current_virtual_lines = vim.diagnostic.config().virtual_lines
   vim.diagnostic.config({
-    virtual_text = false,
-    virtual_lines = not current_virtual_lines,
-    signs = true, -- Always show signs
-    underline = true, -- Always show underline
+    virtual_text = not vim.diagnostic.config().virtual_text,
+    virtual_lines = false, -- not vim.diagnostic.config().virtual_lines,
+    signs = true,
+    underline = true,
   })
 end, "[T]oggle [D]iagnostics")
