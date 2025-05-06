@@ -83,6 +83,8 @@
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
+    XCURSOR_THEME = "WhiteSur-cursors";
+    XCURSOR_SIZE = "12";
   };
   hardware = {
     graphics.enable = true;
@@ -246,6 +248,7 @@
     tofi
     tree-sitter
     cargo
+    whitesur-cursors
   ];
 
   nixpkgs.config.allowUnfree = true;
