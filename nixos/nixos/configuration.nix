@@ -217,6 +217,7 @@
     swww
     alacritty
     ghostty
+    wezterm
     stow
     networkmanagerapplet
     fzf
@@ -248,6 +249,7 @@
     tofi
     tree-sitter
     cargo
+    nwg-look
     whitesur-cursors
   ];
 
