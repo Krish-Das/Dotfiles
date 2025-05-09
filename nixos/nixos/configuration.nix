@@ -139,6 +139,9 @@
   #   pulse.enable = true;
   # };
 
+  # Enable polkit.
+  security.polkit.enable = true;
+
   # Enable sound with pipewire.
   security.rtkit.enable = true;
   services.pipewire = {
