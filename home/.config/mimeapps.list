@@ -1,0 +1,28 @@
+[Default Applications]
+# Set Google Chrome as the default browser
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+text/html=google-chrome.desktop
+
+# Set MPV as the default video player
+video/mp4=mpv.desktop
+video/x-matroska=mpv.desktop
+video/webm=mpv.desktop
+video/ogg=mpv.desktop
+video/x-msvideo=mpv.desktop
+video/x-flv=mpv.desktop
+video/x-ms-wmv=mpv.desktop
+video/mpeg=mpv.desktop
+video/quicktime=mpv.desktop
+
+# Set Feh as the default image viewer
+image/jpeg=feh.desktop
+image/png=feh.desktop
+image/gif=feh.desktop
+image/bmp=feh.desktop
+image/webp=feh.desktop
+image/tiff=feh.desktop
+image/x-xbitmap=feh.desktop
+image/x-portable-bitmap=feh.desktop
+image/x-portable-graymap=feh.desktop
+image/x-portable-pixmap=feh.desktop
