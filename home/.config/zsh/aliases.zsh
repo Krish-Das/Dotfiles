@@ -6,6 +6,9 @@ alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
 
+# Publish date (MM-DD-YYYY) for mdx
+alias pdate='date +"%m-%d-%Y"'
+
 # settings for common commands
 alias nv="nvim"
 alias ya="yazi"
