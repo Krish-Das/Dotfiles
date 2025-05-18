@@ -5,7 +5,9 @@ return {
   "saghen/blink.cmp",
   event = "VimEnter",
   version = "1.*",
-  dependencies = { "folke/lazydev.nvim" },
+  dependencies = {
+    require("plugins.snippets"),
+  },
 
   --- @module 'blink.cmp'
   --- @type blink.cmp.Config
@@ -22,6 +24,7 @@ return {
       documentation = { auto_show = false, window = { winblend = 1 } },
     },
     signature = { enabled = true, window = { winblend = 1 } },
+    snippets = { preset = "luasnip" },
     sources = {
       default = { "lsp", "path", "snippets", "lazydev", "buffer" },
       providers = {
