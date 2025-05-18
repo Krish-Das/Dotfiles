@@ -17,11 +17,11 @@ return {
       nerd_font_variant = "mono",
     },
     completion = {
-      ghost_text = { enabled = true },
-      menu = { auto_show = false },
-      documentation = { auto_show = false, window = { border = "rounded" } },
+      ghost_text = { enabled = false },
+      menu = { auto_show = false, winblend = 1 },
+      documentation = { auto_show = false, window = { winblend = 1 } },
     },
-    signature = { enabled = true, window = { border = "rounded" } },
+    signature = { enabled = true, window = { winblend = 1 } },
     sources = {
       default = { "lsp", "path", "snippets", "lazydev", "buffer" },
       providers = {
