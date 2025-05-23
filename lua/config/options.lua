@@ -86,7 +86,7 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.swapfile = false
 vim.opt.backup = false
 
-vim.opt.showmode = true
+vim.opt.showmode = false
 
 -- Disable the welcome message
 vim.opt.shortmess:append("I")
