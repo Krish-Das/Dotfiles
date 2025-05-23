@@ -2,18 +2,18 @@
 return {
   "mikavilpas/yazi.nvim",
   event = "VeryLazy",
-  keys = {
-    {
-      "<leader>e",
-      "<cmd>Yazi<cr>",
-      desc = "Yazi: Open at the current file",
-    },
-    {
-      "<leader>cw",
-      "<cmd>Yazi cwd<cr>",
-      desc = "Yazi: Open in nvim's working directory",
-    },
-  },
+  -- keys = {
+  --   {
+  --     "<leader>e",
+  --     "<cmd>Yazi<cr>",
+  --     desc = "Yazi: Open at the current file",
+  --   },
+  --   {
+  --     "<leader>cw",
+  --     "<cmd>Yazi cwd<cr>",
+  --     desc = "Yazi: Open in nvim's working directory",
+  --   },
+  -- },
   ---@type YaziConfig
   opts = {
     open_for_directories = false,
