@@ -1,0 +1,80 @@
+{
+  "base_keymap": "VSCode",
+
+  //
+  // Vim mode
+  //
+  "vim_mode": true,
+  "use_multiline_find": true,
+  "relative_line_numbers": true,
+  "use_smartcase_search": true,
+  "vim": {
+    "use_system_clipboard": "on_yank"
+  },
+
+  //
+  // Ui
+  //
+  "ui_font_size": 14,
+  "buffer_font_family": "JetBrains Mono",
+  "ui_font_family": "SF Pro Rounded",
+  "buffer_font_size": 14,
+  // "buffer_line_height": { "custom": 2 },
+  "bottom_dock_layout": "left_aligned",
+  "hide_mouse": "on_typing",
+  "unnecessary_code_fade": 0.75,
+  "scrollbar": { "show": "never" },
+
+  "show_whitespaces": null,
+  "indent_guides": { "enabled": false },
+  "inline_code_actions": false,
+  "gutter": {
+    "folds": false,
+    "runnables": false,
+    "breakpoints": false,
+    "line_numbers": true
+  },
+
+  //
+  // Auto
+  //
+  "use_autoclose": false,
+  "linked_edits": false,
+  "show_completions_on_input": true,
+
+  //
+  // Zed specific
+  //
+  "projects_online_by_default": false,
+  "ensure_final_newline_on_save": false,
+  "drag_and_drop_selection": false,
+  "centered_layout": {
+    "left_padding": 0.15,
+    "right_padding": 0.15
+  },
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
+  "preview_tabs": { "enabled": true },
+  "project_panel": {
+    "hide_gitignore": false,
+    "default_width": 320,
+    "dock": "right",
+    "entry_spacing": "standard"
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Aquarium Coral"
+  },
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "Log to console": {
+    "prefix": "clg",
+    "body": ["console.info(\"${1}:\", ${1})", "$0"],
+    "description": "Logs to console"
+  }
+}
