@@ -1,37 +1,59 @@
 [
+  /*
+   * Disable the default bindings as they're handled below
+   */
   {
-    "context": "Editor && vim_mode == normal",
+    "context": "Editor",
+    "bindings": {
+      "ctrl-k v": null // disable side preview for markdown
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-p": null, // Open with : instead!
+      "ctrl-alt-b": null, // Open with space e
+      "ctrl-shift-f": null // Open with space f g
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-v": "editor::Paste"
+    }
+  },
+  {
+    "context": "VimControl && vim_mode == normal",
     "bindings": {
       "space f f": "file_finder::Toggle",
       "space f m": "editor::Format",
       "space e": "project_panel::ToggleFocus",
-      "shift-y": ["workspace::SendKeystrokes", "y $"]
+      "shift-y": ["workspace::SendKeystrokes", "y $"],
+      "space p p": "markdown::OpenPreview",
+      "space p s": "markdown::OpenPreviewToTheSide",
+      "space f g": "pane::DeploySearch"
     }
   },
   {
-    "context": "Editor && vim_mode == visual",
+    "context": "vim_operator == y",
+    "bindings": {
+      "-": ["workspace::SendKeystrokes", "^ y $"]
+    }
+  },
+  {
+    "context": "VimControl && vim_mode == visual",
     "bindings": {
       "shift-x": "vim::Exchange"
     }
   },
   {
-    "context": "vim_mode == normal || vim_mode == visual",
+    "context": "VimControl && vim_mode == normal || vim_mode == visual",
     "bindings": {
       "space a": "editor::SelectAll",
       "alt-k": "editor::MoveLineUp",
       "alt-j": "editor::MoveLineDown",
-      "alt-s": "vim::PushSneak", // <leader>' → Sneak forward
-      "shift-s": "vim::PushSneakBackward" // <leader>" → Sneak backward
-    }
-  },
-
-  //
-  // Completion menu in insert mode
-  //
-  {
-    "context": "Editor && vim_mode == insert && showing_completions",
-    "bindings": {
-      // "ctrl-y": "editor::ConfirmCompletion",
+      "s": "vim::PushSneak", // <leader>' → Sneak forward
+      "alt-s": "vim::PushSneakBackward" // <leader>" → Sneak backward
     }
   },
   {

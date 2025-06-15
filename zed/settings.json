@@ -9,7 +9,7 @@
   "relative_line_numbers": true,
   "use_smartcase_search": true,
   "vim": {
-    "use_system_clipboard": "on_yank"
+    "use_system_clipboard": "never"
   },
 
   //
@@ -68,13 +68,45 @@
     "dock": "right",
     "entry_spacing": "standard"
   },
+  "diagnostics.ignored_files": ["**/bun.lock"],
+  "command_aliases": {
+    "W": "w",
+    "Wa": "wa",
+    "Wq": "wq",
+    "Wqa": "wqa",
+    "Q": "q",
+    "Bd": "bd",
+    "Bn": "bn",
+    "Bp": "bp",
+    "Bda": "bda",
+    "l": "ls"
+  },
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Aquarium Coral"
+    "dark": "Rosé Pine"
   },
   "telemetry": {
     "metrics": false,
     "diagnostics": false
   }
+  // Reat the disscussion:
+  // https://github.com/zed-industries/zed/issues/5040
+  // "experimental.theme_overrides": {
+  //   // Get the Hex values from here:
+  //   // https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
+  //   // fromat: #FFFFFF_66 (40% alpha)
+  //   "background.appearance": "blurred",
+  //   "background": "#00000082",
+  //   "title_bar.background": "#000000D9",
+  //   "toolbar.background": "#000000D9",
+  //   "tab_bar.background": "#000000D9",
+  //   "tab.inactive_background": "#000000D9",
+  //   "tab.active_background": "#000000D9",
+  //   "panel.background": "#000000D9",
+  //   "editor.background": "#000000D9",
+  //   "status_bar.background": "#000000D9",
+  //   "editor.gutter.background": "#000000D9"
+  //   // "editor.active_line.background": "#FFF1"
+  // }
 }
