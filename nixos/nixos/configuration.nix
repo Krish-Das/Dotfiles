@@ -260,6 +260,7 @@
     nwg-look
     whitesur-cursors
     thokr
+    zed-editor
   ];
 
   nixpkgs.config.allowUnfree = true;
