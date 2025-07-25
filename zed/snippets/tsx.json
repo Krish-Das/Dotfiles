@@ -168,7 +168,10 @@
   },
   "Log to console": {
     "prefix": "clg",
-    "body": ["console.info(\"${1}:\", ${1})", "$0"],
-    "description": "Logs to console"
+    "body": [
+      "console.info(\"%cINFO\", \"color: black; background: #34c759; border-radius: 3px; padding: 2px 3px;\", ${1})",
+      "$0"
+    ],
+    "description": "Logs to console with styled output"
   }
 }
