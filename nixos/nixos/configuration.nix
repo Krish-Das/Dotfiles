@@ -90,14 +90,22 @@
     NIXOS_OZONE_WL = "1";
     XCURSOR_THEME = "WhiteSur-cursors";
     XCURSOR_SIZE = "12";
+    GBM_BACKEND = "nvidia-drm";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
   hardware = {
-    graphics.enable = true;
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [
+        rocmPackages.clr.icd
+      ];
+    };
     nvidia = {
       open = false; # Use the proprietary driver
       nvidiaSettings = true;
       modesetting.enable = true;
       powerManagement.enable = false;
+      powerManagement.finegrained = false;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
   };
@@ -170,6 +178,7 @@
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
+  services.gnome.gnome-keyring.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -260,7 +269,8 @@
     nwg-look
     whitesur-cursors
     thokr
-    zed-editor
+    zed-editor-fhs # zed-editor
+    typst
   ];
 
   nixpkgs.config.allowUnfree = true;
