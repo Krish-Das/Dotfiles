@@ -30,6 +30,8 @@ map("<A-k>", ":m .-2<CR>==", "Move lines up")
 map("<A-j>", ":m '>+1<CR>gv=gv", "Move lines down", "v")
 map("<A-k>", ":m '<-2<CR>gv=gv", "Move lines up", "v")
 
+map("<C-s>", ":w<CR>", "Write current buffer to the file")
+
 -- Join lines below and move cursor where it was
 -- map("J", "mzJ`z", "Join the line below")
 
