@@ -41,14 +41,19 @@ else
 fi
 
 # Build scrcpy command with conditional touch option
-scrcpy_cmd="scrcpy \
+scrcpy_cmd="
+scrcpy \
   --record=\"$path/$file\" \
   --record-format=\"$record_format\" \
   --max-fps \"$max_fps\" \
   --max-size \"$max_size\" \
   --print-fps \
   --video-bit-rate \"$vid_bitrate\" \
-  --audio-dup"
+  --audio-dup \
+  --no-control \
+  --no-playback
+"
+
 # --audio-codec "$audio_codec"
 
 if [ "$show_touch" = true ]; then

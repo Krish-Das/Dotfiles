@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 pgrep -x "wf-recorder" && pkill -INT -x wf-recorder && exit 0
 
