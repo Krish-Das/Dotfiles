@@ -10,6 +10,8 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./modules/users.nix
+    ./modules/shared-fs.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -182,15 +184,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.upsher = {
-    isNormalUser = true;
-    extraGroups = ["wheel" "video" "audio" "networkmanager" "lp" "scanner" "storage" "adbusers"];
-    description = "Upsher aka Krish Das";
-    shell = pkgs.zsh;
-    packages = with pkgs; [];
-  };
 
   # programs.firefox.enable = true;
   # programs.neovim = {
