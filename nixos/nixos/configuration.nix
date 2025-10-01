@@ -16,6 +16,7 @@
     ./modules/networking.nix
     ./modules/thunar.nix
     ./modules/gtk-themes.nix
+    ./modules/flatpak.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -131,15 +132,6 @@
   # Enable media-controles with playerctl
   services.playerctld.enable = true;
 
-  # Enable flatpak
-  services.flatpak.enable = true;
-  systemd.services.flatpak-repo = {
-    wantedBy = ["multi-user.target"];
-    path = [pkgs.flatpak];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
   services.gnome.gnome-keyring.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
