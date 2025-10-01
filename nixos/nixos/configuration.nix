@@ -13,6 +13,7 @@
     ./modules/users.nix
     ./modules/shared-fs.nix
     ./modules/services.nix
+    ./modules/networking.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -31,48 +32,7 @@
   };
 
   system.name = "didact";
-  networking.hostName = "didact";
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [
-      53317 # port for LocalSend
-    ];
-    allowedTCPPortRanges = [
-      {
-        from = 3000;
-        to = 3010;
-      }
-    ];
-  };
-  # Enable DNS
-  # Configure DNS servers (Cloudflare) for both IPv4 and IPv6
-  networking.nameservers = [
-    "1.1.1.1#cloudflare-dns.com"
-    "8.8.8.8#dns.google"
-    "1.0.0.1#cloudflare-dns.com"
-    "8.8.4.4#dns.google"
-    "2606:4700:4700::1111#cloudflare-dns.com"
-    "2001:4860:4860::8888#dns.google"
-    "2606:4700:4700::1001#cloudflare-dns.com"
-    "2001:4860:4860::8844#dns.google"
-  ];
-  services.resolved = {
-    enable = true;
-    dnssec = "allow-downgrade";
-    dnsovertls = "opportunistic";
-    domains = ["~."]; # "use as default interface for all requests"
-    llmnr = "true";
-  };
-
-  # Set your time zone.
   time.timeZone = "Asia/Kolkata";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
@@ -144,8 +104,8 @@
   services.xserver.xkb.options = "caps:escape_shifted_capslock";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  # Enable polkit.
+  security.polkit.enable = true;
 
   # Enable sound.
   # services.pulseaudio.enable = true;
@@ -154,9 +114,6 @@
   #   enable = true;
   #   pulse.enable = true;
   # };
-
-  # Enable polkit.
-  security.polkit.enable = true;
 
   # Enable sound with pipewire.
   security.rtkit.enable = true;
@@ -186,16 +143,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
-  # programs.firefox.enable = true;
-  # programs.neovim = {
-  #   enable = true;
-  #   defaultEditor = true;
-  #   configure = {
-  #     packages.myVimPackage = with pkgs.vimPlugins; {
-  #       start = [nvim-treesitter];
-  #     };
-  #   };
-  # };
   programs.thunar = {
     enable = true;
   };
@@ -281,12 +228,6 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
