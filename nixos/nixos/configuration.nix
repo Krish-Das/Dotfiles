@@ -12,6 +12,7 @@
     ./hardware-configuration.nix
     ./modules/users.nix
     ./modules/shared-fs.nix
+    ./modules/services.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
