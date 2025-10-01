@@ -14,6 +14,8 @@
     ./modules/shared-fs.nix
     ./modules/services.nix
     ./modules/networking.nix
+    ./modules/thunar.nix
+    ./modules/gtk-themes.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -143,9 +145,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
-  programs.thunar = {
-    enable = true;
-  };
   programs.java.enable = true;
   programs.lazygit.enable = true;
   programs.zsh.enable = true;
@@ -208,7 +207,6 @@
     tree-sitter
     cargo
     nwg-look
-    whitesur-cursors
     thokr
     zed-editor-fhs # zed-editor
     typst
