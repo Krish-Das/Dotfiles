@@ -198,7 +198,6 @@
     tofi
     tree-sitter
     cargo
-    nwg-look
     thokr
     zed-editor-fhs # zed-editor
     typst
