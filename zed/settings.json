@@ -47,7 +47,9 @@
   //
   "projects_online_by_default": false,
   "ensure_final_newline_on_save": false,
-  "drag_and_drop_selection": false,
+  "drag_and_drop_selection": {
+    "enabled": false
+  },
   "centered_layout": {
     "left_padding": 0.15,
     "right_padding": 0.15
