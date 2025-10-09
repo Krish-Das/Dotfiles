@@ -91,7 +91,18 @@
   "telemetry": {
     "metrics": false,
     "diagnostics": false
+  },
+  "languages": {
+    "Nix": {
+      "formatter": {
+        "external": {
+          "command": "alejandra",
+          "arguments": ["--quiet", "--"]
+        }
+      }
+    }
   }
+
   // Reat the disscussion:
   // https://github.com/zed-industries/zed/issues/5040
   // "experimental.theme_overrides": {
