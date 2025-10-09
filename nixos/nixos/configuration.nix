@@ -168,7 +168,6 @@
     ghostty
     wezterm
     stow
-    networkmanagerapplet
     fzf
     eza
     fastfetch
