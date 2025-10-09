@@ -3,7 +3,6 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 {
   config,
-  lib,
   pkgs,
   ...
 }: {
@@ -12,11 +11,12 @@
     ./hardware-configuration.nix
     ./modules/users.nix
     ./modules/shared-fs.nix
-    ./modules/services.nix
+    ./modules/servieces.nix
     ./modules/networking.nix
     ./modules/thunar.nix
     ./modules/gtk-themes.nix
     ./modules/flatpak.nix
+    ./modules/lsp.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -180,8 +180,6 @@
     bat
     pavucontrol
     gh
-    alejandra
-    stylua
     gcc
     scrcpy
     fd
