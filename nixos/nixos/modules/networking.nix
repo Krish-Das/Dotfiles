@@ -3,7 +3,9 @@
     hostName = "didact"; # same as hostname
 
     # networking.wireless.enable = true;
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+    };
 
     # Enable DNS
     # Configure DNS servers (Cloudflare) for both IPv4 and IPv6
@@ -34,8 +36,8 @@
 
   services.resolved = {
     enable = true;
-    dnssec = "allow-downgrade";
-    dnsovertls = "opportunistic";
+    dnssec = "false"; # "allow-downgrade"
+    dnsovertls = "false"; # "opportunistic"
     domains = ["~."]; # "use as default interface for all requests"
     llmnr = "true";
   };
