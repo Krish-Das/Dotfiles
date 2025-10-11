@@ -198,6 +198,7 @@
     thokr
     zed-editor-fhs # zed-editor
     typst
+    yaak
   ];
 
   nixpkgs.config.allowUnfree = true;
