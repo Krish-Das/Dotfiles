@@ -10,23 +10,8 @@
   },
   "auto_update": false,
   "base_keymap": null,
-  "command_aliases": {
-    "W": "w",
-    "Wa": "wa",
-    "Wq": "wq",
-    "Wqa": "wqa",
-    "Q": "q",
-    "Bd": "bd",
-    "Bn": "bn",
-    "Bp": "bp",
-    "Bda": "bda",
-    "l": "ls"
-  },
 
-  //
-  // Vim mode
-  //
-  "diagnostics.ignored_files": ["**/bun.lock"],
+  "file_scan_exclusions": ["**/bun.lock"],
   "drag_and_drop_selection": {
     "enabled": false
   },
@@ -45,6 +30,9 @@
     "enabled": false
   },
   "inline_code_actions": false,
+  "prettier": {
+    "allowed": true
+  },
   "languages": {
     "Nix": {
       "formatter": {
@@ -62,7 +50,6 @@
   "preview_tabs": {
     "enabled": true
   },
-  "projects_online_by_default": false,
   "project_panel": {
     "hide_gitignore": false,
     "default_width": 320,
@@ -93,27 +80,39 @@
     "metrics": false,
     "diagnostics": false
   },
-  "theme": {
-    "mode": "system",
-    "light": "Rosé Pine",
-    "dark": "Rosé Pine"
-  },
   "toolbar": {
     "breadcrumbs": false,
     "quick_actions": false
   },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "icon_theme": "Zed (Default)",
   "ui_font_family": "SF Pro Rounded",
   "ui_font_size": 14,
   "unnecessary_code_fade": 0.75,
   "use_autoclose": false,
-  "use_modifier_to_send": true,
-  "use_multiline_find": true,
   "use_smartcase_search": true,
   "vertical_scroll_margin": 0,
+  "vim_mode": true,
   "vim": {
-    "use_system_clipboard": "never"
+    "use_system_clipboard": "never",
+    "use_smartcase_find": true
   },
-  "vim_mode": true
+  "command_aliases": {
+    "W": "w",
+    "Wa": "wa",
+    "Wq": "wq",
+    "Wqa": "wqa",
+    "Q": "q",
+    "Bd": "bd",
+    "Bn": "bn",
+    "Bp": "bp",
+    "Bda": "bda",
+    "l": "ls"
+  }
 
   // Reat the disscussion:
   // https://github.com/zed-industries/zed/issues/5040
