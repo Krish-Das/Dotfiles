@@ -1,76 +1,15 @@
 {
-  "base_keymap": "VSCode",
-
-  //
-  // Vim mode
-  //
-  "vim_mode": true,
-  "use_multiline_find": true,
-  "relative_line_numbers": true,
-  "use_smartcase_search": true,
-  "vim": {
-    "use_system_clipboard": "never"
+  "agent": {
+    "play_sound_when_agent_done": true,
+    "use_modifier_to_send": true,
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-4o"
+    },
+    "always_allow_tool_actions": false
   },
-
-  //
-  // Ui
-  //
-  "ui_font_size": 14,
-  "buffer_font_family": "JetBrains Mono",
-  "ui_font_family": "SF Pro Rounded",
-  "buffer_font_size": 14,
-  // "buffer_line_height": { "custom": 2 },
-  "bottom_dock_layout": "left_aligned",
-  "hide_mouse": "on_typing",
-  "unnecessary_code_fade": 0.75,
-  "scrollbar": { "show": "never" },
-
-  "show_whitespaces": null,
-  "indent_guides": { "enabled": false },
-  "inline_code_actions": false,
-  "gutter": {
-    "folds": false,
-    "runnables": false,
-    "breakpoints": false,
-    "line_numbers": true
-  },
-
-  //
-  // Auto
-  //
-  "use_autoclose": false,
-  "linked_edits": false,
-  "show_completions_on_input": true,
-
-  //
-  // Zed specific
-  //
-  "projects_online_by_default": false,
-  "ensure_final_newline_on_save": false,
-  "drag_and_drop_selection": {
-    "enabled": false
-  },
-  "centered_layout": {
-    "left_padding": 0.15,
-    "right_padding": 0.15
-  },
-  "tab_bar": {
-    "show": true,
-    "show_nav_history_buttons": false,
-    "show_tab_bar_buttons": false
-  },
-  "toolbar": {
-    "breadcrumbs": false,
-    "quick_actions": false
-  },
-  "preview_tabs": { "enabled": true },
-  "project_panel": {
-    "hide_gitignore": false,
-    "default_width": 320,
-    "dock": "right",
-    "entry_spacing": "standard"
-  },
-  "diagnostics.ignored_files": ["**/bun.lock"],
+  "auto_update": false,
+  "base_keymap": null,
   "command_aliases": {
     "W": "w",
     "Wa": "wa",
@@ -83,15 +22,29 @@
     "Bda": "bda",
     "l": "ls"
   },
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Rosé Pine"
+
+  //
+  // Vim mode
+  //
+  "diagnostics.ignored_files": ["**/bun.lock"],
+  "drag_and_drop_selection": {
+    "enabled": false
   },
-  "telemetry": {
-    "metrics": false,
-    "diagnostics": false
+  "ensure_final_newline_on_save": false,
+  "gutter": {
+    "folds": false,
+    "runnables": false,
+    "breakpoints": false,
+    "line_numbers": true
   },
+  "hide_mouse": "on_typing",
+  "indent_guides": {
+    "enabled": false
+  },
+  "inlay_hints": {
+    "enabled": false
+  },
+  "inline_code_actions": false,
   "languages": {
     "Nix": {
       "formatter": {
@@ -101,7 +54,61 @@
         }
       }
     }
-  }
+  },
+  "linked_edits": false,
+  "max_tabs": 5,
+  "middle_click_paste": false,
+
+  "preview_tabs": {
+    "enabled": true
+  },
+  "projects_online_by_default": false,
+  "project_panel": {
+    "hide_gitignore": false,
+    "default_width": 320,
+    "dock": "right",
+    "entry_spacing": "standard"
+  },
+  "relative_line_numbers": true,
+  "scrollbar": {
+    "show": "never"
+  },
+  "show_completions_on_input": true,
+  "show_whitespaces": null,
+  "status_bar": {
+    "active_language_button": true,
+    "cursor_position_button": false
+  },
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false
+  },
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Rosé Pine",
+    "dark": "Rosé Pine"
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
+  "ui_font_family": "SF Pro Rounded",
+  "ui_font_size": 14,
+  "unnecessary_code_fade": 0.75,
+  "use_autoclose": false,
+  "use_modifier_to_send": true,
+  "use_multiline_find": true,
+  "use_smartcase_search": true,
+  "vertical_scroll_margin": 0,
+  "vim": {
+    "use_system_clipboard": "never"
+  },
+  "vim_mode": true
 
   // Reat the disscussion:
   // https://github.com/zed-industries/zed/issues/5040
@@ -119,7 +126,7 @@
   //   "panel.background": "#000000D9",
   //   "editor.background": "#000000D9",
   //   "status_bar.background": "#000000D9",
-  //   "editor.gutter.background": "#000000D9"
-  //   // "editor.active_line.background": "#FFF1"
+  //   "editor.gutter.background": "#0kjk00000D9"
+  //   "editor.active_line.background": "#FFF1",
   // }
 }
