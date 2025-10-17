@@ -31,6 +31,11 @@ plug "$HOME/.config/zsh/aliases.zsh"
 plug "$HOME/.config/zsh/exports.zsh"
 plug "$HOME/.config/zsh/functions.zsh"
 
+# Load local environment variables if the file exists
+if [ -f "$HOME/.config/env/local.env" ]; then
+  plug "$HOME/.config/env/local.env"
+fi
+
 # plugins
 plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/vim"
@@ -49,7 +54,7 @@ plug "romkatv/powerlevel10k"
 # zstyle ':completion:*' menu no
 # zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-# Keybindings 
+# Keybindings
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
