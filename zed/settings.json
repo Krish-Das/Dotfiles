@@ -79,8 +79,13 @@
     "active_language_button": true,
     "cursor_position_button": false
   },
+  "title_bar": {
+    "show_project_items": false,
+    "show_menus": false,
+    "show_sign_in": false
+  },
   "tab_bar": {
-    "show": true,
+    "show": false,
     "show_nav_history_buttons": false,
     "show_tab_bar_buttons": false
   },

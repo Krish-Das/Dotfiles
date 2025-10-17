@@ -13,7 +13,9 @@
     "bindings": {
       "ctrl-shift-p": null, // Open with : instead!
       "ctrl-alt-b": null, // Open with space e
-      "ctrl-shift-f": null // Open with space f g
+      "ctrl-shift-f": null, // Open with space f g
+      "ctrl-tab": null, // Open with space space
+      "ctrl-shift-tab": null // No binding for this
     }
   },
   {
@@ -31,7 +33,10 @@
       "shift-y": ["workspace::SendKeystrokes", "y $"],
       "space p p": "markdown::OpenPreview",
       "space p s": "markdown::OpenPreviewToTheSide",
-      "space f g": "pane::DeploySearch"
+      "space f g": "pane::DeploySearch",
+      "space space": "tab_switcher::Toggle",
+      "space b n": "pane::ActivateNextItem",
+      "space b p": "pane::ActivatePreviousItem"
     }
   },
   {
