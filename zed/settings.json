@@ -44,9 +44,9 @@
     }
   },
   "linked_edits": false,
+  "show_edit_predictions": false,
   "max_tabs": 5,
   "middle_click_paste": false,
-
   "preview_tabs": {
     "enabled": true
   },
@@ -55,6 +55,18 @@
     "default_width": 320,
     "dock": "right",
     "entry_spacing": "standard"
+  },
+  "terminal": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "collaboration_panel": {
+    "button": false
   },
   "relative_line_numbers": true,
   "scrollbar": {
@@ -75,6 +87,9 @@
     "show": false,
     "show_nav_history_buttons": false,
     "show_tab_bar_buttons": false
+  },
+  "outline_panel": {
+    "dock": "right"
   },
   "telemetry": {
     "metrics": false,

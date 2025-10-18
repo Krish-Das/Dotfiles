@@ -34,7 +34,7 @@
       "space p p": "markdown::OpenPreview",
       "space p s": "markdown::OpenPreviewToTheSide",
       "space f g": "pane::DeploySearch",
-      "space space": "tab_switcher::Toggle",
+      "space space": "tab_switcher::ToggleAll",
       "space b n": "pane::ActivateNextItem",
       "space b p": "pane::ActivatePreviousItem"
     }
@@ -62,7 +62,7 @@
     }
   },
   {
-    "context": "ProjectPanel && not_editing",
+    "context": "ProjectPanel && not_editing && !menu",
     "bindings": {
       ".": "project_panel::ToggleHideGitIgnore",
       "q": "workspace::ToggleRightDock",
