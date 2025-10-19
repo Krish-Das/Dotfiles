@@ -1,0 +1,48 @@
+# vim:fileencoding=utf-8:ft=conf
+#
+# All options:
+# https://github.com/philj56/tofi/blob/master/doc/config
+
+prompt-text = ""
+prompt-padding = 5
+prompt-color = #6A8ED1
+
+text-color = #CCCBFF
+background-color = #1F1F1F
+selection-color = #121317
+selection-background = #DF83EE
+
+corner-radius = 8
+border-width = 1
+outline-width = 1
+border-color = #333333
+outline-color = #1F1F1F
+
+selection-padding = 5
+selection-background-corner-radius = 2
+
+anchor = center
+width = 600
+height = 300
+padding-top = 6
+padding-right = 6
+padding-bottom = 6
+margin-left = 6
+
+text-cursor = true
+text-cursor-color = #7B5CFB
+text-cursor-corner-radius = 1
+text-cursor-thickness = 3
+
+font = JetBrains Mono, SF Pro Text, SFMono Nerd Font
+font-variations = "wght 600"
+font-size = 10
+
+result-spacing = 14
+num-results = 0
+horizontal = false
+
+history = true
+drun-launch = true
+fuzzy-match = true
+ascii-input = false
