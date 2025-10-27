@@ -13,23 +13,11 @@
     ./modules/gtk-themes.nix
     ./modules/flatpak.nix
     ./modules/lsp.nix
+    ./modules/grub.nix
     ./drivers/amd.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  # Use the systemd-boot EFI boot loader.
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    timeout = 1;
-  };
-  boot.loader.grub = {
-    enable = true;
-    efiSupport = true;
-    configurationLimit = 8;
-    device = "nodev";
-    # useOSProber = true; # Increases rebuild time
-  };
 
   system.name = "didact";
   time.timeZone = "Asia/Kolkata";
