@@ -13,7 +13,7 @@
     ./modules/gtk-themes.nix
     ./modules/flatpak.nix
     ./modules/lsp.nix
-    ./modules/grub.nix
+    ./boot/grub.nix
     ./drivers/amd.nix
   ];
 
