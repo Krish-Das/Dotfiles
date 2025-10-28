@@ -174,6 +174,7 @@
     zed-editor-fhs # zed-editor
     typst
     system-config-printer
+    appimage-run
     yaak
   ];
 
