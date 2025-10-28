@@ -13,6 +13,7 @@
     ./modules/gtk-themes.nix
     ./modules/flatpak.nix
     ./modules/lsp.nix
+    ./modules/packages
     ./boot/grub.nix
     ./drivers/amd.nix
   ];
@@ -130,52 +131,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim
-    wget
-    neovim
-    firefox
-    google-chrome
-    git
-    swaynotificationcenter
-    libnotify
-    swww
-    alacritty
-    ghostty
-    wezterm
-    stow
-    fzf
-    eza
-    fastfetch
-    trash-cli
-    bottom
-    procs
-    yazi
-    wl-clipboard
-    cliphist
-    bat
-    pavucontrol
-    gh
-    gcc
-    scrcpy
-    fd
-    unzip
-    ripgrep
-    ffmpeg
-    wf-recorder
-    mpv
-    feh
-    nodejs
-    grim
-    slurp
-    tofi
-    tree-sitter
-    cargo
-    thokr
-    zed-editor-fhs # zed-editor
-    typst
-    system-config-printer
-    appimage-run
-    yaak
   ];
 
   nixpkgs.config.allowUnfree = true;
