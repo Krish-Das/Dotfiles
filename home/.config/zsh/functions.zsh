@@ -55,7 +55,7 @@ icat() {
 
 silent() {
   if command -v "$1" >/dev/null; then
-    "$@" >/dev/null 2>&1 &
+    "$@" &>/dev/null &!
     pid=$!
     printf "\033[32mRan %s in background silently (PID: %d).\033[0m\n" "$*" $pid
   else
@@ -63,3 +63,4 @@ silent() {
     return 127
   fi
 }
+compdef _precommand silent # enable tab completion
