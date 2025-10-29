@@ -3,7 +3,7 @@
 # window-decoration=false
 gtk-titlebar = false
 
-window-padding-x = 5,5
+window-padding-x = 0,0
 window-padding-y = 1,0
 window-padding-balance=true
 
@@ -22,9 +22,8 @@ cursor-invert-fg-bg = true
 mouse-hide-while-typing = true
 
 # --- THEMES ---
+# theme = Rose Pine Moon
+theme = Material Ocean
 # theme = iTerm2 Pastel Dark Background
-# theme = tokyonight_night
-# theme = GitHub Dark
 # latte, frappe, macchiato, mocha
-# theme = rose-pine
-theme = catppuccin-mocha
+# theme = catppuccin-mocha
