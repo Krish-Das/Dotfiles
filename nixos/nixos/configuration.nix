@@ -113,13 +113,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
-  programs.java.enable = true;
-  programs.lazygit.enable = true;
-  programs.zsh.enable = true;
-  programs.tmux.enable = true;
-  programs.adb.enable = true;
-  programs.nh.enable = true;
-
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged
