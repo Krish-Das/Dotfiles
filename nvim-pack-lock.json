@@ -1,0 +1,20 @@
+{
+  "plugins": {
+    "mini.pick": {
+      "rev": "bb764a5",
+      "src": "https://github.com/echasnovski/mini.pick"
+    },
+    "nvim-lspconfig": {
+      "rev": "87d3018",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "oil.nvim": {
+      "rev": "7e1cd77",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "vague.nvim": {
+      "rev": "5689afd",
+      "src": "https://github.com/vague2k/vague.nvim"
+    }
+  }
+}
