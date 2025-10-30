@@ -11,8 +11,11 @@ require("mason-tool-installer").setup({
   ensure_installed = {
     "lua_ls",
     "stylua",
-    "biome",
     "ts_ls",
+    "cssls",
+    "html",
+    "tailwindcss",
+    "biome",
   },
 })
 
