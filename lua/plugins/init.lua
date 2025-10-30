@@ -14,7 +14,7 @@ require("mini.pick").setup()
 require("oil").setup()
 require("mason").setup()
 require("nvim-treesitter.configs").setup({
-  ensure_installed = { "typescript", "javascript" },
+  ensure_installed = { "typescript", "javascript", "css" },
   auto_install = false,
   ignore_install = {},
   modules = {},
@@ -31,7 +31,7 @@ vim.cmd.highlight("statusline guibg=NONE")
 
 map("<leader>rr", ":update<CR>:source<CR>", "Yank current line to system clipboard")
 
-vim.lsp.enable({ "lua_ls", "biome" })
+vim.lsp.enable({ "lua_ls"})
 vim.lsp.config("lua_ls", {
   settings = {
     Lua = {
