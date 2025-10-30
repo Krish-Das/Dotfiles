@@ -8,6 +8,10 @@
       "rev": "ad7146a",
       "src": "https://github.com/mason-org/mason.nvim"
     },
+    "material.nvim": {
+      "rev": "8a34cb0",
+      "src": "https://github.com/marko-cerovac/material.nvim"
+    },
     "mini.pick": {
       "rev": "bb764a5",
       "src": "https://github.com/echasnovski/mini.pick"

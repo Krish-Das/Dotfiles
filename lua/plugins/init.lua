@@ -1,12 +1,13 @@
 local map = require("config.keymap_utils")
 
 vim.pack.add({
-  { src = "https://github.com/vague2k/vague.nvim" },
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/echasnovski/mini.pick" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/mason-org/mason.nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+  -- themes
+  { src = "https://github.com/marko-cerovac/material.nvim" },
 })
 
 require("mini.pick").setup()
@@ -25,8 +26,8 @@ map("<leader>e", "<cmd>Pick files<CR>")
 map("<leader>-", "<cmd>Oil<CR>")
 
 -- Set colorscheme
-vim.cmd("colorscheme vague")
-vim.cmd(":hi statusline guibg=NONE")
+vim.cmd.colorscheme("material-deep-ocean")
+vim.cmd.highlight("statusline guibg=NONE")
 
 map("<leader>rr", ":update<CR>:source<CR>", "Yank current line to system clipboard")
 
