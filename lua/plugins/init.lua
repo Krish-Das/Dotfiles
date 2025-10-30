@@ -30,9 +30,9 @@ vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
 
 -- Some keybinds
-map("<leader>e", "<cmd>Pick files<CR>")
-map("<leader>-", "<cmd>Oil<CR>")
+map("<leader>e", "<cmd>Pick files<CR>", "Open file picker")
+map("<leader>-", "<cmd>Oil<CR>", "Open directory in Oil buffer")
 map("<leader>rr", ":update<CR>:source<CR>", "Yank current line to system clipboard")
 map("<leader>fm", function()
   vim.lsp.buf.format()
-end)
+end, "Format current buffer via LSP")
