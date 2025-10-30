@@ -42,5 +42,4 @@ vim.lsp.config("lua_ls", {
   }
 })
 
-vim.lsp.config("biome", {})
 map("<leader>fm", function() vim.lsp.buf.format() end)
