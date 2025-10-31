@@ -9,13 +9,21 @@ require("mason").setup()
 require("mason-lspconfig").setup({})
 require("mason-tool-installer").setup({
   ensure_installed = {
-    "lua_ls",
+    "vim-language-server",
+    "lua-language-server",
     "stylua",
+    "luacheck",
     "ts_ls",
     "cssls",
     "html",
+    "jsonls",
     "tailwindcss",
     "biome",
+    "shellcheck",
+    "shfmt",
+    "bash-language-server",
+    -- "nil_ls"
+    -- "alejandra",
   },
 })
 
@@ -30,13 +38,27 @@ vim.lsp.config("lua_ls", {
   },
 })
 
--- Automatically trigger lsp autocomplete
-vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if client ~= nil and client:supports_method("textDocument/completion") then
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-    end
+--
+-- Notify user that mason is starting to install
+--
+vim.api.nvim_create_autocmd("User", {
+  pattern = "MasonToolsStartingInstall",
+  callback = function()
+    vim.schedule(function()
+      print("mason-tool-installer is starting")
+    end)
   end,
 })
-vim.cmd("set completeopt+=noselect")
+
+--
+-- Automatically trigger lsp autocomplete
+--
+-- vim.api.nvim_create_autocmd("LspAttach", {
+--   callback = function(ev)
+--     local client = vim.lsp.get_client_by_id(ev.data.client_id)
+--     if client ~= nil and client:supports_method("textDocument/completion") then
+--       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+--     end
+--   end,
+-- })
+-- vim.cmd("set completeopt+=noselect")
