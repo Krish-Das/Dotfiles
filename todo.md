@@ -29,7 +29,7 @@
 
 ## Others
 
-- [ ] Get rid of the startup message
+- [x] Get rid of the startup message
 - [x] Remove the `<leader>rr` binding in `./lua/plugins/init.lua`
 
 ---

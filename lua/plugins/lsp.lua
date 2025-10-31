@@ -6,7 +6,7 @@ vim.pack.add({
 })
 
 require("mason").setup()
-require("mason-lspconfig").setup({})
+require("mason-lspconfig").setup()
 require("mason-tool-installer").setup({
   ensure_installed = {
     "vim-language-server",
@@ -25,6 +25,8 @@ require("mason-tool-installer").setup({
     "bash-language-server",
     -- "alejandra",
   },
+  run_on_start = false,
+  debounce_hours = 12,
 })
 
 vim.lsp.config("lua_ls", {
@@ -51,7 +53,7 @@ vim.api.nvim_create_autocmd("User", {
   pattern = "MasonToolsStartingInstall",
   callback = function()
     vim.schedule(function()
-      print("mason-tool-installer is starting")
+      vim.notify("mason-tool-installer is starting", vim.log.levels.INFO, { title = "mason-tool-installer" })
     end)
   end,
 })
