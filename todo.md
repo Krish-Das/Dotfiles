@@ -7,7 +7,7 @@
   - [x] make sure `==`/`=ap` works with the LSP and the formatter
   - [x] `gcc` support inside jsx.
 - [ ] Probably auto-tag support
-- [ ] `.nix` integration
+- [x] `.nix` integration
 - [ ] code folding
 
 ## Formatting
@@ -26,6 +26,7 @@
 - [ ] better comments (`gcc`)
 - [ ] better code-actions (with biome and json's singlequote)
 - [ ] probably better code folding
+- [ ] Snippets with LuaSnip
 
 ## Others
 

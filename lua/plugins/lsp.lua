@@ -23,7 +23,6 @@ require("mason-tool-installer").setup({
     "shellcheck",
     "shfmt",
     "bash-language-server",
-    -- "nil_ls"
     -- "alejandra",
   },
 })
@@ -37,6 +36,12 @@ vim.lsp.config("lua_ls", {
       telemetry = { enable = false },
     },
   },
+})
+
+-- Using system-wide nixd (ensure nixd is installed in system PATH)
+vim.lsp.enable("nixd")
+vim.lsp.config("nixd", {
+  cmd = { "nixd" },
 })
 
 --
