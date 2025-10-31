@@ -16,16 +16,16 @@
 
 ## Integrations
 
-- [x] Git integration
 - [ ] [leap.nvim](https://github.com/ggandor/leap.nvim) or mini.jump
-- [x] Mini-surround
-- [x] fuzzy finding + grep
 - [ ] Harpoon
 - [ ] better comments (`gcc`)
-- [x] better code-actions (with biome and json's singlequote)
 - [ ] snippets with LuaSnip
 - [ ] code folding
 - [ ] auto-tag support
+- [x] Git integration
+- [x] fuzzy finding + grep
+- [x] Mini-surround
+- [x] better code-actions (with biome and json's singlequote)
 
 ## Others
 
