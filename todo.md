@@ -18,7 +18,7 @@
 
 - [ ] Git integration
 - [ ] Leap jumps
-- [ ] Mini-surround / vim-surrounding
+- [x] Mini-surround
 - [x] fuzzy finding + grep
 - [ ] Harpoon
 - [ ] better comments (`gcc`)

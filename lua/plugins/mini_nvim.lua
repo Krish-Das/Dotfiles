@@ -1,7 +1,9 @@
 vim.pack.add({
   "https://github.com/nvim-mini/mini.pick",
+  "https://github.com/nvim-mini/mini.surround",
 })
 require("mini.pick").setup()
+require("mini.surround").setup()
 
 local map = require("config.keymap_utils")
 map("<leader>ff", "<cmd>Pick files<CR>", "[F]ind [F]iles")
