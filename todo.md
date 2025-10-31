@@ -17,15 +17,15 @@
 ## Integrations
 
 - [ ] Git integration
-- [ ] Probably harpoon
 - [ ] Leap jumps
-- [ ] mino-surround / vim-surrounding
+- [ ] Mini-surround / vim-surrounding
+- [ ] fuzzy finding + grep
+- [ ] Harpoon
 - [ ] better comments (`gcc`)
-- [ ] better code-actions (with biome and json's singlequote)
-- [ ] probably better code folding
-- [ ] Snippets with LuaSnip
+- [x] better code-actions (with biome and json's singlequote)
+- [ ] snippets with LuaSnip
 - [ ] code folding
-- [ ] Probably auto-tag support
+- [ ] auto-tag support
 
 ## Others
 
