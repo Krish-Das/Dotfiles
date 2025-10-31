@@ -2,6 +2,7 @@ local map = require("config.keymap_utils")
 
 require("plugins.lsp")
 require("config.treesitter")
+require("config.formatter")
 
 vim.pack.add({
   { src = "https://github.com/stevearc/oil.nvim" },
@@ -24,6 +25,3 @@ vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
 map("<leader>ff", "<cmd>Pick files<CR>", "Open file picker")
 map("<leader>-", "<cmd>Oil<CR>", "Open directory in Oil buffer")
 map("<leader>rr", ":update<CR>:source<CR>", "Yank current line to system clipboard")
-map("<leader>fm", function()
-  vim.lsp.buf.format()
-end, "Format current buffer via LSP")

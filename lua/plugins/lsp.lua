@@ -19,6 +19,7 @@ require("mason-tool-installer").setup({
     "jsonls",
     "tailwindcss",
     "biome",
+    "prettierd",
     "shellcheck",
     "shfmt",
     "bash-language-server",

@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "conform.nvim": {
+      "rev": "9fd3d5e",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
     "mason-lspconfig.nvim": {
       "rev": "3590d66",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
