@@ -1,8 +1,9 @@
 ## LSP and Treesitter
-- [ ] Better Tresitter highlight
-- [ ] Betton LSP Support
-    - [ ] make sure `==`/`=ap` works with the LSP and the formatter
-    - [ ] `gcc` support inside jsx.
+- [X] Better Tresitter highlight
+- [ ] Better LSP Support
+    - [ ] LSP Support
+    - [X] make sure `==`/`=ap` works with the LSP and the formatter
+    - [X] `gcc` support inside jsx.
 - [ ] Probably auto-tag support
 - [ ] `.nix` integration
 - [ ] better LSP suggestions for tailwind classes
@@ -17,3 +18,4 @@
 - [ ] Probably harpoon
 - [ ] Leap jumps
 - [ ] mino-surround / vim-surrounding
+- [ ] better comments (`gcc`)
