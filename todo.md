@@ -19,7 +19,7 @@
 - [ ] Git integration
 - [ ] Leap jumps
 - [ ] Mini-surround / vim-surrounding
-- [ ] fuzzy finding + grep
+- [x] fuzzy finding + grep
 - [ ] Harpoon
 - [ ] better comments (`gcc`)
 - [x] better code-actions (with biome and json's singlequote)

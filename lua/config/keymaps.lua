@@ -20,7 +20,8 @@ map("x", '"_x')
 map("C", '"_C')
 map("c", '"_c')
 
--- Switch buffer
+-- Switch buffers
+map("<Tab>", "<cmd>e #<CR>", "Switch to the last buffer")
 map("<leader>bn", "<cmd>bnext<CR>", "Goto the next buffer")
 map("<leader>bp", "<cmd>bprevious<CR>", "Goto the previous buffer")
 
