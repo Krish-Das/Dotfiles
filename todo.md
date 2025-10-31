@@ -16,8 +16,8 @@
 
 ## Integrations
 
-- [ ] Git integration
-- [ ] Leap jumps
+- [x] Git integration
+- [ ] [leap.nvim](https://github.com/ggandor/leap.nvim) or mini.jump
 - [x] Mini-surround
 - [x] fuzzy finding + grep
 - [ ] Harpoon
