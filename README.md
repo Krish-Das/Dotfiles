@@ -9,12 +9,12 @@
 
 ### NvimTree Toggle/Focus Mapping
 
-Currently, `<leader>-` runs `api.tree.toggle()` to open or close the tree.
+Currently, `<leader>e` runs `api.tree.toggle()` to open or close the tree.
 
-To bring back the behavior where `<leader>-` focuses the tree if it's not active, and closes it if it is, use this mapping instead:
+To bring back the behavior where `<leader>e` focuses the tree if it's not active, and closes it if it is, use this mapping instead:
 
 ```lua
-map("<leader>-", function()
+map("<leader>e", function()
   local api = require("nvim-tree.api")
   if api.tree.is_tree_buf() then
     api.tree.toggle()

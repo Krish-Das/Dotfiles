@@ -40,6 +40,6 @@ require("nvim-tree").setup({
 })
 
 local map = require("config.keymap_utils")
-map("<leader>-", function()
+map("<leader>e", function()
   require("nvim-tree.api").tree.toggle()
 end, "Toggle nvim tree")
