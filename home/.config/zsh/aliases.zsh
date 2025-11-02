@@ -10,7 +10,7 @@ alias fgrep="fgrep --color=auto"
 alias pdate='date +"%m-%d-%Y"'
 
 # settings for common commands
-alias nv="nvim"
+alias e="$EDITOR"
 alias ya="yazi"
 alias fetch="fastfetch"
 alias lg="lazygit"

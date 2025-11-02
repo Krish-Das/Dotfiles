@@ -23,18 +23,11 @@ S() {
 # Edit the dotfiles with one command
 conf() {
   dotfiles_dir="$HOME/dotfiles"
-
-  # Find files in the Dotfiles directory with a max depth of 4
   selected_files=$(find "$dotfiles_dir" -maxdepth 4 -type f |
     grep -v '^'"$dotfiles_dir"'/.git/' |
     fzf --cycle)
 
-  # Open the selected files in nvim
-  if [ -n "$selected_files" ]; then
-    nvim "$selected_files"
-  else
-    echo "No files selected."
-  fi
+  [ -n "$selected_files" ] && $EDITOR "$selected_files" || echo "No files selected."
 }
 
 # Open Repos
