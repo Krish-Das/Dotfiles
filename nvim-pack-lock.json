@@ -24,6 +24,10 @@
       "rev": "8a34cb0",
       "src": "https://github.com/marko-cerovac/material.nvim"
     },
+    "mini.extra": {
+      "rev": "188422c",
+      "src": "https://github.com/nvim-mini/mini.extra"
+    },
     "mini.pick": {
       "rev": "bb764a5",
       "src": "https://github.com/echasnovski/mini.pick"

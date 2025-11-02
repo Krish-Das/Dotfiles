@@ -1,15 +1,18 @@
 vim.pack.add({
   "https://github.com/nvim-mini/mini.pick",
   "https://github.com/nvim-mini/mini.surround",
+  "https://github.com/nvim-mini/mini.extra",
 })
 require("mini.pick").setup()
 require("mini.surround").setup()
+require("mini.extra").setup()
 
 local map = require("config.keymap_utils")
 map("<leader>ff", "<cmd>Pick files<CR>", "[F]ind [F]iles")
 map("<leader><leader>", "<cmd>Pick buffers<CR>", "[ ] Find existing buffers")
 map("<leader>fg", "<cmd>Pick grep_live<CR>", "[F]ind by [G]rep")
 map("<leader>fh", "<cmd>Pick help<CR>", "[F]ind [H]elp")
+map("<leader>fk", "<cmd>Pick keymaps<CR>", "[F]ind [K]eymaps")
 
 -- Git unstaged (modified, tracked)
 map("<leader>gu", function()
