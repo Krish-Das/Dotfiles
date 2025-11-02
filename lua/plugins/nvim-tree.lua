@@ -1,0 +1,45 @@
+vim.pack.add({
+  "https://github.com/nvim-tree/nvim-tree.lua",
+  -- "https://github.com/nvim-lua/plenary.nvim",
+})
+
+-- optionally enable 24-bit colour
+vim.opt.termguicolors = true
+
+-- :h nvim-tree-opts
+require("nvim-tree").setup({
+  hijack_cursor = true,
+  disable_netrw = true,
+  sort = { sorter = "case_sensitive" },
+  view = {
+    width = 30,
+    side = "right",
+    centralize_selection = true,
+  },
+  renderer = {
+    group_empty = true,
+    indent_markers = { enable = true },
+    add_trailing = true,
+    -- root_folder_label = ":t", -- just the root folder
+    root_folder_label = ":t:s?^?􁋷  ?", -- root folder with icon
+    icons = {
+      show = {
+        file = false,
+        folder = false,
+        folder_arrow = false,
+        git = false,
+      },
+    },
+  },
+  filters = { dotfiles = true },
+  git = { enable = true },
+  diagnostics = {
+    enable = true,
+    icons = { hint = "h", info = "i", warning = "W", error = "E" },
+  },
+})
+
+local map = require("config.keymap_utils")
+map("<leader>-", function()
+  require("nvim-tree.api").tree.toggle()
+end, "Toggle nvim tree")
