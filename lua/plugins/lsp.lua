@@ -17,7 +17,7 @@ require("mason-tool-installer").setup({
     "cssls",
     "html",
     "jsonls",
-    "tailwindcss",
+    "tailwindcss-language-server",
     "biome",
     "prettierd",
     "shellcheck",
@@ -25,7 +25,9 @@ require("mason-tool-installer").setup({
     "bash-language-server",
     -- "alejandra",
   },
-  run_on_start = false,
+  -- auto-installs tools on startup
+  -- disable it to install manually via :MasonToolsInstall
+  run_on_start = true,
   debounce_hours = 12,
 })
 

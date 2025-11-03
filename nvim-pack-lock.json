@@ -30,7 +30,7 @@
     },
     "mini.pick": {
       "rev": "bb764a5",
-      "src": "https://github.com/echasnovski/mini.pick"
+      "src": "https://github.com/nvim-mini/mini.pick"
     },
     "mini.surround": {
       "rev": "da5a221",
