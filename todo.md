@@ -16,12 +16,12 @@
 
 ## Integrations
 
-- [ ] [leap.nvim](https://github.com/ggandor/leap.nvim) or mini.jump
 - [ ] Harpoon
 - [ ] better comments (`gcc`)
 - [ ] snippets with LuaSnip
 - [ ] code folding
 - [ ] auto-tag support
+- [x] Go to definition (`<C-]>` in nvim 0.12)
 - [x] Git integration
 - [x] fuzzy finding + grep
 - [x] Mini-surround
