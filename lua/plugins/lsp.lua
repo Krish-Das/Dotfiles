@@ -42,6 +42,13 @@ vim.lsp.config("lua_ls", {
   },
 })
 
+-- Disable the warning with tailwind directives
+vim.lsp.config("cssls", {
+  settings = {
+    css = { lint = { unknownAtRules = "ignore" } },
+  },
+})
+
 -- Using system-wide nixd (ensure nixd is installed in system PATH)
 vim.lsp.enable("nixd")
 vim.lsp.config("nixd", {
