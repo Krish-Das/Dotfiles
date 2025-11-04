@@ -1,9 +1,9 @@
 ## LSP and Treesitter
 
 - [x] Better Tresitter highlight
-- [ ] Better LSP Support
+- [x] Better LSP Support
   - [x] LSP Support
-  - [ ] better LSP suggestions for tailwind classes (`line-through`)
+  - [x] better LSP suggestions for tailwind classes (`line-through`)
   - [x] make sure `==`/`=ap` works with the LSP and the formatter
   - [x] `gcc` support inside jsx.
 - [x] `.nix` integration
