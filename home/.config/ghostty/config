@@ -21,6 +21,12 @@ confirm-close-surface = false
 cursor-invert-fg-bg = true
 mouse-hide-while-typing = true
 
+keybind = ctrl+,=unbind
+keybind = ctrl+enter=unbind
+# Fix dvorak binding
+keybind = ctrl+equal=unbind
+keybind = ctrl+==increase_font_size:1
+
 # --- THEMES ---
 # theme = Rose Pine Moon
 theme = Material Ocean
