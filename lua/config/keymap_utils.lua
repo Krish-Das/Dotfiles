@@ -11,4 +11,13 @@ local function map(keys, func, desc, mode)
   vim.keymap.set(mode, keys, func, opts)
 end
 
+---Delete keymappings with optional mode
+---@param keys string The keys to delete
+---@param mode string|string[]|nil Mode(s) for the mapping (default: "n")
+---@return nil
+local function unmap(keys, mode)
+  mode = mode or "n"
+  vim.keymap.del(mode, keys)
+end
+
 return map
