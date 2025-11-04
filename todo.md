@@ -20,7 +20,8 @@
 - [ ] better comments (`gcc`)
 - [ ] snippets with LuaSnip
 - [ ] code folding
-- [ ] auto-tag support
+- [ ] Probably Undo tree
+- [x] auto-tag support
 - [x] Go to definition (`<C-]>` in nvim 0.12)
 - [x] Git integration
 - [x] fuzzy finding + grep

@@ -48,6 +48,10 @@
       "rev": "42fc28ba",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
+    "nvim-ts-autotag": {
+      "rev": "c4ca798",
+      "src": "https://github.com/windwp/nvim-ts-autotag"
+    },
     "oil.nvim": {
       "rev": "7e1cd77",
       "src": "https://github.com/stevearc/oil.nvim"
