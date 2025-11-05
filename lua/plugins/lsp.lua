@@ -28,6 +28,7 @@ require("mason-tool-installer").setup({
   -- auto-installs tools on startup
   -- disable it to install manually via :MasonToolsInstall
   run_on_start = true,
+  start_delay = 5000, -- ms
   debounce_hours = 12,
 })
 
