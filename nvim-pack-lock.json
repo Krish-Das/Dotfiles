@@ -15,6 +15,10 @@
     "harpoon": {
       "version": "'harpoon2'"
     },
+    "leap.nvim": {
+      "rev": "673517c",
+      "src": "https://github.com/ggandor/leap.nvim"
+    },
     "mason-lspconfig.nvim": {
       "rev": "3590d66",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"

@@ -17,6 +17,7 @@
 ## Integrations
 
 - [x] Harpoon
+- [x] leap.nvim
 - [ ] better comments (`gcc`)
 - [ ] snippets with LuaSnip
 - [ ] code folding
