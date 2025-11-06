@@ -12,6 +12,9 @@
       "rev": "20ad441",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
+    "harpoon": {
+      "version": "'harpoon2'"
+    },
     "mason-lspconfig.nvim": {
       "rev": "3590d66",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
@@ -60,6 +63,7 @@
       "rev": "7e1cd77",
       "src": "https://github.com/stevearc/oil.nvim"
     },
+    "plenary.nvim": [],
     "vague.nvim": {
       "rev": "5689afd",
       "src": "https://github.com/vague2k/vague.nvim"

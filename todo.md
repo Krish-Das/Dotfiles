@@ -16,7 +16,7 @@
 
 ## Integrations
 
-- [ ] Harpoon
+- [x] Harpoon
 - [ ] better comments (`gcc`)
 - [ ] snippets with LuaSnip
 - [ ] code folding
