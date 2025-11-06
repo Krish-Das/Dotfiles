@@ -1,0 +1,6 @@
+require("config.options")
+require("config.keymaps")
+require("config.highlight_yank")
+require("config.user_command")
+require("config.vertial_help")
+require("config.diagnostics")
