@@ -18,6 +18,7 @@
 
 - [x] Harpoon
 - [x] leap.nvim
+- [x] mini.ai
 - [ ] better comments (`gcc`)
 - [ ] snippets with LuaSnip
 - [ ] code folding

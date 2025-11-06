@@ -1,10 +1,12 @@
 vim.pack.add({
   "https://github.com/nvim-mini/mini.pick",
   "https://github.com/nvim-mini/mini.surround",
+  "https://github.com/nvim-mini/mini.ai",
   "https://github.com/nvim-mini/mini.extra",
 })
 require("mini.pick").setup()
 require("mini.surround").setup()
+require("mini.ai").setup({ n_lines = 500 })
 require("mini.extra").setup()
 
 local map = require("config.keymap_utils")

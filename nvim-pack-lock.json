@@ -35,6 +35,10 @@
       "rev": "8a34cb0",
       "src": "https://github.com/marko-cerovac/material.nvim"
     },
+    "mini.ai": {
+      "rev": "0d3c9cf",
+      "src": "https://github.com/nvim-mini/mini.ai"
+    },
     "mini.extra": {
       "rev": "188422c",
       "src": "https://github.com/nvim-mini/mini.extra"
