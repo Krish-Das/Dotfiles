@@ -8,14 +8,27 @@ lze.add({
       before = function()
         vim.o.foldmethod = "expr"
         vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-        vim.o.foldcolumn = "0"
-        vim.o.foldlevel = 99
-        vim.o.foldlevelstart = 99
-        vim.o.foldenable = true
       end,
       after = function()
         require("nvim-treesitter.configs").setup({
-          ensure_installed = { "lua" },
+          ensure_installed = {
+            "diff",
+            "lua",
+            "luadoc",
+            "markdown",
+            "markdown_inline",
+            "json",
+            "jsonc",
+            "typescript",
+            "javascript",
+            "tsx",
+            "css",
+            "html",
+            "bash",
+            "nix",
+            "vim",
+            "vimdoc",
+          },
           highlight = { enable = true },
           auto_install = false,
           sync_install = false,
