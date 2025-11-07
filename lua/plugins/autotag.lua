@@ -1,0 +1,22 @@
+local lze = require("plugin-helper")
+lze.add({
+  {
+    src = "https://github.com/windwp/nvim-ts-autotag",
+    data = {
+      event = "BufReadPost",
+      ft = { "typescriptreact", "javascriptreact" },
+      after = function()
+        require("nvim-ts-autotag").setup({
+          opts = {
+            enable_close = true,
+            enable_rename = true,
+            enable_close_on_slash = false, -- Auto close on trailing </
+          },
+          per_filetype = {
+            ["html"] = { enable_close = false },
+          },
+        })
+      end,
+    },
+  },
+})
