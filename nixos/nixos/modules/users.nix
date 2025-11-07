@@ -7,7 +7,6 @@
     extraGroups = ["wheel" "video" "audio" "networkmanager" "lp" "scanner" "storage" "adbusers"];
     description = "Upsher aka Krish Das";
     shell = pkgs.zsh;
-    packages = with pkgs; [];
   };
 
   # Note: /shared volume is configured separately in modules/shared.nix
