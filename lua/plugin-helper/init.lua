@@ -1,9 +1,10 @@
 -- lua/plugins/init.lua
 local M = {}
+local should_confirm = true
 
 -- ensure lze is installed/registered early
 function M.setup()
-  vim.pack.add({ "https://github.com/BirdeeHub/lze" }, { load = function() end, confirm = false })
+  vim.pack.add({ "https://github.com/BirdeeHub/lze" }, { load = function() end, confirm = should_confirm })
   vim.cmd.packadd("lze")
   M.lze = require("lze")
 end
@@ -22,7 +23,7 @@ function M.add(specs)
   if not M.lze then
     M.setup()
   end
-  vim.pack.add(specs, { load = common_load, confirm = false })
+  vim.pack.add(specs, { load = common_load, confirm = should_confirm })
 end
 
 return M
