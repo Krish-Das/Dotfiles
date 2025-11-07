@@ -32,10 +32,30 @@ lze.add({
       event = "DeferredUIEnter",
       after = function()
         require("mason-tool-installer").setup({
-          ensure_installed = { "lua-language-server" },
+          ensure_installed = {
+            "vim-language-server",
+            "lua-language-server",
+            "stylua",
+            -- "luacheck", -- requires "luarocks" executable in PATH.
+            "typescript-language-server",
+            "css-lsp",
+            "html-lsp",
+            "json-lsp",
+            "tailwindcss-language-server",
+            "biome",
+            "prettierd",
+            "shellcheck",
+            "shfmt",
+            "bash-language-server",
+            -- "alejandra", -- requires "alejandra" executable in PATH.
+          },
+
           -- auto-installs tools on startup
           -- disable it to install manually via :MasonToolsInstall
           run_on_start = false,
+          -- start_delay = 5000, -- ms
+          -- debounce_hours = 12,
+
           integrations = {
             ["mason-lspconfig"] = true,
           },

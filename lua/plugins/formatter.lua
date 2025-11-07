@@ -7,8 +7,22 @@ lze.add({
       event = "BufWritePre",
       after = function()
         require("conform").setup({
+          formatters_by_ft = {
+            lua = { "stylua" },
+            nix = { "alejandra" },
+            yaml = { "biome" },
+            toml = { "biome" },
+            json = { "biome" },
+            jsonc = { "biome" },
+            css = { "biome" },
+            typescript = { "biome" },
+            javascript = { "biome" },
+            javascriptreact = { "biome" },
+            typescriptreact = { "biome" },
+            html = { "prettierd", "prettier", stop_after_first = true }, -- Biome is not working on this
+            markdown = { "prettierd", "prettier", stop_after_first = true }, -- No support for Biome
+          },
           notify_on_error = false,
-          formatters_by_ft = { lua = { "stylua" } },
           format_on_save = { timeout_ms = 500, lsp_format = "fallback" },
         })
         local map = require("config.keymap_utils")
