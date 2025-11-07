@@ -17,6 +17,12 @@ lze.add({
         local neogit = require("neogit")
         neogit.setup({
           kind = "floating",
+          floating = {
+            height = 0.8,
+          },
+          integrations = {
+            mini_pick = true,
+          },
         })
         local map = require("config.keymap_utils")
         map("<leader>gg", function()
