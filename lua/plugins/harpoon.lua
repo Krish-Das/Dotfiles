@@ -4,7 +4,7 @@ lze.add({
     src = "https://github.com/nvim-lua/plenary.nvim",
     data = {
       event = "DeferredUIEnter",
-      dep_of = "harpoon",
+      dep_of = { "harpoon", "neogit" },
     },
   },
   {

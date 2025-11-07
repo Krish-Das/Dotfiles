@@ -9,4 +9,20 @@ lze.add({
       end,
     },
   },
+  {
+    src = "https://github.com/NeogitOrg/neogit",
+    data = {
+      keys = { "<leader>gg" },
+      after = function()
+        local neogit = require("neogit")
+        neogit.setup({
+          kind = "floating",
+        })
+        local map = require("config.keymap_utils")
+        map("<leader>gg", function()
+          neogit.open()
+        end, "Open Git UI (Neogit)")
+      end,
+    },
+  },
 })
