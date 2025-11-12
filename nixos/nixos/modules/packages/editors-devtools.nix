@@ -19,6 +19,7 @@
     zed-editor-fhs
     # zed-editor
     gh
+    # commitizen # To create conventional commits. Visit https://github.com/commitizen-tools/commitizen
 
     gcc
     nodejs
