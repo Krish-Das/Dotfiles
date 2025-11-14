@@ -94,3 +94,16 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
   end,
 })
+
+-- make the colorscheme background transparent
+vim.api.nvim_create_autocmd("ColorScheme", {
+  group = vim.api.nvim_create_augroup("UserColorschemeOverrides", { clear = true }),
+  pattern = "*",
+  callback = function()
+    vim.cmd.highlight("statusline guibg=NONE")
+    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+    vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+  end,
+  desc = "Make colorscheme background transparent",
+})
