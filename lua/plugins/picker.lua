@@ -1,7 +1,10 @@
 return {
   "ibhagwan/fzf-lua",
   cmd = "FzfLua",
-  opts = {},
+  opts = {
+    fzf_colors = true,
+    defaults = { formatter = "path.dirname_first" },
+  },
   keys = {
     { "<leader>f<space>", "<CMD>FzfLua<CR>", desc = "Open FZF picker" },
     { "<leader>ff", "<CMD>FzfLua files<CR>", desc = "Find Files" },
