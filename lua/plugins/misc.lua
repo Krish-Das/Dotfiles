@@ -23,15 +23,13 @@ return {
   -- Leap jump
   {
     "ggandor/leap.nvim",
-    keys = { "<A-l>", "<A-h>", "x", "X", "gs" },
-    config = function()
-      local map = require("config.keymap_utils")
-      map("<A-l>", "<Plug>(leap-forward-to)", "Leap: Forward to", { "n", "x", "o" })
-      map("<A-h>", "<Plug>(leap-backward-to)", "Leap: Backward to", { "n", "x", "o" })
-      map("x", "<Plug>(leap-forward-till)", "Leap: Forward till", { "x", "o" })
-      map("X", "<Plug>(leap-backward-till)", "Leap: Backward till", { "x", "o" })
-      map("gs", "<Plug>(leap-from-window)", "Leap: to non-current buffer", { "n", "x", "o" })
-    end,
+    keys = {
+      { "<A-l>", "<Plug>(leap-forward-to)", desc = "Leap: Forward to", mode = { "n", "x", "o" } },
+      { "<A-h>", "<Plug>(leap-backward-to)", desc = "Leap: Backward to", mode = { "n", "x", "o" } },
+      { "x", "<Plug>(leap-forward-till)", desc = "Leap: Forward till", mode = { "x", "o" } },
+      { "X", "<Plug>(leap-backward-till)", desc = "Leap: Backward till", mode = { "x", "o" } },
+      { "gs", "<Plug>(leap-from-window)", desc = "Leap: to non-current buffer", mode = { "n", "x", "o" } },
+    },
   },
 
   -- Fold plugin
