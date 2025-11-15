@@ -4,6 +4,9 @@ return {
   opts = {
     fzf_colors = true,
     defaults = { formatter = "path.dirname_first" },
+    fzf_opts = {
+      ["--info"] = "right",
+    },
   },
   keys = {
     { "<leader>f<space>", "<CMD>FzfLua<CR>", desc = "Open FZF picker" },
@@ -18,4 +21,11 @@ return {
     { "<leader>sS", "<cmd>FzfLua lsp_workspace_symbols<cr>", desc = "LSP Workspace Symbols" },
     { "<leader>gg", "<cmd>FzfLua git_status<cr>", desc = "Git status" },
   },
+  config = function(_, opts)
+    local fzf = require("fzf-lua")
+    fzf.setup(opts)
+    fzf.register_ui_select({
+      winopts = { height = 0.6, width = 0.5, preview = { hidden = "hidden" } },
+    })
+  end,
 }

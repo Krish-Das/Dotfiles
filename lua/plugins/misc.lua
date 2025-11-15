@@ -41,6 +41,7 @@ return {
         lineCount = { template = " %d" },
       },
       autoFold = { enabled = false },
+      foldKeymaps = { setup = false },
     },
     init = function()
       vim.opt.foldlevel = 99
