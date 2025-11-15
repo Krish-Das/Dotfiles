@@ -106,6 +106,7 @@ local formatter = {
       typescriptreact = { "biome" },
       html = { "prettierd", "prettier", stop_after_first = true }, -- Biome is not working on this
       markdown = { "prettierd", "prettier", stop_after_first = true }, -- No support for Biome
+      ["mdx"] = { "prettierd", "prettier", stop_after_first = true }, -- No support for Biome
     },
     notify_on_error = false,
     format_on_save = { timeout_ms = 500, lsp_format = "fallback" },
