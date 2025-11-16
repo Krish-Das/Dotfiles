@@ -13,7 +13,7 @@ return {
     { "<leader>ff", "<CMD>FzfLua files<CR>", desc = "Find Files" },
     { "<leader><space>", "<CMD>FzfLua buffers<CR>", desc = "Find in Buffers" },
     { "<leader>fq", "<cmd>FzfLua quickfix<cr>", desc = "Quickfix List" },
-    { "<leader>/", "<cmd>FzfLua live_grep<cr>", desc = "Find by Grep" },
+    { "<leader>fg", "<cmd>FzfLua live_grep<cr>", desc = "Find by Grep" },
     { "<leader>uC", "<cmd>FzfLua colorschemes<cr>", desc = "Find Colorschemes" },
     { "<leader>fh", "<cmd>FzfLua helptags<cr>", desc = "Search Help Pages" },
     { "<leader>fk", "<cmd>FzfLua keymaps<cr>", desc = "Find Keymaps" },
