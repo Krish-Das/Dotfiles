@@ -1,4 +1,23 @@
 gui:
   theme:
+    activeBorderColor:
+      - white
+    inactiveBorderColor:
+      - black
+    defaultFgColor:
+      - default
     selectedLineBgColor:
-      - reverse
+      - black
+  commitLength:
+    show: true
+  border: single
+  sidePanelWidth: 0.3
+  expandFocusedSidePanel: true
+  expandedSidePanelWeight: 30
+git:
+  paging:
+    pager: delta --paging=never --diff-so-fancy --detect-dark-light=always
+    colorArg: always
+update:
+  autoUpdate: false
+  checkForUpdates: false

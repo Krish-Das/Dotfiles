@@ -19,6 +19,7 @@
     zed-editor-fhs
     # zed-editor
     gh
+    delta
     # commitizen # To create conventional commits. Visit https://github.com/commitizen-tools/commitizen
 
     gcc
