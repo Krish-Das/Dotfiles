@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   programs = {
     bat.enable = true;
-    yazi.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
@@ -17,5 +16,6 @@
     procs
     fastfetch
     thokr
+    yazi
   ];
 }
