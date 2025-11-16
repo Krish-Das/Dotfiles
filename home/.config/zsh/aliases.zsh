@@ -37,13 +37,12 @@ alias H="Hyprland"
 alias notes="notes.sh"
 alias proj="projects.sh"
 
-alias Trash="cd \$HOME/.local/share/Trash/files"
+alias Trash="cd \$XDG_DATA_HOME/Trash/files"
 # alias Hdd="cd /media/Hdd/" # for Arch-land 🙂
 alias run="cd /run/media/$USER"
 alias dots="cd \$HOME/dotfiles"
 
 # git aliases
-alias galias="bat ~/.config/zsh/aliases.zsh | grep 'alias g' | fzf --cycle"
 alias g="git"
 alias gst="git status"
 alias gcm="git commit"
@@ -56,7 +55,6 @@ alias gnb="git checkout -b"
 alias gac="git add . && git commit"
 alias grs="git restore --staged ."
 alias gre="git restore"
-alias gr="git remote"
 alias gcl="git clone"
 alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 alias gt="git ls-tree -r master --name-only"
