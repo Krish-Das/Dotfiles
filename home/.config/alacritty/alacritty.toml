@@ -1,46 +1,25 @@
-[env]
-TERM = "xterm-256color"
+[terminal]
+shell = { program = "/run/current-system/sw/bin/fish", args = ["--interactive"] }
 
 [window]
-opacity = 0.95
-padding.x = 12
-padding.y = 3
+opacity = 0.7
+# padding = {x = 12, y = 3}
 dynamic_padding = true
-decorations = "None" # "Full" | "None"
+decorations = "None"
+class = {general = "Alacritty", instance = "Alacritty"}
 
-[window.class]
-general = "Alacritty"
-instance = "Alacritty"
+[env]
+WINIT_X11_SCALE_FACTOR = "1"
 
 [font]
-size = 14.0
-# SFMono Nerd Font
-# TX-02
-# JetBrainsMono Nerd Font
-# Monaspace Argon Var
-# feather
-# Material Icons
-# Symbols Nerd Font
-
-[font.offset]
-x = 0
-y = 3
-
-[font.normal]
-family = "TX-02"
-style = "Regular"
-
-[font.italic]
-family = "TX-02"
-style = "Oblique"
-
-[font.bold]
-family = "TX-02"
-style = "Bold"
-
-[font.bold_italic]
-family = "TX-02"
-style = "Bold Oblique"
+normal = { family = "JetBrains Mono", style = "Regular" }
+bold = { family = "JetBrains Mono", style = "Bold" }
+italic = { family = "JetBrains Mono", style = "Italic" }
+bold_italic = { family = "JetBrains Mono", style = "Bold Italic" }
+size = 11.5
+offset = { x = 0, y = 1 }
+glyph_offset = { x = 0, y = 1 }
+builtin_box_drawing = true
 
 [cursor]
 blink_interval = 500

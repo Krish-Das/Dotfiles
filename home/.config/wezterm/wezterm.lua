@@ -1,7 +1,4 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
-
--- This will hold the configuration.
 local config = wezterm.config_builder()
 
 -- Window settings
@@ -26,16 +23,18 @@ config.font = wezterm.font_with_fallback({
 })
 config.font_size = 12
 
--- config.freetype_load_flags = "NO_HINTING|NO_AUTOHINT"
--- config.freetype_load_target = "Light" -- HorizontalLcd
--- config.freetype_render_target = "HorizontalLcd"
+config.window_padding = { left = 1, right = 1, top = 1, bottom = 1 }
 
--- Asthetics and colors
-config.color_scheme = "Catppuccin Mocha (Gogh)"
+config.font_size = 11.5
+config.font = wezterm.font("JetBrains Mono")
+config.harfbuzz_features = { "calt=0", "ss01=1", "zero" }
+-- config.freetype_load_flags = "NO_HINTING" -- "NO_HINTING|NO_AUTOHINT"
+config.freetype_load_target = "HorizontalLcd" -- "Light" -- HorizontalLcd
+config.freetype_render_target = "HorizontalLcd"
 
+config.color_scheme = "Peppermint"
 config.window_background_opacity = 0.9
 
--- Behaviour
 config.scrollback_lines = 10000
 config.hide_tab_bar_if_only_one_tab = true
 config.unicode_version = 14
