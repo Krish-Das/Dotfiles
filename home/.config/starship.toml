@@ -1,0 +1,25 @@
+right_format = """
+$cmd_duration
+"""
+
+add_newline = false
+
+[character]
+vimcmd_symbol = '[V](bold cyan) '
+
+[cmd_duration]
+min_time = 300
+show_milliseconds = true
+disabled = false
+
+[package]
+disabled = true
+
+[directory]
+style = "cyan bold"
+truncate_to_repo = true
+truncation_length = 2
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = " "
