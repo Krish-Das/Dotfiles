@@ -38,6 +38,22 @@ A modern Neovim setup bootstrapped with LazyVim plugin manager, featuring LSP su
 
 ## Requirements
 
-- Neovim 0.8+
+- Neovim 0.12+ (pre-release as of 2025)
 - Git
-- Language servers (automatically managed by Mason)
+- [fzf](https://search.nixos.org/packages?show=fzf) - Command-line fuzzy finder
+- [ripgrep](https://search.nixos.org/packages?show=ripgrep) - Fast text search tool (required for live grep functionality)
+- Language servers (automatically managed by Mason):
+  - Lua (lua-language-server)
+  - JavaScript/TypeScript (typescript-language-server)
+  - CSS/HTML/JSON (css-lsp, html-lsp, json-lsp)
+  - Shell scripts (bash-language-server)
+  - Nix (nixd) - Must be installed separately via system package manager
+- Formatters (managed by Mason):
+  - Lua (stylua)
+  - Nix (alejandra) - May need manual installation
+  - Web formats (biome, prettierd)
+  - Shell scripts (shfmt)
+- Optional system packages for Nix LSP:
+  - [nixd](https://search.nixos.org/packages?show=nixd) (language server)
+  - [alejandra](https://search.nixos.org/packages?show=alejandra) (formatter)
+  - Alternatively, you may install these using `:MasonToolsInstall` within Neovim
