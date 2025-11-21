@@ -25,7 +25,7 @@ A modern Neovim setup bootstrapped with LazyVim plugin manager, featuring LSP su
 1. Clone this repository to your Neovim config directory:
 
    ```bash
-   git clone https://github.com/Krish-Das/Dotfiles -b neovim ~/.config/nvim
+   git clone https://github.com/Krish-Das/Dotfiles -b neovim/main ~/.config/nvim
    ```
 
 2. Start Neovim:
