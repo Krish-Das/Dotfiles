@@ -8,6 +8,7 @@
     ./modules/users.nix
     ./modules/shared-fs.nix
     ./modules/servieces.nix
+    ./modules/media.nix
     ./modules/networking.nix
     ./modules/thunar.nix
     ./modules/gtk-themes.nix
@@ -20,6 +21,7 @@
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  nixpkgs.config.allowUnfree = true;
 
   system.name = "didact";
   time.timeZone = "Asia/Kolkata";
@@ -82,33 +84,8 @@
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "dvorak";
   services.xserver.xkb.options = "caps:escape_shifted_capslock";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
-  # Enable polkit.
   security.polkit.enable = true;
-
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
-
-  # Enable sound with pipewire.
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-    wireplumber.enable = true;
-  };
-
-  # Enable media-controles with playerctl
-  services.playerctld.enable = true;
-
   services.gnome.gnome-keyring.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -127,8 +104,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   ];
-
-  nixpkgs.config.allowUnfree = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
