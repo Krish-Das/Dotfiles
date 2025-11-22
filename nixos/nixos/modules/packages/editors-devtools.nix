@@ -20,6 +20,7 @@
     # zed-editor
     gh
     delta
+    starship
     # commitizen # To create conventional commits. Visit https://github.com/commitizen-tools/commitizen
 
     gcc

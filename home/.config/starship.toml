@@ -5,11 +5,13 @@ $cmd_duration
 add_newline = false
 
 [character]
-vimcmd_symbol = '[V](bold cyan) '
+# success_symbol = ''
+# vimcmd_symbol = '[V](bold cyan) '
+# ⋊>
 
 [cmd_duration]
 min_time = 300
-show_milliseconds = true
+show_milliseconds = false
 disabled = false
 
 [package]
@@ -19,7 +21,9 @@ disabled = true
 style = "cyan bold"
 truncate_to_repo = true
 truncation_length = 2
-truncation_symbol = "…/"
 
 [git_branch]
 symbol = " "
+
+[git_status]
+deleted = '-'

@@ -3,6 +3,7 @@
     scrcpy
     yaak
     unzip
+    p7zip
     wget
   ];
 }
