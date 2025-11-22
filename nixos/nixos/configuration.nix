@@ -14,6 +14,7 @@
     ./modules/flatpak.nix
     ./modules/lsp.nix
     ./modules/packages
+    ./modules/auto-update.nix
     ./boot/grub.nix
     ./drivers/amd.nix
   ];
