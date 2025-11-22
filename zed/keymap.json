@@ -25,6 +25,8 @@
     }
   },
   {
+    // "context": "Editor && vim_mode == normal && !menu && !VimWaiting",
+    // "context": "Editor && vim_mode == normal && !VimWaiting",
     "context": "VimControl && vim_mode == normal",
     "bindings": {
       "space f f": "file_finder::Toggle",
@@ -52,6 +54,7 @@
     }
   },
   {
+    // "context": "Editor && (vim_mode == normal || vim_mode == visual) && !menu && !VimWaiting",
     "context": "VimControl && vim_mode == normal || vim_mode == visual",
     "bindings": {
       "space a": "editor::SelectAll",
@@ -62,7 +65,7 @@
     }
   },
   {
-    "context": "ProjectPanel && not_editing && !menu",
+    "context": "ProjectPanel && not_editing",
     "bindings": {
       ".": "project_panel::ToggleHideGitIgnore",
       "q": "workspace::ToggleRightDock",
