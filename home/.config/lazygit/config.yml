@@ -15,9 +15,9 @@ gui:
   expandFocusedSidePanel: true
   expandedSidePanelWeight: 30
 git:
-  paging:
-    pager: delta --paging=never --diff-so-fancy --detect-dark-light=always
-    colorArg: always
+  pagers:
+    - pager: delta --paging=never --diff-so-fancy --detect-dark-light=always
+      colorArg: always
 update:
   autoUpdate: false
   checkForUpdates: false
