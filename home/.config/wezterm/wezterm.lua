@@ -4,6 +4,9 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+-- set different shell e.g.: fish
+-- config.default_prog = { "/run/current-system/sw/bin/fish", "--interactive" }
+
 config.font_size = 12
 config.line_height = 1
 config.font = wezterm.font("JetBrainsMono Nerd Font")

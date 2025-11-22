@@ -29,6 +29,5 @@
 
     typst
     stow
-    jq
   ];
 }
