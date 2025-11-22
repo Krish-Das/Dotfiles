@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     system-config-printer
-    appimage-run
 
     wl-clipboard
     cliphist
@@ -13,4 +12,7 @@
 
     tofi
   ];
+
+  programs.appimage.enable = true;
+  programs.appimage.binfmt = true;
 }
