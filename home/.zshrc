@@ -51,9 +51,6 @@ bindkey '^[[B' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-# bun completions
-# [ -s "/home/mavx/.bun/_bun" ] && source "/home/mavx/.bun/_bun"
-
 # Other part of profiling zsh startup time
 # this will write the output to /tmp/zprof_dump
 # zprof >/tmp/zprof_dump

@@ -20,6 +20,11 @@ S() {
   yay -Ss "$package_name"
 }
 
+# load bun completions on demand
+buncomp() {
+  [ -s "$HOME/.bun/_bun" ] && . "$HOME/.bun/_bun"
+}
+
 # Edit the dotfiles with one command
 conf() {
   dotfiles_dir="$HOME/dotfiles"
@@ -34,16 +39,6 @@ conf() {
 code() {
   file=$(find "$HOME/Repos" -maxdepth 1 -type d | grep -i "/Repos/" | fzf --cycle)
   [ -n "$file" ] && cd "$file"
-}
-
-icat() {
-  if [ "$TERM" = "xterm-kitty" ]; then
-    kitten icat "$@"
-  elif [ "$TERM" = "alacritty" ]; then
-    echo "You are using Alacritty. Please use Kitty to display images with icat."
-  else
-    echo "This terminal does not support icat. Please use Kitty."
-  fi
 }
 
 silent() {
