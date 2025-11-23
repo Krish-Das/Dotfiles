@@ -38,7 +38,6 @@ alias notes="notes.sh"
 alias proj="projects.sh"
 
 alias Trash="cd \$XDG_DATA_HOME/Trash/files"
-# alias Hdd="cd /media/Hdd/" # for Arch-land 🙂
 alias run="cd /run/media/$USER"
 alias dots="cd \$HOME/dotfiles"
 
