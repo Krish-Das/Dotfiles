@@ -22,7 +22,7 @@ S() {
 
 # load bun completions on demand
 buncomp() {
-  [ -s "$HOME/.bun/_bun" ] && . "$HOME/.bun/_bun"
+  [ -s "${BUN_INSTALL:-$HOME/.bun}/_bun" ] && . "${BUN_INSTALL:-$HOME/.bun}/_bun"
 }
 
 # Edit the dotfiles with one command
