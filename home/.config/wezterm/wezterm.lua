@@ -18,6 +18,7 @@ config.freetype_load_flags = "NO_HINTING|NO_AUTOHINT"
 config.window_background_opacity = 0.95
 config.window_padding = { left = 2, right = 1, top = 1, bottom = 1 }
 config.cursor_thickness = 2
+config.window_close_confirmation = "NeverPrompt"
 
 -- config.color_scheme = "Rosé Pine (Gogh)"
 -- config.color_scheme = "Catppuccin Macchiato"
