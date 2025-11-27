@@ -20,15 +20,16 @@ config.window_padding = { left = 2, right = 1, top = 1, bottom = 1 }
 config.cursor_thickness = 2
 config.window_close_confirmation = "NeverPrompt"
 
--- config.color_scheme = "Rosé Pine (Gogh)"
--- config.color_scheme = "Catppuccin Macchiato"
-config.color_scheme = "Tokyo Night"
+---@diagnostic disable-next-line: unused-local
+local schemes = { "Tokyo Night", "ChallengerDeep" }
+config.color_scheme = "ChallengerDeep"
 config.colors = {
   background = "black",
   -- cursor_bg = "#DC322F",
   -- cursor_fg = "#fedad5",
 }
 
+config.keys = { { key = "L", mods = "CTRL|SHIFT", action = wezterm.action.ShowLauncher } }
 config.scrollback_lines = 10000
 config.hide_tab_bar_if_only_one_tab = true
 config.unicode_version = 14

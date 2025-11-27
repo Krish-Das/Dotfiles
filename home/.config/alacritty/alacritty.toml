@@ -18,7 +18,7 @@ normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
-size = 11
+size = 12
 # offset = { x = 0, y = 0 }
 # glyph_offset = { x = 0, y = 0 }
 builtin_box_drawing = false
@@ -33,7 +33,7 @@ thickness = 0.2
 # import = ["~/.config/alacritty/themes/nightlify_mod.toml"]
 # import = ["~/.config/alacritty/themes/pastel.toml"]
 # import = ["~/.config/alacritty/themes/midnight-haze.toml"]
-import = ["~/.config/alacritty/themes/catppuccin_mocha.toml"]
+import = ["~/.config/alacritty/themes/tokyonight_night.toml"]
 
 [colors]
 draw_bold_text_with_bright_colors = true
