@@ -12,12 +12,14 @@
 # history
 HISTFILE="$HOME/.zsh_history"
 
-setopt hist_ignore_dups     # do not record an event that was just recorded again
-setopt hist_ignore_all_dups # delete an old recorded event if a new event is a duplicate
-setopt hist_ignore_space    # do not record an event starting with a space
-setopt hist_save_no_dups    # do not write a duplicate event to the history file
-setopt inc_append_history   # write to the history file immediately, not when the shell exits
-setopt share_history        # share history between terminals
+setopt hist_ignore_dups         # do not record an event that was just recorded again
+setopt hist_ignore_all_dups     # delete an old recorded event if a new event is a duplicate
+setopt hist_expire_dups_first
+setopt hist_ignore_space        # do not record an event starting with a space
+setopt hist_save_no_dups        # do not write a duplicate event to the history file
+setopt hist_verify
+setopt inc_append_history       # write to the history file immediately, not when the shell exits
+setopt share_history            # share history between terminals
 
 # fzf in terminal, fzf must be installed to use this
 eval "$(fzf --zsh)"
