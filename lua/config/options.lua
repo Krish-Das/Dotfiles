@@ -26,6 +26,7 @@ vim.opt.hlsearch = true
 
 -- Disable text wrap
 vim.opt.wrap = false
+vim.opt.linebreak = true
 
 vim.g.have_nerd_font = false
 
