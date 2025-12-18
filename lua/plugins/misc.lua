@@ -24,8 +24,8 @@ return {
   {
     "ggandor/leap.nvim",
     keys = {
-      { "<A-l>", "<Plug>(leap-forward-to)", desc = "Leap: Forward to", mode = { "n", "x", "o" } },
-      { "<A-h>", "<Plug>(leap-backward-to)", desc = "Leap: Backward to", mode = { "n", "x", "o" } },
+      { "g>", "<Plug>(leap-forward-to)", desc = "Leap: Forward to", mode = { "n", "x", "o" } },
+      { "g<", "<Plug>(leap-backward-to)", desc = "Leap: Backward to", mode = { "n", "x", "o" } },
       { "x", "<Plug>(leap-forward-till)", desc = "Leap: Forward till", mode = { "x", "o" } },
       { "X", "<Plug>(leap-backward-till)", desc = "Leap: Backward till", mode = { "x", "o" } },
       { "gs", "<Plug>(leap-from-window)", desc = "Leap: to non-current buffer", mode = { "n", "x", "o" } },
@@ -59,5 +59,14 @@ return {
       --- or `beforeAll` function.
       vim.g.startuptime_tries = 10
     end,
+  },
+  -- Lua
+  {
+    "folke/zen-mode.nvim",
+    cmd = "ZenMode",
+    opts = { window = { width = 0.75, options = {
+      signcolumn = "no",
+      number = false,
+    } } },
   },
 }
