@@ -91,8 +91,12 @@ return {
   -- MDX syntax highlighting with Treesitter
   {
     "davidmh/mdx.nvim",
-    event = "BufEnter *.mdx",
-    config = true,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
+    ft = "mdx",
+    init = function()
+      vim.filetype.add({
+        extension = { mdx = "mdx" },
+      })
+    end,
   },
 }
