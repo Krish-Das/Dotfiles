@@ -7,7 +7,6 @@
     lazygit.enable = true;
     zsh.enable = true;
     tmux.enable = true;
-    adb.enable = true;
     nh.enable = true;
     zoxide = {
       enable = true;
@@ -29,5 +28,7 @@
 
     typst
     stow
+
+    android-tools
   ];
 }
