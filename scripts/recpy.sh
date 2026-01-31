@@ -56,7 +56,13 @@ else
   file="scrcpy-$time_stamp.mkv"
 fi
 
-# Build scrcpy command
+# Build scrcpy command - add conditional flags inside the main string
+if [ "$show_touch" = true ]; then
+  control_flag="--show-touches"
+else
+  control_flag="--no-control"
+fi
+
 scrcpy_cmd="
 scrcpy \
   --record=\"$path/$file\" \
@@ -67,15 +73,9 @@ scrcpy \
   --video-bit-rate \"$vid_bitrate\" \
   --audio-dup \
   --no-playback \
-  --render-driver=$render_driver
+  --render-driver=$render_driver \
+  $control_flag
 "
-
-# Only add --no-control if touch display is NOT enabled
-if [ "$show_touch" = true ]; then
-  scrcpy_cmd="$scrcpy_cmd --show-touches"
-else
-  scrcpy_cmd="$scrcpy_cmd --no-control"
-fi
 
 eval "$scrcpy_cmd"
 
