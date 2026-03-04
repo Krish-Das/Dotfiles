@@ -1,0 +1,81 @@
+[
+  // disabling defaults
+  { "key": "ctrl+0", "command": null },
+  {
+    "key": "ctrl+shift+e",
+    "command": null,
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  { "key": "ctrl+b", "command": null },
+  { "key": "ctrl+n", "command": null },
+  { "key": "f8", "command": null, "when": "editorFocus" },
+  { "key": "alt+f8", "command": null, "when": "editorFocus" },
+  { "key": "shift+alt+f8", "command": null, "when": "editorFocus" },
+  { "key": "shift+f8", "command": null, "when": "editorFocus" },
+  { "key": "shift+alt+f12", "command": null },
+
+  // ctrl+n/p to move the selection up and down
+  {
+    "key": "ctrl+n",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "list.focusDown",
+    "when": "listFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "list.focusUp",
+    "when": "listFocus"
+  },
+
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusLeftGroup"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusRightGroup"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.focusBelowGroup"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusAboveGroup"
+  },
+
+  // accept suggestions
+  { "key": "ctrl+y",   "command": "acceptSelectedSuggestion",        "when": "suggestWidgetVisible && textInputFocus" },
+  { "key": "tab",      "command": null,                              "when": "suggestWidgetVisible && textInputFocus" },
+
+  // move forwand and backward through snippet
+  { "key": "ctrl+l",   "command": "jumpToNextSnippetPlaceholder",    "when": "hasNextTabstop && textInputFocus" },
+  { "key": "tab",      "command": null,                              "when": "hasNextTabstop && textInputFocus" },
+  { "key": "ctrl+h",   "command": "jumpToPrevSnippetPlaceholder",    "when": "hasPrevTabstop && textInputFocus" },
+  { "key": "tab",      "command": null,                              "when": "hasPrevTabstop && textInputFocus" },
+
+  {
+    "key": "escape",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "sideBarVisible"
+  }
+]

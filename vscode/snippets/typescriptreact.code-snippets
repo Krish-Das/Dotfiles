@@ -1,0 +1,66 @@
+{
+	// visit : https://snippet-generator.app to build the snippets
+	"Insert console.log statement": {
+		"scope": "javascriptreact,javascript,typescriptreact,typescript",
+		"prefix": "clg",
+		"body": [
+			"console.log(${1:})"
+		],
+		"description": "Insert console.log statement"
+	},
+
+	"Insert named import statement": {
+		"scope": "javascriptreact,javascript,typescriptreact,typescript",
+		"prefix": "imp",
+		"body": [
+			"import { ${2:} } from \"${1:}\""
+		],
+		"description": "Insert named import statement"
+	},
+
+	"Insert React component with default export": {
+		"scope": "javascriptreact,typescriptreact",
+		"prefix": "rfc",
+		"body": [
+			"export default function ${1:Component}() {",
+			"  return (",
+			"    ${2:null}",
+			"  )",
+			"}"
+		],
+		"description": "Insert React component with default export"
+	},
+
+	"Insert React component with named export": {
+		"scope": "javascriptreact,typescriptreact",
+		"prefix": "rfn",
+		"body": [
+			"export function ${1:Component}() {",
+			"  return (",
+			"    ${2:null}",
+			"  )",
+			"}"
+		],
+		"description": "Insert React component with named export"
+	},
+
+	"Create React useState hook": {
+		"scope": "javascriptreact,typescriptreact",
+		"prefix": "ush",
+		"body": [
+			"const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2})"
+		],
+		"description": "Insert React useState hook with capitalized setter"
+	},
+
+	"Insert React useEffect hook": {
+		"scope": "javascriptreact,typescriptreact",
+		"prefix": "ueh",
+		"body": [
+			"useEffect(() => {",
+			"  ${1}",
+			"}, [])"
+		],
+		"description": "Insert React useEffect hook"
+	}
+}

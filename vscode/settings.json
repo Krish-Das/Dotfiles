@@ -1,0 +1,232 @@
+{
+  "workbench.colorTheme": "Tokyo Night Storm Frameless",
+
+  "vim.enableVim": true,
+  "vim.useSystemClipboard": false,
+  "search.smartCase": true,
+  "breadcrumbs.filePath": "last",
+  "breadcrumbs.enabled": false,
+
+  "editor.fontSize": 14,
+  "editor.fontFamily": "'JetBrains Mono', 'SF Mono', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.lineHeight": 0,
+  "editor.tabSize": 2,
+
+  "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+  "window.zoomLevel": 0,
+  "window.menuBarVisibility": "compact",
+  "window.density.editorTabHeight": "compact",
+  "window.commandCenter": false,
+
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "selection",
+  "editor.guides.indentation": false,
+  "editor.glyphMargin": false,
+  "editor.scrollbar.vertical": "auto",
+  "editor.scrollbar.horizontal": "auto",
+  "editor.stickyScroll.enabled": false,
+  "editor.colorDecorators": false,
+  "editor.codeLens": false,
+  "editor.matchBrackets": "near",
+  "editor.parameterHints.enabled": true,
+  "editor.lightbulb.enabled": "off",
+  "editor.guides.highlightActiveIndentation": true,
+  "editor.snippetSuggestions": "inline",
+  "editor.formatOnSave": true,
+  "editor.autoIndentOnPaste": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.wordWrap": "off",
+  "editor.autoClosingBrackets": "never",
+  "editor.linkedEditing": true,
+  "editor.lineNumbers": "relative",
+  "editor.find.autoFindInSelection": "always",
+  "editor.fontLigatures": false,
+  "editor.tabCompletion": "off",
+  "editor.quickSuggestions": {
+    "comments": "off",
+    "strings": "off",
+    "other": "off"
+  },
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.experimentalGpuAcceleration": "off",
+  "editor.foldingImportsByDefault": true,
+
+  "files.insertFinalNewline": false,
+
+  "workbench.editor.tabActionLocation": "left",
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.showIcons": false,
+  "workbench.editor.editorActionsLocation": "hidden",
+  "explorer.excludeGitIgnore": false,
+  "explorer.openEditors.visible": 2,
+  "workbench.sideBar.location": "right",
+
+  "telemetry.editStats.enabled": false,
+  "telemetry.feedback.enabled": false,
+  "telemetry.telemetryLevel": "off",
+  "update.mode": "none",
+
+  "workbench.activityBar.location": "top",
+  "workbench.statusBar.visible": true,
+  "workbench.tips.enabled": false,
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.tree.indent": 18,
+  "explorer.compactFolders": false,
+  "extensions.ignoreRecommendations": true,
+  "chat.commandCenter.enabled": false,
+  "workbench.navigationControl.enabled": false,
+  "workbench.layoutControl.enabled": false,
+
+  "prettier.requireConfig": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "always"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "grammarly.files.include": [
+    "**/readme.md",
+    "**/README.md",
+    "**/*.txt",
+    "**/*.mdx"
+  ],
+
+  // ----------------------------------
+  // ---------  vim mode  -------------
+  // ----------------------------------
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "vim.enableNeovim": true,
+  "vim.neovimUseConfigFile": false,
+  "vim.statusBarColorControl": false,
+  "vim.showcmd": false,
+  "vim.hlsearch": false,
+  "vim.incsearch": true,
+  "vim.easymotion": false,
+  "vim.leader": "<space>",
+  "vim.surround": true,
+  "vim.neovimPath": "/run/current-system/sw/bin/nvim",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "f", "<space>"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "<space>"],
+      "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
+    },
+    {
+      "before": ["<leader>", "f", "q"],
+      "commands": ["workbench.actions.view.problems"]
+    },
+    {
+      "before": ["<leader>", "f", "g"],
+      "commands": ["workbench.action.quickTextSearch"]
+    },
+    {
+      "before": ["<leader>", "u", "C"],
+      "commands": ["workbench.action.selectTheme"]
+    },
+    {
+      "before": ["<leader>", "f", "h"],
+      "commands": ["workbench.action.openGlobalKeybindingsFile"]
+    },
+    {
+      "before": ["<leader>", "f", "k"],
+      "commands": ["workbench.action.openGlobalKeybindings"]
+    },
+    {
+      "before": ["<leader>", "s", "s"],
+      "commands": ["workbench.action.gotoSymbol"]
+    },
+    {
+      "before": ["<leader>", "s", "S"],
+      "commands": ["workbench.action.showAllSymbols"]
+    },
+    {
+      "before": ["<leader>", "g", "g"],
+      "commands": ["workbench.view.scm"]
+    },
+    {
+      "before": ["<leader>", "f", "m"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.files.saveWithoutFormatting"]
+    },
+    {
+      "before": ["<leader>", "a"],
+      "after": ["g", "g", "V", "G"]
+    },
+    {
+      "before": ["<leader>", "b", "n"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["<leader>", "b", "p"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
+
+    // ]d ]e ]w bindings : editor.action.marker.nextError editor.action.marker.nextWarning
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"],
+      "when": "editorFocus"
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"],
+      "when": "editorFocus"
+    },
+    {
+      "before": ["g", "r", "r"],
+      "commands": ["references-view.findReferences"],
+      "when": "editorTextFocus && editorHasReferenceProvider"
+    },
+    {
+      "before": ["s"],
+      "commands": ["leap.findForward"]
+    },
+    {
+      "before": ["S"],
+      "commands": ["leap.findBackward"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "y"],
+      "commands": ["editor.action.clipboardCopyAction", "cancelSelection"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-c>": false,
+    "<C-f>": false,
+    "<C-s>": false,
+    "<C-z>": false,
+    "<C-p>": false,
+    "<C-n>": false
+  }
+}
