@@ -11,6 +11,8 @@
   "editor.fontFamily": "'JetBrains Mono', 'SF Mono', 'Droid Sans Mono', 'monospace', monospace",
   "editor.lineHeight": 0,
   "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": true,
 
   "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
   "window.zoomLevel": 0,
