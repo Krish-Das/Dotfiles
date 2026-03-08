@@ -1,18 +1,56 @@
+// default bindings: https://github.com/codebling/vs-code-default-keybindings
 [
   // disabling defaults
-  { "key": "ctrl+0", "command": null },
+  { "key": "ctrl+0", "command": "-workbench.action.focusSideBar" },
   {
     "key": "ctrl+shift+e",
-    "command": null,
+    "command": "-workbench.view.explorer",
     "when": "viewContainer.workbench.view.explorer.enabled"
   },
-  { "key": "ctrl+b", "command": null },
-  { "key": "ctrl+n", "command": null },
-  { "key": "f8", "command": null, "when": "editorFocus" },
-  { "key": "alt+f8", "command": null, "when": "editorFocus" },
-  { "key": "shift+alt+f8", "command": null, "when": "editorFocus" },
-  { "key": "shift+f8", "command": null, "when": "editorFocus" },
-  { "key": "shift+alt+f12", "command": null },
+  { "key": "ctrl+b", "command": "-workbench.action.toggleSidebarVisibility" },
+  { "key": "ctrl+n", "command": "-workbench.action.files.newUntitledFile" },
+  {
+    "key": "f8",
+    "command": "-editor.action.marker.nextInFiles",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+f8",
+    "command": "-editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+alt+f8",
+    "command": "-editor.action.marker.prev",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+f8",
+    "command": "-editor.action.marker.prevInFiles",
+    "when": "editorFocus"
+  },
+  { "key": "shift+alt+f12", "command": "-references-view.findReferences" },
+  { "key": "ctrl+z", "command": "-undo" },
+  {
+    "key": "alt+f5",
+    "command": "-workbench.action.editor.nextChange",
+    "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
+  },
+  {
+    "key": "shift+alt+f5",
+    "command": "-workbench.action.editor.previousChange",
+    "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
+  },
+  {
+    "key": "ctrl+.",
+    "command": "-editor.action.quickFix"
+  },
+
+  // ctrl+0 to reset the zoom-level
+  {
+    "key": "ctrl+0",
+    "command": "workbench.action.zoomReset"
+  },
 
   // ctrl+n/p to move the selection up and down
   {
@@ -45,6 +83,16 @@
     "command": "list.focusUp",
     "when": "listFocus"
   },
+  {
+    "key": "ctrl+n",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
+  },
 
   {
     "key": "ctrl+h",
@@ -64,14 +112,38 @@
   },
 
   // accept suggestions
-  { "key": "ctrl+y",   "command": "acceptSelectedSuggestion",        "when": "suggestWidgetVisible && textInputFocus" },
-  { "key": "tab",      "command": null,                              "when": "suggestWidgetVisible && textInputFocus" },
+  {
+    "key": "ctrl+y",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "tab",
+    "command": "-acceptSelectedSuggestion",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
 
-  // move forwand and backward through snippet
-  { "key": "ctrl+l",   "command": "jumpToNextSnippetPlaceholder",    "when": "hasNextTabstop && textInputFocus" },
-  { "key": "tab",      "command": null,                              "when": "hasNextTabstop && textInputFocus" },
-  { "key": "ctrl+h",   "command": "jumpToPrevSnippetPlaceholder",    "when": "hasPrevTabstop && textInputFocus" },
-  { "key": "tab",      "command": null,                              "when": "hasPrevTabstop && textInputFocus" },
+  // move forward and backward through snippet
+  {
+    "key": "ctrl+l",
+    "command": "jumpToNextSnippetPlaceholder",
+    "when": "hasNextTabstop && textInputFocus"
+  },
+  {
+    "key": "tab",
+    "command": "-jumpToNextSnippetPlaceholder",
+    "when": "hasNextTabstop && textInputFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "jumpToPrevSnippetPlaceholder",
+    "when": "hasPrevTabstop && textInputFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "-jumpToPrevSnippetPlaceholder",
+    "when": "hasPrevTabstop && textInputFocus"
+  },
 
   {
     "key": "escape",

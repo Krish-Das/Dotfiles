@@ -7,7 +7,7 @@
   "breadcrumbs.filePath": "last",
   "breadcrumbs.enabled": false,
 
-  "editor.fontSize": 14,
+  "editor.fontSize": 15.5,
   "editor.fontFamily": "'JetBrains Mono', 'SF Mono', 'Droid Sans Mono', 'monospace', monospace",
   "editor.lineHeight": 0,
   "editor.tabSize": 2,
@@ -38,7 +38,7 @@
   "editor.autoIndentOnPaste": true,
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.wordWrap": "off",
-  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingBrackets": "always",
   "editor.linkedEditing": true,
   "editor.lineNumbers": "relative",
   "editor.find.autoFindInSelection": "always",
@@ -100,7 +100,7 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
   "grammarly.files.include": [
     "**/readme.md",
@@ -127,7 +127,7 @@
   "vim.neovimPath": "/run/current-system/sw/bin/nvim",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "f", "<space>"],
+      "before": ["<leader>", "p", "p"],
       "commands": ["workbench.action.showCommands"]
     },
     {
@@ -159,11 +159,11 @@
       "commands": ["workbench.action.openGlobalKeybindings"]
     },
     {
-      "before": ["<leader>", "s", "s"],
+      "before": ["<leader>", "f", "s"],
       "commands": ["workbench.action.gotoSymbol"]
     },
     {
-      "before": ["<leader>", "s", "S"],
+      "before": ["<leader>", "f", "S"],
       "commands": ["workbench.action.showAllSymbols"]
     },
     {
@@ -191,6 +191,10 @@
       "commands": ["workbench.action.previousEditor"]
     },
     { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
+    {
+      "before": ["<leader>", "y", "y"],
+      "commands": ["editor.action.clipboardCopyAction"]
+    },
 
     // ]d ]e ]w bindings : editor.action.marker.nextError editor.action.marker.nextWarning
     {
@@ -209,26 +213,38 @@
       "when": "editorTextFocus && editorHasReferenceProvider"
     },
     {
-      "before": ["s"],
+      "before": ["g", "."],
+      "commands": ["editor.action.quickFix"],
+      "when": "editorTextFocus && editorHasReferenceProvider"
+    },
+    {
+      "before": ["g", ">"],
       "commands": ["leap.findForward"]
     },
     {
-      "before": ["S"],
+      "before": ["g", "<"],
       "commands": ["leap.findBackward"]
+    },
+    {
+      "before": ["]", "c"],
+      "commands": ["workbench.action.editor.nextChange"]
+    },
+    {
+      "before": ["[", "c"],
+      "commands": ["workbench.action.editor.previousChange"]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "p", "p"],
+      "commands": ["workbench.action.showCommands"]
+    },
     {
       "before": ["<leader>", "y"],
       "commands": ["editor.action.clipboardCopyAction", "cancelSelection"]
     }
   ],
   "vim.handleKeys": {
-    "<C-c>": false,
-    "<C-f>": false,
-    "<C-s>": false,
-    "<C-z>": false,
-    "<C-p>": false,
-    "<C-n>": false
+    "<C-s>": false
   }
 }
