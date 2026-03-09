@@ -1,11 +1,24 @@
-#!/bin/sh
-# rp - Repo navigator: fuzzy-pick a project or worktree under ~/Repos and print the path.
-# Meant to be called by the `rp` shell function (see bottom of file) which does the actual cd.
+#!/usr/bin/env sh
+# rp - Repo navigator: fuzzy-pick a project or worktree under ~/Repos.
+# Outputs the selected path to stdout only — the shell function handles cd.
 #
 # Usage:
-#   rp            - pick from top-level projects
-#   rp <project>  - pick from worktrees of <project> (falls back to project root if none)
-#   rp -h|--help  - show this help
+#   rp                        - pick a project and print its path
+#   rp <project>              - pick a worktree of <project> and print its path
+#   rp -h|--help              - show this help
+#
+# Examples:
+#   rp                        - lists One, Two, Three → prints ~/Repos/One
+#   rp Two                    - lists [root] Two, feature-x → prints ~/Repos/_worktree/Two/feature-x
+#
+# This script only prints paths. To cd, add the rp() function to your ~/.zshrc:
+#
+#   rp() {
+#     case "$1" in
+#       -h|--help) "$HOME/.local/bin/rp.sh" "$@" ;;
+#       *)         cd "$("$HOME/.local/bin/rp.sh" "$@")" || return 1 ;;
+#     esac
+#   }
 
 # ---------------------------------------------------------------------------
 # Global constants
@@ -15,43 +28,39 @@ readonly WORKTREE_DIR="_worktree"
 
 # ---------------------------------------------------------------------------
 # usage
-#   Prints help text to stdout.
+#   Prints help text to stderr (keeps stdout clean for path output).
 #   Input : none
-#   Output: help text
+#   Output: help text on stderr
 #   Called by: main
 # ---------------------------------------------------------------------------
 usage() {
-  cat <<EOF
-Usage: rp [project] [-h|--help]
-
-  rp                Pick a project from $REPOS_DIR and cd into it.
-  rp <project>      Pick a worktree of <project> (or the project root) and cd into it.
-  rp -h|--help      Show this help.
-
-Worktrees are expected at: $REPOS_DIR/$WORKTREE_DIR/<project>/<branch>
-EOF
+  printf 'Usage: rp [project] [-h|--help]\n\n' >&2
+  printf '  rp                Pick a project from %s and print its path.\n' "$REPOS_DIR" >&2
+  printf '  rp <project>      Pick a worktree of <project> (or the project root) and print its path.\n' >&2
+  printf '  rp -h|--help      Show this help.\n\n' >&2
+  printf 'Worktrees are expected at: %s/%s/<project>/<branch>\n' "$REPOS_DIR" "$WORKTREE_DIR" >&2
 }
 
 # ---------------------------------------------------------------------------
 # pick_project
 #   Lists top-level directories in REPOS_DIR (excluding _worktree), pipes to fzf.
 #   Input : none
-#   Output: selected project name (stdout), empty if aborted
+#   Output: selected project name on stdout, empty if aborted
 #   Called by: main
 # ---------------------------------------------------------------------------
 pick_project() {
   fd --min-depth 1 --max-depth 1 --type d \
     --exclude "$WORKTREE_DIR" \
     . "$REPOS_DIR" |
-    sed "s|$REPOS_DIR/||" |
-    fzf --prompt="project> "
+    sed "s|$REPOS_DIR/||;s|/$||" |
+    fzf --cycle --prompt="project> "
 }
 
 # ---------------------------------------------------------------------------
 # pick_worktree
-#   Lists worktree branches for a given project plus the project root itself.
+#   Lists the project root and any worktree branches for a given project.
 #   Input : $1 = project name
-#   Output: absolute path of selected entry (stdout), empty if aborted
+#   Output: absolute path of selected entry on stdout, empty if aborted
 #   Called by: main
 # ---------------------------------------------------------------------------
 pick_worktree() {
@@ -59,7 +68,6 @@ pick_worktree() {
   wt_base="$REPOS_DIR/$WORKTREE_DIR/$project"
   root_entry="[root] $project"
 
-  # Build list: root first, then any worktree branches
   if [ -d "$wt_base" ]; then
     branches=$(fd --min-depth 1 --max-depth 1 --type d . "$wt_base" |
       sed "s|$wt_base/||")
@@ -68,8 +76,8 @@ pick_worktree() {
     list="$root_entry"
   fi
 
-  selected=$(printf '%s\n' "$list" | fzf --prompt="worktree> ")
-  [ -z "$selected" ] && return
+  selected=$(printf '%s\n' "$list" | fzf --cycle --prompt="worktree> ")
+  [ -z "$selected" ] && return 1
 
   if [ "$selected" = "$root_entry" ]; then
     printf '%s\n' "$REPOS_DIR/$project"
@@ -82,28 +90,28 @@ pick_worktree() {
 # main
 #   Entry point. Parses args, delegates to pick_project or pick_worktree.
 #   Input : CLI args
-#   Output: resolved absolute path printed to stdout (consumed by shell function)
-#   Called by: shell function `rp`
+#   Output: resolved absolute path on stdout, exits non-zero on failure
+#   Called by: shell function `rp` in ~/.zshrc
 # ---------------------------------------------------------------------------
 main() {
   case "$1" in
   -h | --help)
     usage
-    exit 0
+    return 0
     ;;
   "")
     project=$(pick_project)
-    [ -z "$project" ] && exit 1
+    [ -z "$project" ] && return 1
     printf '%s\n' "$REPOS_DIR/$project"
     ;;
   *)
     project="$1"
     if [ ! -d "$REPOS_DIR/$project" ]; then
       printf 'rp: project "%s" not found in %s\n' "$project" "$REPOS_DIR" >&2
-      exit 1
+      return 1
     fi
     path=$(pick_worktree "$project")
-    [ -z "$path" ] && exit 1
+    [ -z "$path" ] && return 1
     printf '%s\n' "$path"
     ;;
   esac
@@ -112,8 +120,12 @@ main() {
 main "$@"
 
 # ---------------------------------------------------------------------------
-# Shell function — paste this into your ~/.bashrc / ~/.zshrc / ~/.profile
+# Add to ~/.zshrc:
+#
+#   rp() {
+#     case "$1" in
+#       -h|--help) "$HOME/.local/bin/rp.sh" "$@" ;;
+#       *)         cd "$("$HOME/.local/bin/rp.sh" "$@")" || return 1 ;;
+#     esac
+#   }
 # ---------------------------------------------------------------------------
-# rp() {
-#     path=$(command rp "$@") && cd "$path"
-# }

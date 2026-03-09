@@ -57,14 +57,17 @@ stow -v -t "$HOME"/.local/bin scripts
 
 ```sh
 chmod +x rp.sh
-mv rp.sh ~/bin/rp          # or anywhere on your $PATH
+mv rp.sh ~/.local/bin/rp.sh
 ```
 
-Add to your shell rc (`.zshrc` / `.bashrc`):
+Add to your `.zshrc`:
 
 ```sh
 rp() {
-    path=$(command rp "$@") && cd "$path"
+  case "$1" in
+    -h|--help) "$HOME/.local/bin/rp.sh" "$@" ;;
+    *)         cd "$("$HOME/.local/bin/rp.sh" "$@")" || return 1 ;;
+  esac
 }
 ```
 
@@ -80,7 +83,7 @@ rp() {
 
 ---
 
-**Worktree layout expected:**
+**Worktree layout:**
 
 ```
 ~/Repos/
