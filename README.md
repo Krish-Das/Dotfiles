@@ -46,3 +46,49 @@ sudo stow -v -t /etc nixos
 cd ~/dotfiles
 stow -v -t "$HOME"/.local/bin scripts
 ```
+
+---
+
+## Script usage
+
+### `rp.sh` script:
+
+**Setup:**
+
+```sh
+chmod +x rp.sh
+mv rp.sh ~/bin/rp          # or anywhere on your $PATH
+```
+
+Add to your shell rc (`.zshrc` / `.bashrc`):
+
+```sh
+rp() {
+    path=$(command rp "$@") && cd "$path"
+}
+```
+
+---
+
+**API:**
+
+| Command  | Behaviour                                                  |
+| -------- | ---------------------------------------------------------- |
+| `rp`     | fzf over all projects in `~/Repos`                         |
+| `rp Two` | fzf over `[root] Two` + all entries under `_worktree/Two/` |
+| `rp -h`  | help                                                       |
+
+---
+
+**Worktree layout expected:**
+
+```
+~/Repos/
+  One/
+  Two/
+  Three/
+  _worktree/
+    Two/
+      feature-x/
+      bugfix-y/
+```
