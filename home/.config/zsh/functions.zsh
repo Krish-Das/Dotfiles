@@ -35,10 +35,12 @@ conf() {
   [ -n "$selected_files" ] && $EDITOR "$selected_files" || echo "No files selected."
 }
 
-# Open Repos
-code() {
-  file=$(find "$HOME/Repos" -maxdepth 1 -type d | grep -i "/Repos/" | fzf --cycle)
-  [ -n "$file" ] && cd "$file"
+# Open projects
+rp() {
+  case "$1" in
+  -h | --help) "$HOME/.local/bin/rp.sh" "$@" ;;
+  *) cd "$("$HOME/.local/bin/rp.sh" "$@")" || return 1 ;;
+  esac
 }
 
 silent() {
