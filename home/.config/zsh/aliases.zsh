@@ -8,6 +8,8 @@ alias fgrep="fgrep --color=auto"
 
 # Publish date (MM-DD-YYYY) for mdx
 alias pdate='date +"%m-%d-%Y"'
+alias timestamp='date +"%d%m%y-%H%M%S%3N"'
+alias scrcpy='scrcpy --render-driver=opengl'
 
 # settings for common commands
 alias e="$EDITOR"
@@ -32,7 +34,7 @@ alias tp="trash-put"
 alias tpr="trash-restore"
 
 alias s="echo no-sirski!"
-alias H="Hyprland"
+alias H="start-hyprland"
 
 alias notes="notes.sh"
 alias proj="projects.sh"

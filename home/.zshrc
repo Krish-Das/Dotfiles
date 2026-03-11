@@ -12,6 +12,8 @@
 # history
 HISTFILE="$HOME/.zsh_history"
 
+setopt autocd                   # change directory just by typing the name
+setopt interactivecomments      # allow # to start comments in interactive commands
 setopt hist_ignore_dups         # do not record an event that was just recorded again
 setopt hist_ignore_all_dups     # delete an old recorded event if a new event is a duplicate
 setopt hist_expire_dups_first
@@ -29,6 +31,10 @@ eval "$(starship init zsh)"
 plug "$HOME/.config/zsh/exports.zsh"
 plug "$HOME/.config/zsh/aliases.zsh"
 plug "$HOME/.config/zsh/functions.zsh"
+
+# completion for toc cli
+# https://github.com/kriuchkov/tock
+plug "$HOME/.config/tock/tock.zsh"
 
 # plugins
 plug "zsh-users/zsh-autosuggestions"

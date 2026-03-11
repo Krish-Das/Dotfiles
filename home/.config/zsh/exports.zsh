@@ -22,3 +22,4 @@ export MANWIDTH=999
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export TOCK_FILE="$XDG_CACHE_HOME/.tock.txt"
