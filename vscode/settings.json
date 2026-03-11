@@ -1,6 +1,4 @@
 {
-  "workbench.colorTheme": "Tokyo Night Storm Frameless",
-
   "vim.enableVim": true,
   "vim.useSystemClipboard": false,
   "search.smartCase": true,
@@ -8,7 +6,8 @@
   "breadcrumbs.enabled": false,
 
   "editor.fontSize": 15.5,
-  "editor.fontFamily": "'JetBrains Mono', 'SF Mono', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.renderLineHighlight": "all",
+  "editor.fontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font', 'SF Mono', 'Droid Sans Mono', 'monospace', monospace",
   "editor.lineHeight": 0,
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
@@ -71,6 +70,9 @@
   "telemetry.telemetryLevel": "off",
   "update.mode": "none",
 
+  "workbench.panel.defaultLocation": "right",
+  "workbench.panel.opensMaximized": "always",
+  "workbench.panel.showLabels": false,
   "workbench.activityBar.location": "top",
   "workbench.statusBar.visible": true,
   "workbench.tips.enabled": false,
@@ -82,6 +84,9 @@
   "chat.commandCenter.enabled": false,
   "workbench.navigationControl.enabled": false,
   "workbench.layoutControl.enabled": false,
+
+  "terminal.integrated.allowChords": true,
+  "terminal.integrated.defaultLocation": "view",
 
   "prettier.requireConfig": true,
   "editor.codeActionsOnSave": {
@@ -232,6 +237,28 @@
     {
       "before": ["[", "c"],
       "commands": ["workbench.action.editor.previousChange"]
+    },
+
+    // Git hunk bindings
+    {
+      "before": ["<leader>", "h", "p"],
+      "commands": ["git.openChange"]
+    },
+    {
+      "before": ["<leader>", "h", "s"],
+      "commands": ["git.stageSelectedRanges"]
+    },
+    {
+      "before": ["<leader>", "h", "r"],
+      "commands": ["git.revertSelectedRanges"]
+    },
+    {
+      "before": ["<leader>", "h", "S"],
+      "commands": ["git.stage"]
+    },
+    {
+      "before": ["<leader>", "h", "R"],
+      "commands": ["git.clean"]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
@@ -242,6 +269,16 @@
     {
       "before": ["<leader>", "y"],
       "commands": ["editor.action.clipboardCopyAction", "cancelSelection"]
+    },
+
+    // Git hunk bindings
+    {
+      "before": ["<leader>", "h", "s"],
+      "commands": ["git.stageSelectedRanges"]
+    },
+    {
+      "before": ["<leader>", "h", "r"],
+      "commands": ["git.revertSelectedRanges"]
     }
   ],
   "vim.handleKeys": {

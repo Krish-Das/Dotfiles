@@ -2,6 +2,7 @@
 [
   // disabling defaults
   { "key": "ctrl+0", "command": "-workbench.action.focusSideBar" },
+  { "key": "ctrl+p", "command": "-workbench.action.quickOpen" },
   {
     "key": "ctrl+shift+e",
     "command": "-workbench.view.explorer",
@@ -51,7 +52,13 @@
     "key": "ctrl+0",
     "command": "workbench.action.zoomReset"
   },
-
+  { "key": "ctrl+\\", "command": "-workbench.action.splitEditor" },
+  { "key": "ctrl+k ctrl+\\", "command": "-workbench.action.splitEditorDown" },
+  {
+    "key": "escape",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "sideBarVisible"
+  },
   // ctrl+n/p to move the selection up and down
   {
     "key": "ctrl+n",
@@ -143,11 +150,5 @@
     "key": "shift+tab",
     "command": "-jumpToPrevSnippetPlaceholder",
     "when": "hasPrevTabstop && textInputFocus"
-  },
-
-  {
-    "key": "escape",
-    "command": "workbench.action.toggleSidebarVisibility",
-    "when": "sideBarVisible"
   }
 ]
