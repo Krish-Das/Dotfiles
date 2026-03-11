@@ -1,3 +1,4 @@
+// vim:fileencoding=utf-8:ft=jsonc
 [
   /*
    * Disable the default bindings as they're handled below
@@ -32,7 +33,10 @@
       "space f f": "file_finder::Toggle",
       "space f m": "editor::Format",
       "space e": "project_panel::ToggleFocus",
-      "shift-y": ["workspace::SendKeystrokes", "y $"],
+      "shift-y": [
+        "workspace::SendKeystrokes",
+        "y $"
+      ],
       "space p p": "markdown::OpenPreview",
       "space p s": "markdown::OpenPreviewToTheSide",
       "space f g": "pane::DeploySearch",
@@ -42,9 +46,12 @@
     }
   },
   {
-    "context": "vim_operator == y",
+    "context": "VimControl && vim_operator == y",
     "bindings": {
-      "-": ["workspace::SendKeystrokes", "^ y $"]
+      "-": [
+        "workspace::SendKeystrokes",
+        "^ y $"
+      ]
     }
   },
   {
@@ -60,8 +67,8 @@
       "space a": "editor::SelectAll",
       "alt-k": "editor::MoveLineUp",
       "alt-j": "editor::MoveLineDown",
-      "s": "vim::PushSneak", // <leader>' → Sneak forward
-      "alt-s": "vim::PushSneakBackward" // <leader>" → Sneak backward
+      "s": "vim::PushSneak",
+      "alt-s": "vim::PushSneakBackward"
     }
   },
   {
