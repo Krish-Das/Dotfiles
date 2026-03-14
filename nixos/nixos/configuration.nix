@@ -1,20 +1,27 @@
-{pkgs, ...}: {
-  imports = [
-    ./hardware-configuration.nix
-    ./modules/users.nix
-    ./modules/shared-fs.nix
-    ./modules/servieces.nix
-    ./modules/media.nix
-    ./modules/networking.nix
-    ./modules/thunar.nix
-    ./modules/gtk-themes.nix
-    ./modules/flatpak.nix
-    ./modules/lsp.nix
-    ./modules/packages
-    ./modules/auto-update.nix
-    ./boot/grub.nix
-    ./drivers/amd.nix
-  ];
+{
+  pkgs,
+  lib,
+  ...
+}: {
+  imports =
+    [
+      ./hardware-configuration.nix
+      ./modules/users.nix
+      ./modules/shared-fs.nix
+      ./modules/servieces.nix
+      ./modules/media.nix
+      ./modules/networking.nix
+      ./modules/thunar.nix
+      ./modules/gtk-themes.nix
+      ./modules/flatpak.nix
+      ./modules/lsp.nix
+      ./modules/packages
+      ./modules/auto-update.nix
+      ./boot/grub.nix
+      ./drivers/amd.nix
+    ]
+    # Optionally include local/default.nix if it exists (git-ignored, for local-only packages)
+    ++ lib.optional (builtins.pathExists ./local) ./local;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
