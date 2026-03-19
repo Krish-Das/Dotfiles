@@ -100,10 +100,10 @@ local formatter = {
       json = { "biome" },
       jsonc = { "biome" },
       css = { "biome" },
-      typescript = { "biome" },
-      javascript = { "biome" },
-      javascriptreact = { "biome" },
-      typescriptreact = { "biome" },
+      typescript = { "biome", "prettierd", "prettier", stop_after_first = true },
+      javascript = { "biome", "prettierd", "prettier", stop_after_first = true },
+      javascriptreact = { "biome", "prettierd", "prettier", stop_after_first = true },
+      typescriptreact = { "biome", "prettierd", "prettier", stop_after_first = true },
       html = { "prettierd", "prettier", stop_after_first = true }, -- Biome is not working on this
       markdown = { "prettierd", "prettier", stop_after_first = true }, -- No support for Biome
       ["mdx"] = { "prettierd", "prettier", stop_after_first = true }, -- No support for Biome

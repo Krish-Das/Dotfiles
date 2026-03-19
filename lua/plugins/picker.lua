@@ -17,15 +17,15 @@ return {
     { "<leader>uC", "<cmd>FzfLua colorschemes<cr>", desc = "Find Colorschemes" },
     { "<leader>fh", "<cmd>FzfLua helptags<cr>", desc = "Search Help Pages" },
     { "<leader>fk", "<cmd>FzfLua keymaps<cr>", desc = "Find Keymaps" },
-    { "<leader>ss", "<cmd>FzfLua lsp_document_symbols<cr>", desc = "LSP Document Symbols" },
-    { "<leader>sS", "<cmd>FzfLua lsp_workspace_symbols<cr>", desc = "LSP Workspace Symbols" },
+    { "<leader>fs", "<cmd>FzfLua lsp_document_symbols<cr>", desc = "LSP Document Symbols" },
+    { "<leader>fS", "<cmd>FzfLua lsp_workspace_symbols<cr>", desc = "LSP Workspace Symbols" },
     { "<leader>gg", "<cmd>FzfLua git_status<cr>", desc = "Git status" },
   },
   config = function(_, opts)
     local fzf = require("fzf-lua")
     fzf.setup(opts)
     fzf.register_ui_select({
-      winopts = { height = 0.6, width = 0.5, preview = { hidden = "hidden" } },
+      winopts = { height = 1, width = 1, preview = { hidden = "hidden" } },
     })
   end,
 }
