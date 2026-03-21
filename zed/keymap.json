@@ -43,6 +43,7 @@
       "space p p": "markdown::OpenPreview",
       "space p s": "markdown::OpenPreviewToTheSide",
       "space space": "tab_switcher::ToggleAll",
+      "space o": "outline::Toggle",
     },
   },
 

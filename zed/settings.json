@@ -1,5 +1,12 @@
 {
   // ── Window & session ─────────────────────────────────────────
+  "search": {
+    "button": false,
+    "regex": true,
+  },
+  "sticky_scroll": {
+    "enabled": true,
+  },
   "when_closing_with_no_tabs": "keep_window_open",
   "max_tabs": 5,
   "preview_tabs": {
@@ -24,10 +31,11 @@
 
   // ── Tabs ─────────────────────────────────────────────────────
   "tabs": {
+    "show_close_button": "hover",
     "show_diagnostics": "errors",
     "close_position": "left",
-    "file_icons": true,
-    "git_status": false,
+    "file_icons": false,
+    "git_status": true,
   },
 
   // ── Editor: core text & layout ───────────────────────────────
@@ -40,12 +48,17 @@
 
   // ── Editor: gutter, guides, hints, fade ─────────────────────
   "gutter": {
+    "min_line_number_digits": 2,
     "folds": false,
     "runnables": false,
     "breakpoints": false,
     "line_numbers": true,
   },
   "indent_guides": {
+    "background_coloring": "disabled",
+    "coloring": "fixed",
+    "active_line_width": 1,
+    "line_width": 1,
     "enabled": false,
   },
   "inlay_hints": {
@@ -67,6 +80,7 @@
   "use_on_type_format": false,
   "use_autoclose": false,
   "use_smartcase_search": true,
+  "auto_indent_on_paste": false,
 
   // ── Editor: input & selection ────────────────────────────────
   "drag_and_drop_selection": {
@@ -111,15 +125,18 @@
 
   // ── UI chrome (title bar, status, tabs, toolbar) ───────────
   "title_bar": {
-    "show_project_items": false,
+    "show_branch_name": true,
+    "show_branch_icon": false,
+    "show_project_items": true,
     "show_menus": false,
     "show_sign_in": false,
   },
   "status_bar": {
     "active_language_button": true,
-    "cursor_position_button": false,
+    "cursor_position_button": true,
   },
   "tab_bar": {
+    "show_pinned_tabs_in_separate_row": false,
     "show": true,
     "show_nav_history_buttons": false,
     "show_tab_bar_buttons": false,
