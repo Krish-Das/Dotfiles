@@ -1,8 +1,19 @@
 {
+  "which_key": {
+    "enabled": false,
+  },
+  "text_rendering_mode": "subpixel",
+  "agent_buffer_font_size": 12.0,
+  "agent_ui_font_size": 12.0,
+  "session": {
+    "trust_all_worktrees": false,
+  },
+  "redact_private_values": true,
+  "when_closing_with_no_tabs": "keep_window_open",
   "buffer_line_height": "standard",
   "tabs": {
     "show_diagnostics": "errors",
-    "close_position": "right",
+    "close_position": "left",
     "file_icons": true,
     "git_status": false,
   },
@@ -22,6 +33,9 @@
     },
   },
   "agent": {
+    "tool_permissions": {
+      "default": "allow",
+    },
     "default_profile": "ask",
     "play_sound_when_agent_done": true,
     "use_modifier_to_send": true,
@@ -33,7 +47,6 @@
       "provider": "openai",
       "model": "gpt-4o-mini",
     },
-    "always_allow_tool_actions": true,
   },
   "auto_update": false,
   "base_keymap": null,
@@ -42,6 +55,7 @@
     "enabled": false,
   },
   "ensure_final_newline_on_save": false,
+  "remove_trailing_whitespace_on_save": true,
   "gutter": {
     "folds": false,
     "runnables": false,
@@ -104,15 +118,21 @@
   "project_panel": {
     "hide_hidden": true,
     "hide_gitignore": true,
-    "default_width": 320,
-    "dock": "right",
+    "default_width": 400,
+    "dock": "left",
     "entry_spacing": "standard",
   },
+  "debugger": {
+    "button": false,
+  },
   "terminal": {
+    "dock": "right",
+  },
+  "outline_panel": {
     "dock": "left",
   },
   "git_panel": {
-    "dock": "right",
+    "dock": "left",
   },
   "notification_panel": {
     "button": false,
@@ -140,9 +160,6 @@
     "show_nav_history_buttons": false,
     "show_tab_bar_buttons": false,
   },
-  "outline_panel": {
-    "dock": "right",
-  },
   "telemetry": {
     "metrics": false,
     "diagnostics": false,
@@ -151,16 +168,18 @@
     "breadcrumbs": false,
     "quick_actions": false,
   },
-  "theme": "Material Theme Ocean High Contrast",
   "icon_theme": "Zed (Default)",
   "buffer_font_family": "JetBrains Mono",
-  "buffer_font_size": 16,
+  "buffer_font_size": 15.0,
   "ui_font_family": "SF Pro Rounded",
-  "ui_font_size": 14,
+  "ui_font_size": 14.0,
   "buffer_font_features": {
     "calt": false,
   },
   "unnecessary_code_fade": 0.75,
+  // Biome (and other LSPs) on-type formatting injects spaces around `{`, `"`, etc. while typing.
+  // Must be top-level; per-language override is unreliable — see zed#15405.
+  "use_on_type_format": false,
   "use_autoclose": false,
   "use_smartcase_search": true,
   "vertical_scroll_margin": 1.0,

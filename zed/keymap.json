@@ -6,8 +6,8 @@
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-k v": null // disable side preview for markdown
-    }
+      "ctrl-k v": null, // disable side preview for markdown
+    },
   },
   {
     "context": "Workspace",
@@ -16,14 +16,14 @@
       "ctrl-alt-b": null, // Open with space e
       "ctrl-shift-f": null, // Open with space f g
       "ctrl-tab": null, // Open with space space
-      "ctrl-shift-tab": null // No binding for this
-    }
+      "ctrl-shift-tab": null, // No binding for this
+    },
   },
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-shift-v": "editor::Paste"
-    }
+      "ctrl-shift-v": "editor::Paste",
+    },
   },
   {
     // "context": "Editor && vim_mode == normal && !menu && !VimWaiting",
@@ -33,52 +33,63 @@
       "space f f": "file_finder::Toggle",
       "space f m": "editor::Format",
       "space e": "project_panel::ToggleFocus",
-      "shift-y": [
-        "workspace::SendKeystrokes",
-        "y $"
-      ],
+      "shift-y": ["workspace::SendKeystrokes", "y $"],
       "space p p": "markdown::OpenPreview",
       "space p s": "markdown::OpenPreviewToTheSide",
       "space f g": "pane::DeploySearch",
       "space space": "tab_switcher::ToggleAll",
       "space b n": "pane::ActivateNextItem",
-      "space b p": "pane::ActivatePreviousItem"
-    }
+      "space b p": "pane::ActivatePreviousItem",
+      "g Y": ["workspace::SendKeystrokes", "^ \" + y t $"], // yank line to "+
+    },
   },
   {
-    "context": "VimControl && vim_operator == y",
+    "context": "vim_operator == y",
     "bindings": {
-      "-": [
-        "workspace::SendKeystrokes",
-        "^ y $"
-      ]
-    }
+      "-": ["workspace::SendKeystrokes", "^ y $"],
+    },
   },
   {
-    "context": "VimControl && vim_mode == visual",
+    "context": "vim_mode == visual",
     "bindings": {
-      "shift-x": "vim::Exchange"
-    }
+      "shift-x": "vim::Exchange",
+      "shift-s": "vim::PushAddSurrounds",
+      "g y": "editor::Copy",
+    },
   },
   {
     // "context": "Editor && (vim_mode == normal || vim_mode == visual) && !menu && !VimWaiting",
-    "context": "VimControl && vim_mode == normal || vim_mode == visual",
+    "context": "vim_mode == normal || vim_mode == visual",
     "bindings": {
       "space a": "editor::SelectAll",
       "alt-k": "editor::MoveLineUp",
       "alt-j": "editor::MoveLineDown",
       "s": "vim::PushSneak",
-      "alt-s": "vim::PushSneakBackward"
-    }
+      "alt-s": "vim::PushSneakBackward",
+    },
   },
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
       ".": "project_panel::ToggleHideGitIgnore",
-      "q": "workspace::ToggleRightDock",
-      "space e": "workspace::ToggleRightDock",
+      "q": "project_panel::Toggle",
       "h": null,
-      "z": "project_panel::CollapseSelectedEntry"
-    }
-  }
+      "z": "project_panel::CollapseSelectedEntry",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "escape": "workspace::CloseAllDocks",
+    },
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-w h": "workspace::ActivatePaneLeft",
+      "ctrl-w l": "workspace::ActivatePaneRight",
+      "ctrl-w k": "workspace::ActivatePaneUp",
+      "ctrl-w j": "workspace::ActivatePaneDown",
+    },
+  },
 ]
