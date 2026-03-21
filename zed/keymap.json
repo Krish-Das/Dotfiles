@@ -1,95 +1,110 @@
 // vim:fileencoding=utf-8:ft=jsonc
 [
   /*
-   * Disable the default bindings as they're handled below
+   * Disable default bindings where custom chords live elsewhere (see Vim / leader).
+   */
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-alt-b": null, // → space e (project panel)
+      "ctrl-shift-f": null, // → space f g (search)
+      "ctrl-shift-p": null, // → : command palette
+      "ctrl-shift-tab": null,
+      "ctrl-tab": null, // → space space (tab switcher)
+    },
+  },
+
+  /*
+   * Editor-wide: markdown preview toggle, paste, docks.
    */
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-k v": null, // disable side preview for markdown
-    },
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "ctrl-shift-p": null, // Open with : instead!
-      "ctrl-alt-b": null, // Open with space e
-      "ctrl-shift-f": null, // Open with space f g
-      "ctrl-tab": null, // Open with space space
-      "ctrl-shift-tab": null, // No binding for this
-    },
-  },
-  {
-    "context": "Editor",
-    "bindings": {
+      "ctrl-k v": null, // disable side preview; use space p s in normal mode
       "ctrl-shift-v": "editor::Paste",
     },
   },
+
+  /*
+   * Vim — normal mode, leader / file / buffer / preview / yank helpers
+   * (VimControl && vim_mode == normal)
+   */
   {
-    // "context": "Editor && vim_mode == normal && !menu && !VimWaiting",
-    // "context": "Editor && vim_mode == normal && !VimWaiting",
     "context": "VimControl && vim_mode == normal",
     "bindings": {
-      "space f f": "file_finder::Toggle",
-      "space f m": "editor::Format",
-      "space e": "project_panel::ToggleFocus",
+      "g Y": ["workspace::SendKeystrokes", "^ \" + y t $"], // yank line to "+
       "shift-y": ["workspace::SendKeystrokes", "y $"],
-      "space p p": "markdown::OpenPreview",
-      "space p s": "markdown::OpenPreviewToTheSide",
-      "space f g": "pane::DeploySearch",
-      "space space": "tab_switcher::ToggleAll",
       "space b n": "pane::ActivateNextItem",
       "space b p": "pane::ActivatePreviousItem",
-      "g Y": ["workspace::SendKeystrokes", "^ \" + y t $"], // yank line to "+
+      "space e": "project_panel::ToggleFocus",
+      "space f f": "file_finder::Toggle",
+      "space f g": "pane::DeploySearch",
+      "space f m": "editor::Format",
+      "space p p": "markdown::OpenPreview",
+      "space p s": "markdown::OpenPreviewToTheSide",
+      "space space": "tab_switcher::ToggleAll",
     },
   },
+
+  /*
+   * Vim — after y (operator): line yank from start
+   */
   {
     "context": "vim_operator == y",
     "bindings": {
       "-": ["workspace::SendKeystrokes", "^ y $"],
     },
   },
+
+  /*
+   * Vim — visual mode
+   */
   {
     "context": "vim_mode == visual",
     "bindings": {
-      "shift-x": "vim::Exchange",
-      "shift-s": "vim::PushAddSurrounds",
       "g y": "editor::Copy",
+      "shift-s": "vim::PushAddSurrounds",
+      "shift-x": "vim::Exchange",
     },
   },
+
+  /*
+   * Vim — normal or visual (motion / sneak / lines / select all)
+   */
   {
-    // "context": "Editor && (vim_mode == normal || vim_mode == visual) && !menu && !VimWaiting",
     "context": "vim_mode == normal || vim_mode == visual",
     "bindings": {
-      "space a": "editor::SelectAll",
-      "alt-k": "editor::MoveLineUp",
       "alt-j": "editor::MoveLineDown",
-      "s": "vim::PushSneak",
+      "alt-k": "editor::MoveLineUp",
       "alt-s": "vim::PushSneakBackward",
+      "s": "vim::PushSneak",
+      "space a": "editor::SelectAll",
     },
   },
+
+  /*
+   * Project panel (file tree), not editing a filename
+   */
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
       ".": "project_panel::ToggleHideGitIgnore",
-      "q": "project_panel::Toggle",
       "h": null,
+      "q": "project_panel::Toggle",
       "z": "project_panel::CollapseSelectedEntry",
     },
   },
-  {
-    "context": "Editor",
-    "bindings": {
-      "escape": "workspace::CloseAllDocks",
-    },
-  },
+
+  /*
+   * Dock / split focus — ctrl-w + hjkl
+   */
   {
     "context": "Dock",
     "bindings": {
       "ctrl-w h": "workspace::ActivatePaneLeft",
-      "ctrl-w l": "workspace::ActivatePaneRight",
-      "ctrl-w k": "workspace::ActivatePaneUp",
       "ctrl-w j": "workspace::ActivatePaneDown",
+      "ctrl-w k": "workspace::ActivatePaneUp",
+      "ctrl-w l": "workspace::ActivatePaneRight",
     },
   },
 ]
