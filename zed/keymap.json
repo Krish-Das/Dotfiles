@@ -32,14 +32,15 @@
   {
     "context": "VimControl && vim_mode == normal",
     "bindings": {
-      "g Y": ["workspace::SendKeystrokes", "^ \" + y t $"], // yank line to "+
-      "shift-y": ["workspace::SendKeystrokes", "y $"],
+      "g y": ["workspace::SendKeystrokes", "\" + y"], // start yanking to "+
       "space b n": "pane::ActivateNextItem",
       "space b p": "pane::ActivatePreviousItem",
       "space e": "project_panel::ToggleFocus",
       "space f f": "file_finder::Toggle",
       "space f g": "pane::DeploySearch",
       "space f m": "editor::Format",
+      "space f s": "outline::Toggle",
+      "space f shift-s": "project_symbols::Toggle",
       "space p p": "markdown::OpenPreview",
       "space p s": "markdown::OpenPreviewToTheSide",
       "space space": "tab_switcher::ToggleAll",
