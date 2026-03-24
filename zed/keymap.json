@@ -13,6 +13,12 @@
       "ctrl-tab": null, // → space space (tab switcher)
     },
   },
+  {
+    "context": "Pane || Workspace || Terminal",
+    "bindings": {
+      "ctrl-w": null, // → :q
+    },
+  },
 
   /*
    * Editor-wide: markdown preview toggle, paste, docks.
@@ -49,22 +55,12 @@
   },
 
   /*
-   * Vim — after y (operator): line yank from start
-   */
-  {
-    "context": "vim_operator == y",
-    "bindings": {
-      "-": ["workspace::SendKeystrokes", "^ y $"],
-    },
-  },
-
-  /*
    * Vim — visual mode
    */
   {
     "context": "vim_mode == visual",
     "bindings": {
-      "g y": "editor::Copy",
+      "g y": ["workspace::SendKeystrokes", "\" + y"],
       "shift-s": "vim::PushAddSurrounds",
       "shift-x": "vim::Exchange",
     },
