@@ -74,7 +74,7 @@
   "show_completions_on_input": true,
   "show_edit_predictions": true,
   "edit_predictions": {
-    "mode": "subtle"
+    "mode": "subtle",
   },
   "inline_code_actions": false,
   "linked_edits": true,
@@ -102,7 +102,7 @@
   // ── Panels: docks & visibility ───────────────────────────────
   "project_panel": {
     "hide_hidden": true,
-    "hide_gitignore": true,
+    "hide_gitignore": false,
     "default_width": 400,
     "dock": "left",
     "entry_spacing": "standard",
