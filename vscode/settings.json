@@ -257,6 +257,11 @@
       "silent": true
     },
     {
+      "before": ["g", "y"],
+      "after": ["\"", "+", "y"],
+      "silent": true
+    },
+    {
       "before": ["]", "c"],
       "commands": ["workbench.action.editor.nextChange"]
     },
@@ -293,8 +298,9 @@
       "commands": ["workbench.action.showCommands"]
     },
     {
-      "before": ["<leader>", "y"],
-      "commands": ["editor.action.clipboardCopyAction", "cancelSelection"]
+      "before": ["g", "y"],
+      "after": ["\"", "+", "y"],
+      "silent": true
     },
 
     // Git hunk bindings
