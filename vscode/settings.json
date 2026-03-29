@@ -1,4 +1,6 @@
 {
+  "workbench.colorTheme": "Experimental Dark",
+
   "vim.enableVim": true,
   "vim.useSystemClipboard": false,
   "search.smartCase": true,
@@ -7,7 +9,7 @@
 
   "editor.fontSize": 15.5,
   "editor.renderLineHighlight": "all",
-  "editor.fontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font', 'SF Mono', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontFamily": "'JetBrains Mono', 'SF Mono', 'monospace', monospace, 'SF Pro Text'",
   "editor.lineHeight": 0,
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
@@ -38,7 +40,7 @@
   "editor.cursorSmoothCaretAnimation": "off",
   "editor.wordWrap": "off",
   "editor.autoClosingBrackets": "always",
-  "editor.linkedEditing": true,
+  "editor.linkedEditing": false,
   "editor.lineNumbers": "relative",
   "editor.find.autoFindInSelection": "always",
   "editor.fontLigatures": false,
@@ -131,8 +133,9 @@
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
   },
-  "vim.enableNeovim": true,
+  "vim.enableNeovim": false,
   "vim.neovimUseConfigFile": false,
+  // "vim.neovimPath": "/run/current-system/sw/bin/nvim",
   "vim.statusBarColorControl": false,
   "vim.showcmd": true,
   "vim.hlsearch": false,
@@ -140,7 +143,6 @@
   "vim.easymotion": false,
   "vim.leader": "<space>",
   "vim.surround": true,
-  "vim.neovimPath": "/run/current-system/sw/bin/nvim",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "p", "p"],
