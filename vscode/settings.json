@@ -41,6 +41,7 @@
   "editor.wordWrap": "off",
   "editor.autoClosingBrackets": "always",
   "editor.linkedEditing": false,
+  "editor.largeFileOptimizations": true,
   "editor.lineNumbers": "relative",
   "editor.find.autoFindInSelection": "always",
   "editor.fontLigatures": false,
@@ -95,7 +96,8 @@
 
   "prettier.requireConfig": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports.biome": "always"
+    "source.organizeImports.biome": "always",
+    "source.fixAll.biome": "explicit"
   },
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
