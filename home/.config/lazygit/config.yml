@@ -10,10 +10,17 @@ gui:
       - black
   commitLength:
     show: true
+  screenMode: half # normal | half | full
   border: single
-  sidePanelWidth: 0.3
   expandFocusedSidePanel: true
-  expandedSidePanelWeight: 30
+  sidePanelWidth: 0.25
+  expandedSidePanelWeight: 5
+  commitAuthorShortLength: 0
+  commitAuthorLongLength: 0
+  shawRandomTip: false
+  showCommandLog: false
+  showBottomLine: false
+  showListFooter: false
 git:
   pagers:
     - pager: delta --paging=never --diff-so-fancy --detect-dark-light=always

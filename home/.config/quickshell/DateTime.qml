@@ -9,7 +9,7 @@ Singleton {
 
   Process {
     id: dateProc
-    command: ["date", "+%H:%M:%S 􀅽 %d %h %y"]
+    command: ["date", "+%H:%M:%S 􀅽 %a %d %b"]
     running: true
     stdout: StdioCollector {
       onStreamFinished: root.time = text.trim().toUpperCase()

@@ -24,9 +24,9 @@ Singleton {
 
   function setVolume(delta) {
     if (delta > 0)
-    volumeProc.command = ["wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.1+", "-l", "1.0"]
+    volumeProc.command = ["wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.05+", "-l", "1.0"]
     else
-    volumeProc.command = ["wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.1-"]
+    volumeProc.command = ["wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.05-"]
     volumeProc.running = true
   }
 
