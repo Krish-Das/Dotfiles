@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Experimental Dark",
+  "workbench.colorTheme": "VS Code Dark",
 
   "search.smartCase": true,
   "breadcrumbs.filePath": "last",
@@ -7,7 +7,7 @@
 
   "editor.fontSize": 15.5,
   "editor.renderLineHighlight": "all",
-  "editor.fontFamily": "'JetBrains Mono', 'SF Mono', 'monospace', monospace, 'SF Pro Text'",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrains Mono', monospace, 'SF Pro Text'",
   "editor.lineHeight": 0,
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
@@ -54,6 +54,7 @@
   "editor.foldingImportsByDefault": false,
 
   "files.insertFinalNewline": false,
+  "files.associations": { "*.jsonc": "jsonc" },
 
   "workbench.editor.tabActionLocation": "left",
   "workbench.editor.showTabs": "multiple",
@@ -126,6 +127,17 @@
     "**/*.txt",
     "**/*.mdx"
   ],
+  "json.schemaDownload.trustedDomains": {
+    "https://biomejs.dev": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://opencode.ai/config.json": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://www.schemastore.org/": true
+  },
 
   // ----------------------------------
   // ---------  vim mode  -------------
@@ -320,14 +332,4 @@
     "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc": "default",
     "*.qrc": "qt-core.qrcEditor"
   },
-  "json.schemaDownload.trustedDomains": {
-    "https://schemastore.azurewebsites.net/": true,
-    "https://raw.githubusercontent.com/microsoft/vscode/": true,
-    "https://raw.githubusercontent.com/devcontainers/spec/": true,
-    "https://www.schemastore.org/": true,
-    "https://json.schemastore.org/": true,
-    "https://json-schema.org/": true,
-    "https://developer.microsoft.com/json-schemas/": true,
-    "https://biomejs.dev": true
-  }
 }
