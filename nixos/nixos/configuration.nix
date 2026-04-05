@@ -107,7 +107,6 @@
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged
     # programs here, NOT in environment.systemPackages
-    xorg.libxcb # Needed for the goose agent cli
   ];
 
   fonts.packages = with pkgs; [jetbrains-mono];
