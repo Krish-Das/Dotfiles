@@ -5,7 +5,7 @@
   programs.thunar = {
     enable = true;
 
-    plugins = with pkgs.xfce; [
+    plugins = with pkgs; [
       thunar-archive-plugin # archive handling (zip, tar, …)
       thunar-volman # removable‑media auto‑mount
     ];
@@ -18,7 +18,7 @@
   # ------------------------------
   services.tumbler.enable = true; # runs the thumbnail daemon
   environment.systemPackages = with pkgs; [
-    xfce.tumbler
+    tumbler
     ffmpegthumbnailer
   ];
 }

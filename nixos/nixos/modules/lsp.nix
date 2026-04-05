@@ -3,5 +3,6 @@
     nixd
     alejandra
     stylua
+    biome
   ];
 }

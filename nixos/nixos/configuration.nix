@@ -23,7 +23,7 @@
     # Optionally include local/default.nix if it exists (git-ignored, for local-only packages)
     ++ lib.optional (builtins.pathExists ./local) ./local;
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = ["nix-command"];
   nixpkgs.config.allowUnfree = true;
 
   system.name = "didact";
@@ -59,8 +59,11 @@
     };
   };
   # XDG portal
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  };
 
   # Enable bluetooth
   services.blueman.enable = true;
@@ -81,6 +84,12 @@
       brlaser # https://nixos.wiki/wiki/Printing
       cups-brother-dcpt310 # from nix-os unstable packages
     ];
+  };
+
+  # Scanners
+  hardware.sane = {
+    enable = true;
+    brscan4.enable = true;
   };
 
   # Configure keymap in X11
