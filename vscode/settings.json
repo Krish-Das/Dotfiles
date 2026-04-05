@@ -23,8 +23,8 @@
   "editor.renderWhitespace": "selection",
   "editor.guides.indentation": false,
   "editor.glyphMargin": false,
-  "editor.scrollbar.vertical": "auto",
-  "editor.scrollbar.horizontal": "auto",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.horizontal": "hidden",
   "editor.stickyScroll.enabled": false,
   "editor.colorDecorators": false,
   "editor.codeLens": false,
@@ -52,6 +52,9 @@
   "editor.defaultFormatter": "biomejs.biome",
   "editor.experimentalGpuAcceleration": "off",
   "editor.foldingImportsByDefault": false,
+
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideStatusBar": false,
 
   "files.insertFinalNewline": false,
   "files.associations": { "*.jsonc": "jsonc" },
