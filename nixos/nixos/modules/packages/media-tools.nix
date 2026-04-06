@@ -6,6 +6,6 @@
     feh
     grim
     slurp
-    swww
+    awww
   ];
 }
