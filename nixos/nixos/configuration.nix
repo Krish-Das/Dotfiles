@@ -15,6 +15,7 @@
       ./modules/gtk-themes.nix
       ./modules/flatpak.nix
       ./modules/lsp.nix
+      ./modules/nix-ld.nix
       ./modules/packages
       ./modules/auto-update.nix
       ./boot/grub.nix
@@ -102,12 +103,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
-
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackaged
-    # programs here, NOT in environment.systemPackages
-  ];
 
   fonts.packages = with pkgs; [jetbrains-mono];
 
