@@ -46,6 +46,20 @@
     "key": "ctrl+.",
     "command": "-editor.action.quickFix"
   },
+  {
+    "key": "ctrl+alt+i",
+    "command": "-workbench.action.chat.open",
+    "when": "!chatSetupDisabled && !chatSetupHidden"
+  },
+  {
+    "key": "ctrl+alt+i",
+    "command": "-workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  {
+    "key": "ctrl+alt+i",
+    "command": "workbench.action.toggleAuxiliaryBar"
+  },
 
   // ctrl+0 to reset the zoom-level
   {
