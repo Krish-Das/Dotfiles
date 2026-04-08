@@ -19,13 +19,15 @@
   "window.density.editorTabHeight": "compact",
   "window.commandCenter": false,
 
-  "git.enabled": false,
+  "git.enabled": true,
+  "git.enableCommitSigning": true,
   "github.copilot.enable": {
     "*": false,
     "plaintext": false,
     "markdown": false,
     "scminput": false
   },
+
   "jjk.enableAnnotations": false,
 
   "editor.minimap.enabled": false,
