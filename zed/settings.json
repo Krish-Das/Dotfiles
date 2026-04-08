@@ -1,5 +1,19 @@
 {
   // ── Window & session ─────────────────────────────────────────
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry",
+    },
+    "opencode": {
+      "type": "registry",
+    },
+  },
+  "diff_view_style": "split",
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "One Dark",
+  },
   "search": {
     "button": false,
     "regex": true,
@@ -68,10 +82,10 @@
   "scrollbar": {
     "show": "never",
   },
-  "show_whitespaces": null,
+  "show_whitespaces": "selection",
 
   // ── Editor: typing, completions, edits ──────────────────────
-  "show_completions_on_input": true,
+  "show_completions_on_input": false,
   "show_edit_predictions": true,
   "edit_predictions": {
     "mode": "subtle",

@@ -27,6 +27,7 @@
     "context": "Editor",
     "bindings": {
       "ctrl-k v": null, // disable side preview; use space p s in normal mode
+      "ctrl-alt-t": null,
       "ctrl-shift-v": "editor::Paste",
     },
   },
@@ -38,6 +39,7 @@
   {
     "context": "VimControl && vim_mode == normal",
     "bindings": {
+      "space t d": "editor::ToggleInlineDiagnostics",
       "g y": ["workspace::SendKeystrokes", "\" + y"], // start yanking to "+
       "space b n": "pane::ActivateNextItem",
       "space b p": "pane::ActivatePreviousItem",
