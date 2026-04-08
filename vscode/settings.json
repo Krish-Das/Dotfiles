@@ -133,6 +133,9 @@
   "[typst]": {
     "editor.defaultFormatter": "myriad-dreamin.tinymist"
   },
+  "[lua]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
+  },
   "qt-qml.qmlls.useQmlImportPathEnvVar": true,
   "qmlFormatter.indentSize": 2,
   "[qml]": {
