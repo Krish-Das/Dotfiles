@@ -182,7 +182,8 @@
   "vim.leader": "<space>",
   "vim.surround": true,
   "extensions.experimental.affinity": {
-    "vscodevim.vim": 1
+    "vscodevim.vim": 1,
+    "asvetliakov.vscode-neovim": 1
   },
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -356,5 +357,11 @@
   "workbench.editorAssociations": {
     "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc": "default",
     "*.qrc": "qt-core.qrcEditor"
+  },
+  "vscode-neovim.neovimExecutablePaths.linux": "/run/current-system/sw/bin/nvim",
+  "vscode-neovim.NVIM_APPNAME": "vsvim",
+  "vscode-neovim.revealCursorScrollLine": true,
+  "workbench.view.showQuietly": {
+    "workbench.panel.output": true
   }
 }

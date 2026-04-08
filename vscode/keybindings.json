@@ -164,5 +164,21 @@
     "key": "shift+tab",
     "command": "-jumpToPrevSnippetPlaceholder",
     "when": "hasPrevTabstop && textInputFocus"
+  },
+  {
+    "command": "vscode-neovim.send",
+    // Invoke the binding with this key sequence.
+    "key": "alt+j",
+    // Don't activate during insert mode.
+    // Docs for "when": https://code.visualstudio.com/api/references/when-clause-contexts
+    "when": "editorTextFocus && neovim.mode != insert",
+    // Send this input to Neovim.
+    "args": "<A-j>"
+  },
+  {
+    "command": "vscode-neovim.send",
+    "key": "alt+k",
+    "when": "editorTextFocus && neovim.mode != insert",
+    "args": "<A-k>"
   }
 ]
