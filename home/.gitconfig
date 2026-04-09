@@ -36,6 +36,8 @@
   rebase-with-hooks = rebase -x 'git reset --soft HEAD~1 && git commit -C HEAD@{1}'
   review-local = "!git lg @{push}.."
 
+[gitbutler]
+	aiModelProvider = anthropic
 [credential "https://github.com"]
 	helper = 
 	helper = !/run/current-system/sw/bin/gh auth git-credential
