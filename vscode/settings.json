@@ -47,7 +47,7 @@
   "editor.autoIndentOnPaste": true,
   "editor.cursorSmoothCaretAnimation": "off",
   "editor.wordWrap": "off",
-  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingBrackets": "languageDefined",
   "editor.linkedEditing": false,
   "editor.largeFileOptimizations": true,
   "editor.lineNumbers": "relative",
@@ -62,6 +62,9 @@
   "editor.defaultFormatter": "biomejs.biome",
   "editor.experimentalGpuAcceleration": "off",
   "editor.foldingImportsByDefault": false,
+  "editor.dragAndDrop": false,
+  "editor.guides.bracketPairs": "active",
+  "editor.cursorSurroundingLines": 1,
 
   "zenMode.hideLineNumbers": false,
   "zenMode.hideStatusBar": false,
@@ -95,7 +98,7 @@
   "workbench.tree.enableStickyScroll": false,
   "workbench.tree.renderIndentGuides": "none",
   "workbench.tree.indent": 18,
-  "explorer.compactFolders": false,
+  "explorer.compactFolders": true,
   "extensions.ignoreRecommendations": true,
   "workbench.navigationControl.enabled": false,
   "workbench.layoutControl.enabled": false,
@@ -109,6 +112,8 @@
   "errorLens.enabled": false,
   "chat.commandCenter.enabled": false,
   "chat.viewSessions.orientation": "stacked",
+
+  "problems.defaultViewMode": "tree",
 
   "prettier.requireConfig": true,
   "editor.codeActionsOnSave": {
