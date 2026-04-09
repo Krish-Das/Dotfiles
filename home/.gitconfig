@@ -2,11 +2,21 @@
   name = Krish-Das
   email = krishdasatgames@gmail.com
 
-[init]
-  defaultBranch = main
-
 [color]
   ui = auto
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
+[init]
+  defaultBranch = main
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[push]
+  followTags = true
 
 [core]
   editor = "$EDITOR"
