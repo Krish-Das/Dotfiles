@@ -36,10 +36,12 @@
 
   services.resolved = {
     enable = true;
-    dnssec = "false"; # "allow-downgrade"
-    dnsovertls = "false"; # "opportunistic"
-    domains = ["~."]; # "use as default interface for all requests"
-    llmnr = "true";
+    settings.Resolve = {
+      DNSSEC = "false"; # "allow-downgrade"
+      DNSOverTLS = "false"; # "opportunistic"
+      Domains = ["~."]; # "use as default interface for all requests"
+      LLMNR = "true";
+    };
   };
 
   environment.systemPackages = with pkgs; [
