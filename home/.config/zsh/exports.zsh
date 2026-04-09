@@ -8,11 +8,13 @@ SAVEHIST=1000000
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export EXPLORER="thunar"
-export BROWSER="chromium"
+export BROWSER="google-chrome-stable"
 
 export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_CACHE_HOME="$HOME"/.cache
 export XDG_DATA_HOME="$HOME"/.local/share
+
+export TMPDIR=/tmp
 
 export PATH="$HOME/.local/bin:$PATH"
 
