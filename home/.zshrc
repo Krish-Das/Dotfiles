@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
 
 # To profile zsh startup time. Look at the end of this file
 # zmodload zsh/zprof
