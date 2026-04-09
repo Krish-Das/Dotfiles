@@ -34,6 +34,7 @@ alias tp="trash-put"
 alias tpr="trash-restore"
 
 alias s="echo no-sirski!"
+alias N="niri --session"
 alias H="start-hyprland"
 
 alias notes="notes.sh"
