@@ -1,36 +1,29 @@
 {
-  // ── Window & session ─────────────────────────────────────────
-  "agent_servers": {
-    "codex-acp": {
-      "type": "registry",
-    },
-    "opencode": {
-      "type": "registry",
-    },
-  },
+  // ── WINDOW & SESSION ─────────────────────────────────────────
+  "cursor_shape": "block",
   "diff_view_style": "split",
+  "when_closing_with_no_tabs": "keep_window_open",
+  "session": {
+    "trust_all_worktrees": false,
+  },
+
+  // ── THEME & TYPOGRAPHY ───────────────────────────────────────
   "theme": {
     "mode": "dark",
     "light": "One Light",
     "dark": "One Dark",
   },
-  "search": {
-    "button": false,
-    "regex": true,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 14,
+  "buffer_font_features": {
+    "calt": false,
   },
-  "sticky_scroll": {
-    "enabled": true,
-  },
-  "when_closing_with_no_tabs": "keep_window_open",
-  "max_tabs": 5,
-  "preview_tabs": {
-    "enabled": true,
-  },
-  "session": {
-    "trust_all_worktrees": false,
-  },
+  "ui_font_family": "SF Pro Text",
+  "ui_font_size": 13.0,
+  "agent_buffer_font_size": 12.0,
+  "agent_ui_font_size": 12.0,
 
-  // ── Privacy, updates, telemetry ──────────────────────────────
+  // ── PRIVACY, UPDATES, TELEMETRY ──────────────────────────────
   "redact_private_values": true,
   "auto_update": false,
   "telemetry": {
@@ -38,12 +31,40 @@
     "diagnostics": false,
   },
 
-  // ── Files & save behavior ────────────────────────────────────
-  "file_scan_exclusions": ["**/bun.lock"],
+  // ── SEARCH & NAVIGATION ──────────────────────────────────────
+  "search": {
+    "button": false,
+    "regex": true,
+  },
+  "use_smartcase_search": true,
+  "sticky_scroll": {
+    "enabled": true,
+  },
+  "preview_tabs": {
+    "enabled": true,
+  },
+
+  // ── FILES & SAVE BEHAVIOR ────────────────────────────────────
+  "file_scan_exclusions": [
+    "**/bun.lock",
+    "**/out",
+    "**/dist",
+    "**/.husky",
+    "**/.turbo",
+    "**/.vscode-test",
+    "**/.vscode",
+    "**/.next",
+    "**/.storybook",
+    "**/.tap",
+    "**/.nyc_output",
+    "**/report",
+    "**/node_modules",
+  ],
   "ensure_final_newline_on_save": false,
   "remove_trailing_whitespace_on_save": true,
 
-  // ── Tabs ─────────────────────────────────────────────────────
+  // ── TABS ─────────────────────────────────────────────────────
+  "max_tabs": 4,
   "tabs": {
     "show_close_button": "hover",
     "show_diagnostics": "errors",
@@ -51,8 +72,14 @@
     "file_icons": false,
     "git_status": false,
   },
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": false,
+    "show": true,
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false,
+  },
 
-  // ── Editor: core text & layout ───────────────────────────────
+  // ── EDITOR: CORE TEXT & LAYOUT ───────────────────────────────
   "tab_size": 2,
   "buffer_line_height": "standard",
   "text_rendering_mode": "subpixel",
@@ -60,7 +87,7 @@
   "vertical_scroll_margin": 1.0,
   "hide_mouse": "on_typing",
 
-  // ── Editor: gutter, guides, hints, fade ─────────────────────
+  // ── EDITOR: GUTTER, GUIDES, VISUALS ──────────────────────────
   "gutter": {
     "min_line_number_digits": 2,
     "folds": false,
@@ -75,16 +102,18 @@
     "line_width": 1,
     "enabled": false,
   },
-  "inlay_hints": {
-    "enabled": false,
-  },
-  "unnecessary_code_fade": 0.75,
   "scrollbar": {
     "show": "never",
   },
   "show_whitespaces": "selection",
+  "unnecessary_code_fade": 0.75,
 
-  // ── Editor: typing, completions, edits ──────────────────────
+  // ── EDITOR: HINTS & ASSIST ───────────────────────────────────
+  "inlay_hints": {
+    "enabled": false,
+  },
+
+  // ── EDITOR: TYPING, COMPLETIONS, EDITS ───────────────────────
   "show_completions_on_input": false,
   "show_edit_predictions": true,
   "edit_predictions": {
@@ -92,29 +121,42 @@
   },
   "inline_code_actions": false,
   "linked_edits": true,
-  // Biome (and other LSPs) on-type formatting injects spaces around `{`, `"`, etc. while typing.
-  // Must be top-level; per-language override is unreliable — see zed#15405.
   "use_on_type_format": false,
   "use_autoclose": false,
-  "use_smartcase_search": true,
   "auto_indent_on_paste": false,
 
-  // ── Editor: input & selection ────────────────────────────────
+  // ── EDITOR: INPUT & SELECTION ────────────────────────────────
   "drag_and_drop_selection": {
     "enabled": false,
   },
   "middle_click_paste": false,
 
-  // ── Git (inline blame) ───────────────────────────────────────
+  // ── GIT ─────────────────────────────────────────────────────
   "git": {
+    "hunk_style": "staged_hollow",
     "inline_blame": {
       "enabled": true,
       "show_commit_summary": true,
     },
   },
 
-  // ── Panels: docks & visibility ───────────────────────────────
+  // ── PANELS & DOCKS ───────────────────────────────────────────
   "project_panel": {
+    "sort_mode": "directories_first",
+    "hide_root": false,
+    "indent_guides": {
+      "show": "always",
+    },
+    "git_status_indicator": true,
+    "diagnostic_badges": true,
+    "scrollbar": {
+      "show": "auto",
+    },
+    "bold_folder_labels": true,
+    "indent_size": 20.0,
+    "folder_icons": true,
+    "file_icons": true,
+    "button": true,
     "hide_hidden": true,
     "hide_gitignore": false,
     "default_width": 400,
@@ -122,25 +164,34 @@
     "entry_spacing": "standard",
   },
   "terminal": {
+    "button": false,
     "dock": "right",
   },
   "outline_panel": {
+    "file_icons": true,
     "dock": "left",
   },
   "git_panel": {
+    "show_count_badge": false,
+    "diff_stats": true,
+    "folder_icons": true,
+    "file_icons": false,
+    "tree_view": true,
+    "fallback_branch_name": "main",
     "dock": "left",
   },
-  "notification_panel": {
-    "button": false,
-  },
   "collaboration_panel": {
+    "dock": "left",
     "button": false,
   },
   "debugger": {
     "button": false,
   },
+  "active_pane_modifiers": {
+    "inactive_opacity": 0.8,
+  },
 
-  // ── UI chrome (title bar, status, tabs, toolbar) ───────────
+  // ── UI CHROME ────────────────────────────────────────────────
   "title_bar": {
     "show_branch_name": true,
     "show_branch_icon": false,
@@ -149,39 +200,34 @@
     "show_sign_in": false,
   },
   "status_bar": {
+    "show_active_file": true,
     "active_language_button": true,
     "cursor_position_button": true,
   },
-  "tab_bar": {
-    "show_pinned_tabs_in_separate_row": false,
-    "show": true,
-    "show_nav_history_buttons": false,
-    "show_tab_bar_buttons": false,
-  },
   "toolbar": {
+    "agent_review": true,
+    "selections_menu": false,
     "breadcrumbs": false,
     "quick_actions": false,
   },
 
-  // ── Typography & theme ─────────────────────────────────────
-  "icon_theme": "Zed (Default)",
-  "buffer_font_family": "JetBrains Mono",
-  "buffer_font_size": 15.0,
-  "buffer_font_features": {
-    "calt": false,
+  // ── AGENT (AI) ──────────────────────────────────────────────
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry",
+    },
+    "opencode": {
+      "type": "registry",
+    },
   },
-  "ui_font_family": "SF Pro Rounded",
-  "ui_font_size": 14.0,
-  "agent_buffer_font_size": 12.0,
-  "agent_ui_font_size": 12.0,
-
-  // ── Agent (AI) ──────────────────────────────────────────────
   "agent": {
+    "button": false,
+    "dock": "right",
     "tool_permissions": {
       "default": "allow",
     },
     "default_profile": "ask",
-    "play_sound_when_agent_done": true,
+    "play_sound_when_agent_done": "always",
     "use_modifier_to_send": true,
     "default_model": {
       "provider": "openrouter",
@@ -193,7 +239,7 @@
     },
   },
 
-  // ── MCP / context servers ────────────────────────────────────
+  // ── MCP / CONTEXT SERVERS ───────────────────────────────────
   "context_servers": {
     "mcp-server-context7": {
       "enabled": true,
@@ -203,15 +249,16 @@
     },
   },
 
-  // ── Key hints overlay ────────────────────────────────────────
+  // ── KEYMAP & HINTS ──────────────────────────────────────────
   "which_key": {
-    "enabled": false,
+    "enabled": true,
   },
-  "base_keymap": null,
+  "base_keymap": "VSCode",
 
-  // ── Vim ────────────────────────────────────────────────────
+  // ── VIM ─────────────────────────────────────────────────────
   "vim_mode": true,
   "vim": {
+    "toggle_relative_line_numbers": false,
     "use_system_clipboard": "never",
     "use_smartcase_find": true,
   },
@@ -228,7 +275,7 @@
     "l": "ls",
   },
 
-  // ── Per-language tooling ─────────────────────────────────────
+  // ── PER-LANGUAGE TOOLING ─────────────────────────────────────
   "languages": {
     "JavaScript": {
       "formatter": {
@@ -253,8 +300,16 @@
     },
     "CSS": {
       "formatter": {
+        "external": {
+          "command": "./node_modules/.bin/biome",
+          "arguments": ["format", "--stdin-file-path={buffer_path}", "-"],
+        },
+      },
+    },
+    "Markdown": {
+      "formatter": {
         "language_server": {
-          "name": "biome",
+          "name": "prettier",
         },
       },
     },
@@ -268,12 +323,8 @@
     },
   },
 
-  // Read the discussion:
-  // https://github.com/zed-industries/zed/issues/5040
+  // ── EXPERIMENTAL THEME OVERRIDES (COMMENTED) ────────────────
   // "experimental.theme_overrides": {
-  //   // Get the Hex values from here:
-  //   // https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
-  //   // fromat: #FFFFFF_66 (40% alpha)
   //   "background.appearance": "blurred",
   //   "background": "#00000082",
   //   "title_bar.background": "#000000D9",
