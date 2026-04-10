@@ -1,7 +1,7 @@
 // vim:fileencoding=utf-8:ft=jsonc
 [
   /*
-   * Disable default bindings where custom chords live elsewhere (see Vim / leader).
+   * GLOBAL DISABLES — avoid conflicts with Vim / leader system
    */
   {
     "context": "Workspace",
@@ -21,7 +21,7 @@
   },
 
   /*
-   * Editor-wide: markdown preview toggle, paste, docks.
+   * EDITOR — generic editor behavior overrides
    */
   {
     "context": "Editor",
@@ -33,34 +33,58 @@
   },
 
   /*
-   * Vim — normal mode, leader / file / buffer / preview / yank helpers
-   * (VimControl && vim_mode == normal)
+   * VIM — core overrides / which-key prep
    */
   {
-    "context": "VimControl && vim_mode == normal",
+    "context": "(VimControl && !menu)",
     "bindings": {
+      "space": null, // Disable the default action vim::WrappingRight
+    },
+  },
+
+  /*
+   * VIM — NORMAL MODE (leader grouped)
+   * Navigation / buffers / search / files / preview / diagnostics
+   */
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // diagnostics / toggle
       "space t d": "editor::ToggleInlineDiagnostics",
-      "g y": ["workspace::SendKeystrokes", "\" + y"], // start yanking to "+
+
+      // buffers
       "space b n": "pane::ActivateNextItem",
       "space b p": "pane::ActivatePreviousItem",
-      "space e": "project_panel::ToggleFocus",
+
+      // explorer / UI
+      "space e": "workspace::ToggleLeftDock",
+      "space o": "outline::Toggle",
+
+      // files / search / symbols
       "space f f": "file_finder::Toggle",
       "space f g": "pane::DeploySearch",
       "space f m": "editor::Format",
       "space f s": "outline::Toggle",
       "space f shift-s": "project_symbols::Toggle",
+      "space f q": "diagnostics::Deploy",
+
+      // preview
       "space p p": "markdown::OpenPreview",
       "space p s": "markdown::OpenPreviewToTheSide",
+
+      // tabs
       "space space": "tab_switcher::ToggleAll",
-      "space o": "outline::Toggle",
+
+      // yank helpers
+      "g y": ["workspace::SendKeystrokes", "\" + y"],
     },
   },
 
   /*
-   * Vim — visual mode
+   * VIM — VISUAL MODE
    */
   {
-    "context": "vim_mode == visual",
+    "context": "Editor && vim_mode == visual",
     "bindings": {
       "g y": ["workspace::SendKeystrokes", "\" + y"],
       "shift-s": "vim::PushAddSurrounds",
@@ -69,10 +93,10 @@
   },
 
   /*
-   * Vim — normal or visual (motion / sneak / lines / select all)
+   * VIM — SHARED (normal + visual)
    */
   {
-    "context": "vim_mode == normal || vim_mode == visual",
+    "context": "Editor && (vim_mode == normal || vim_mode == visual)",
     "bindings": {
       "alt-j": "editor::MoveLineDown",
       "alt-k": "editor::MoveLineUp",
@@ -83,20 +107,7 @@
   },
 
   /*
-   * Project panel (file tree), not editing a filename
-   */
-  {
-    "context": "ProjectPanel && not_editing",
-    "bindings": {
-      ".": "project_panel::ToggleHideGitIgnore",
-      "h": null,
-      "q": "project_panel::Toggle",
-      "z": "project_panel::CollapseSelectedEntry",
-    },
-  },
-
-  /*
-   * Dock / split focus — ctrl-w + hjkl
+   * WINDOW / PANE NAVIGATION
    */
   {
     "context": "Dock",
@@ -105,6 +116,60 @@
       "ctrl-w j": "workspace::ActivatePaneDown",
       "ctrl-w k": "workspace::ActivatePaneUp",
       "ctrl-w l": "workspace::ActivatePaneRight",
+    },
+  },
+
+  /*
+   * PROJECT PANEL — file explorer + netrw-style bindings
+   */
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      // toggles
+      ".": "project_panel::ToggleHideGitIgnore",
+      "space e": "workspace::ToggleLeftDock",
+
+      // command / creation
+      ":": "command_palette::Toggle",
+      "%": "project_panel::NewFile",
+      "d": "project_panel::NewDirectory",
+      "/": "project_panel::NewSearchInDirectory",
+
+      // open
+      "enter": "project_panel::OpenPermanent",
+      "o": "project_panel::OpenPermanent",
+      "t": "project_panel::OpenPermanent",
+      "v": "project_panel::OpenPermanent",
+      "p": "project_panel::Open",
+
+      // navigation
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrevious",
+      "h": "project_panel::CollapseSelectedEntry",
+      "l": "project_panel::ExpandSelectedEntry",
+      "g g": "menu::SelectFirst",
+      "shift-g": "menu::SelectLast",
+      "-": "project_panel::SelectParent",
+
+      // git / diagnostics
+      "] c": "project_panel::SelectNextGitEntry",
+      "[ c": "project_panel::SelectPrevGitEntry",
+      "] d": "project_panel::SelectNextDiagnostic",
+      "[ d": "project_panel::SelectPrevDiagnostic",
+
+      // directory traversal
+      "": "project_panel::SelectNextDirectory",
+      "{": "project_panel::SelectPrevDirectory",
+
+      // actions
+      "shift-d": "project_panel::Delete",
+      "shift-r": "project_panel::Rename",
+      "x": "project_panel::RevealInFileManager",
+      "s": "workspace::OpenWithSystem",
+
+      // misc
+      "escape": "project_panel::ToggleFocus",
+      "ctrl-6": "pane::AlternateFile",
     },
   },
 ]
