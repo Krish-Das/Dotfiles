@@ -63,7 +63,7 @@
   "editor.experimentalGpuAcceleration": "off",
   "editor.foldingImportsByDefault": false,
   "editor.dragAndDrop": false,
-  "editor.guides.bracketPairs": "active",
+  "editor.guides.bracketPairs": false,
   "editor.cursorSurroundingLines": 1,
 
   "zenMode.hideLineNumbers": false,
