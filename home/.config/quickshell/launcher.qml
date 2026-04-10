@@ -3,6 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Io
+import Quickshell.Wayland
 import Quickshell.Widgets
 
 ShellRoot {
@@ -14,14 +15,15 @@ ShellRoot {
         }
     }
 
-    Window {
+    PanelWindow {
         id: win
-        title: "qs-launcher"
         visible: false
-        flags: Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint
         color: Qt.rgba(0, 0, 0, 0.8)
         width: 560
         height: 360
+        exclusionMode: ExclusionMode.Ignore
+        WlrLayershell.layer: WlrLayer.Overlay
+        WlrLayershell.keyboardFocus: visible ? WlrKeyboardFocus.Exclusive : WlrKeyboardFocus.None
 
         property string query: ""
 
@@ -34,6 +36,7 @@ ShellRoot {
 
         onVisibleChanged: {
             if (visible) {
+                list.currentIndex = filtered.values.length > 0 ? 0 : -1;
                 input.forceActiveFocus();
                 return;
             }
@@ -116,7 +119,6 @@ ShellRoot {
                 Layout.fillHeight: true
                 clip: true
                 model: filtered.values
-                currentIndex: filtered.values.length > 0 ? 0 : -1
                 keyNavigationWraps: true
                 preferredHighlightBegin: 0
                 preferredHighlightEnd: height
@@ -164,6 +166,13 @@ ShellRoot {
 
                 // Enter also works while ListView has focus
                 Keys.onReturnPressed: win.launchSelected()
+            }
+
+            Text {
+                Layout.alignment: Qt.AlignHCenter
+                visible: filtered.values.length === 0
+                color: "#cccccc"
+                text: "No matches"
             }
         }
     }
