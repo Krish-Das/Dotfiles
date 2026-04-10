@@ -8,6 +8,7 @@
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "awww-daemon"
 spawn-at-startup "qs"
+spawn-sh-at-startup "quickshell --path ${XDG_CONFIG_HOME:-$HOME/.config}/quickshell/launcher.qml"
 spawn-sh-at-startup "wl-paste --type text --watch cliphist store" // Stores only text data
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
