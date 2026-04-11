@@ -64,7 +64,7 @@
   "remove_trailing_whitespace_on_save": true,
 
   // ── TABS ─────────────────────────────────────────────────────
-  "max_tabs": 4,
+  "max_tabs": 5,
   "tabs": {
     "show_close_button": "hover",
     "show_diagnostics": "errors",

@@ -4,19 +4,9 @@
    * GLOBAL DISABLES — avoid conflicts with Vim / leader system
    */
   {
-    "context": "Workspace",
-    "bindings": {
-      "ctrl-alt-b": null, // → space e (project panel)
-      "ctrl-shift-f": null, // → space f g (search)
-      "ctrl-shift-p": null, // → : command palette
-      "ctrl-shift-tab": null,
-      "ctrl-tab": null, // → space space (tab switcher)
-    },
-  },
-  {
     "context": "Pane || Workspace || Terminal",
     "bindings": {
-      "ctrl-w": null, // → :q
+      "ctrl-w": null,
     },
   },
 
@@ -170,6 +160,48 @@
       // misc
       "escape": "project_panel::ToggleFocus",
       "ctrl-6": "pane::AlternateFile",
+    },
+  },
+  {
+    "unbind": {
+      "ctrl-alt-i": "dev::ToggleInspector",
+    },
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-alt-b": "workspace::ToggleRightDock",
+      "ctrl-shift-f": "pane::DeploySearch",
+      "ctrl-shift-p": "command_palette::Toggle",
+      "ctrl-w": "workspace::CloseActiveDock",
+      "ctrl-tab": "tab_switcher::Toggle",
+      "ctrl-shift-tab": [
+        "tab_switcher::Toggle",
+        {
+          "select_last": true,
+        },
+      ],
+    },
+    "bindings": {
+      "ctrl-alt-i": "agent::Toggle",
+    },
+  },
+  {
+    "context": "Pane",
+    "unbind": {
+      "ctrl-shift-f": "project_search::ToggleFocus",
+    },
+  },
+  {
+    "context": "RulesLibrary",
+    "unbind": {
+      "ctrl-w": "workspace::CloseWindow",
+    },
+  },
+  {
+    "context": "SettingsWindow",
+    "unbind": {
+      "ctrl-w": "workspace::CloseWindow",
     },
   },
 ]
