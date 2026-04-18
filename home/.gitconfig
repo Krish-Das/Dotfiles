@@ -6,6 +6,8 @@
   ui = auto
 [branch]
   sort = -committerdate
+[column]
+  branch = always
 [tag]
   sort = version:refname
 [init]
@@ -27,7 +29,7 @@
 
 [alias]
   # restore = Guilty
-
+  st = status --short
   lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
   current = branch --show-current
   oops = commit --amend --no-edit
