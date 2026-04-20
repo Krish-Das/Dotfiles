@@ -299,17 +299,10 @@
       },
     },
     "CSS": {
-      "formatter": {
-        "external": {
-          "command": "./node_modules/.bin/biome",
-          "arguments": ["format", "--stdin-file-path={buffer_path}", "-"],
-        },
-      },
-    },
-    "Markdown": {
+      "language_servers": ["!vscode-css-language-server", "..."],
       "formatter": {
         "language_server": {
-          "name": "prettier",
+          "name": "biome",
         },
       },
     },
@@ -322,6 +315,18 @@
       },
     },
   },
+
+  // "lsp": {
+  //   "biome": {
+  //     "binary": {
+  //       "path": "/run/current-system/sw/bin/biome",
+  //       "arguments": ["lsp-proxy"],
+  //     },
+  //     "settings": {
+  //       "require_config_file": false,
+  //     },
+  //   },
+  // },
 
   // ── EXPERIMENTAL THEME OVERRIDES (COMMENTED) ────────────────
   // "experimental.theme_overrides": {
