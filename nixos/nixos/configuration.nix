@@ -18,6 +18,7 @@
       ./modules/nix-ld.nix
       ./modules/packages
       ./modules/auto-update.nix
+      ./modules/desktop-environments.nix
       ./boot/grub.nix
       ./drivers/amd.nix
     ]
@@ -38,14 +39,7 @@
     useXkbConfig = true; # use xkb.options in tty.
   };
 
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
   environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
     XCURSOR_THEME = "WhiteSur-cursors";
     XCURSOR_SIZE = "12";
@@ -58,12 +52,6 @@
         rocmPackages.clr.icd
       ];
     };
-  };
-  # XDG portal
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
   # Enable bluetooth
