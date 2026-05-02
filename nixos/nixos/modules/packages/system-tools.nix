@@ -16,8 +16,6 @@
     pavucontrol
 
     tofi
-
-    niri
   ];
 
   programs.appimage.enable = true;
