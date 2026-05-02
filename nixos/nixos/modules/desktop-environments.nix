@@ -12,6 +12,8 @@
 
   programs.niri.enable = true;
 
+  programs.xwayland.enable = true;
+
   # Portal routing for Wayland compositors.
   # Keep defaults simple; route niri capture interfaces explicitly.
   xdg.portal = {

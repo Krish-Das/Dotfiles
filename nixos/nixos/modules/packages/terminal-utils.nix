@@ -11,7 +11,7 @@
     fd
     ripgrep
     trash-cli
-    bottom
+    btop
     procs
     fastfetch
     thokr
