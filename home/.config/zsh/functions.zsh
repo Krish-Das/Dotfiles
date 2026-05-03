@@ -35,6 +35,11 @@ conf() {
   [ -n "$selected_files" ] && $EDITOR "$selected_files" || echo "No files selected."
 }
 
+# Cache SSH key for 1 hour
+ssh-cache() {
+  ssh-add -t 3600 ~/.ssh/id_ed25519 2>/dev/null
+}
+
 # Open projects
 rp() {
   case "$1" in
