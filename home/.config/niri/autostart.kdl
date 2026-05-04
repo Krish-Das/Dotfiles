@@ -6,10 +6,22 @@
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
+spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
+spawn-at-startup "sh" "-c" "systemctl --user start niri-session.target"
+spawn-at-startup "xwayland-satellite"
+
 spawn-at-startup "awww-daemon"
 spawn-at-startup "qs"
 spawn-sh-at-startup "quickshell --path ${XDG_CONFIG_HOME:-$HOME/.config}/quickshell/launcher.qml"
 spawn-sh-at-startup "wl-paste --type text --watch cliphist store" // Stores only text data
+
+environment {
+  XDG_CURRENT_DESKTOP "niri"
+  XDG_SESSION_TYPE "wayland"
+  QT_QPA_PLATFORM "wayland"
+  MOZ_ENABLE_WAYLAND "1"
+  QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+}
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
