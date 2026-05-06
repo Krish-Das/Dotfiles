@@ -84,7 +84,21 @@
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "dvorak";
-  services.xserver.xkb.options = "caps:escape_shifted_capslock";
+  # kernel-level remapping
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = ["*"];
+        settings = {
+          main = {
+            capslock = "esc";
+            esc = "capslock";
+          };
+        };
+      };
+    };
+  };
 
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
