@@ -7,7 +7,7 @@
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && . "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 
 # Load local environment variables
-[ -f "$HOME/.config/env/local.env" ] && . "$HOME/.config/env/local.env"
+[ -f "$HOME/.config/secrets/local.env" ] && . "$HOME/.config/secrets/local.env"
 
 # history
 HISTFILE="$HOME/.zsh_history"
