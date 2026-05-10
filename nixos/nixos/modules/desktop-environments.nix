@@ -18,7 +18,6 @@
   # Keep defaults simple; route niri capture interfaces explicitly.
   xdg.portal = {
     enable = true;
-    xdgOpenUsePortal = true;
     # wlr.enable = true;
 
     extraPortals = with pkgs; [
