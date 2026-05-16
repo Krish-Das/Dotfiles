@@ -16,10 +16,10 @@ export XDG_DATA_HOME="$HOME"/.local/share
 
 export TMPDIR=/tmp
 
-export PATH="$HOME/.local/bin:$PATH"
-
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
+
+export PATH="$HOME/.local/bin:$PATH"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
