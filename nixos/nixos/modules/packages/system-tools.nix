@@ -16,6 +16,7 @@
     pavucontrol
 
     tofi
+    fuzzel
   ];
 
   programs.appimage.enable = true;
