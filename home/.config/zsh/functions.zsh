@@ -35,9 +35,13 @@ conf() {
   [ -n "$selected_files" ] && $EDITOR "$selected_files" || echo "No files selected."
 }
 
-# Cache SSH key for 1 hour
+# Cache SSH key for the provided time, defaulting to 1 hour
 ssh-cache() {
-  ssh-add -t 3600 ~/.ssh/id_ed25519 2>/dev/null
+  time="${1:-3600}"
+  key="$HOME/.ssh/id_ed25519"
+
+  ssh-add -t "$time" "$key" 2>/dev/null &&
+    printf "\033[32mCached SSH key for %s seconds.\033[0m\n" "$time"
 }
 
 # Open projects
