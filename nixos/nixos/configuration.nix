@@ -102,6 +102,7 @@
 
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
+  security.pam.services.login.enableGnomeKeyring = lib.mkForce false;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -123,7 +124,7 @@
   programs.ssh.startAgent = true;
   services.gnome.gcr-ssh-agent.enable = false;
   environment.sessionVariables = {
-    SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/ssh-agent";
+    SSH_AUTH_SOCK = "\${XDG_RUNTIME_DIR}/ssh-agent";
   };
 
   # Copy the NixOS configuration file and link it from the resulting system

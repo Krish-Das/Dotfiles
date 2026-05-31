@@ -4,7 +4,7 @@
   users.users.upsher = {
     isNormalUser = true;
     uid = 1000;
-    extraGroups = ["wheel" "video" "audio" "networkmanager" "lp" "scanner" "storage" "adbusers"];
+    extraGroups = ["wheel" "input" "video" "audio" "networkmanager" "lp" "scanner" "storage" "adbusers"];
     description = "Upsher aka Krish Das";
     shell = pkgs.zsh;
   };
