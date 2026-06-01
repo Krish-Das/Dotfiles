@@ -37,6 +37,10 @@ layout {
     // Let new windows use the width they request instead of forcing half-screen columns.
     default-column-width {}
 
+    tab-indicator {
+        position "right"
+    }
+
     // By default focus ring and border are rendered as a solid background rectangle
     // behind windows. That is, they will show up through semitransparent windows.
     // This is because windows using client-side decorations can have an arbitrary shape.
