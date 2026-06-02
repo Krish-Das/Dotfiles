@@ -12,7 +12,7 @@ alias timestamp='date +"%d%m%y-%H%M%S%3N"'
 alias scrcpy='scrcpy --render-driver=opengl'
 
 # settings for common commands
-alias e="$EDITOR"
+alias e="/home/upsher/.local/bin/nvim.sh"
 alias ya="yazi"
 alias fetch="fastfetch"
 alias lg="lazygit"
