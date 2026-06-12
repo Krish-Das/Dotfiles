@@ -10,7 +10,7 @@ Record Android screen using scrcpy.
 OPTIONS:
   -n NAME      Set custom name for output file
   -b BITRATE   Set video bitrate (default: 8M)
-  -t           Enable touch display (requires control)
+  -t           Show physical touches (requires control)
   -h           Show this help message
 
 EXAMPLES:

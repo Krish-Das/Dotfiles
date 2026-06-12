@@ -250,5 +250,5 @@ binds {
     // moving the mouse or pressing any other key.
     // Mod+Shift+P { power-off-monitors; }
 
-    Mod+V hotkey-overlay-title="Select from clipboard: Tofi" { spawn-sh "tofi-clip.sh"; }
+    Mod+V hotkey-overlay-title="Select from clipboard" { spawn-sh "tofi-clip.sh"; }
 }
