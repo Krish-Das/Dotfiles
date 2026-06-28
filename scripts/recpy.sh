@@ -10,12 +10,15 @@ Record Android screen using scrcpy.
 OPTIONS:
   -n NAME      Set custom name for output file
   -b BITRATE   Set video bitrate (default: 8M)
+  -c CODEC     Set video codec: h264, h265 (default: h265)
   -t           Show physical touches (requires control)
+  -s           Silent mode: disable audio recording
   -h           Show this help message
 
 EXAMPLES:
   $0 -n demo -b 10M -t
-  $0 -n gameplay
+  $0 -n gameplay -c h265
+  $0 -n silent -s
 EOF
 }
 
@@ -25,16 +28,20 @@ path="$HOME/Videos/Screencasts"
 given_name=""
 record_format="mkv"
 vid_bitrate="8M"
+vid_codec="h264"
 max_fps="60"
 max_size="2400"
 show_touch=false
+no_audio=false
 
 # Parse command line options
-while getopts "n:b:th" opt; do
+while getopts "n:b:c:tsh" opt; do
   case $opt in
   n) given_name="$OPTARG" ;;
   b) vid_bitrate="$OPTARG" ;;
+  c) vid_codec="$OPTARG" ;;
   t) show_touch=true ;;
+  s) no_audio=true ;;
   h)
     show_help
     exit 0
@@ -48,7 +55,9 @@ while getopts "n:b:th" opt; do
 done
 
 echo "Bitrate: $vid_bitrate"
+echo "Codec: $vid_codec"
 echo "Show touch: $show_touch"
+echo "No audio: $no_audio"
 
 if [ -n "$given_name" ]; then
   file="$given_name-$time_stamp.mkv"
@@ -63,18 +72,24 @@ else
   control_flag="--no-control"
 fi
 
+if [ "$no_audio" = true ]; then
+  audio_flag="--no-audio"
+else
+  audio_flag=""
+fi
+
 scrcpy_cmd="
 scrcpy \
   --record=\"$path/$file\" \
   --record-format=\"$record_format\" \
+  --video-codec=\"$vid_codec\" \
   --max-fps \"$max_fps\" \
   --max-size \"$max_size\" \
+  --no-video-playback \
   --print-fps \
   --video-bit-rate \"$vid_bitrate\" \
-  --audio-dup \
-  --no-playback \
-  --render-driver=$render_driver \
-  $control_flag
+  $control_flag \
+  $audio_flag
 "
 
 eval "$scrcpy_cmd"
