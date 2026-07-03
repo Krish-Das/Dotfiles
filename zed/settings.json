@@ -96,6 +96,7 @@
 
   // ── EDITOR: GUTTER, GUIDES, VISUALS ──────────────────────────
   "gutter": {
+    "bookmarks": false,
     "min_line_number_digits": 2,
     "folds": false,
     "runnables": false,
