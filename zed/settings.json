@@ -89,7 +89,7 @@
   // ── EDITOR: CORE TEXT & LAYOUT ───────────────────────────────
   "tab_size": 2,
   "buffer_line_height": "standard",
-  "text_rendering_mode": "subpixel",
+  "text_rendering_mode": "platform_default",
   "relative_line_numbers": "enabled",
   "vertical_scroll_margin": 1.0,
   "hide_mouse": "on_typing",
