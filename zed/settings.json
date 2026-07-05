@@ -202,7 +202,6 @@
   // ── UI CHROME ────────────────────────────────────────────────
   "title_bar": {
     "show_branch_name": true,
-    "show_branch_icon": false,
     "show_project_items": true,
     "show_menus": false,
     "show_sign_in": false,
