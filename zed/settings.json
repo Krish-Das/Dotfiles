@@ -123,10 +123,6 @@
 
   // ── EDITOR: TYPING, COMPLETIONS, EDITS ───────────────────────
   "show_completions_on_input": false,
-  "show_edit_predictions": true,
-  "edit_predictions": {
-    "mode": "subtle",
-  },
   "inline_code_actions": false,
   "linked_edits": true,
   "use_on_type_format": false,
