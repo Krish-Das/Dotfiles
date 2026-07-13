@@ -172,10 +172,12 @@
     "dock": "right",
   },
   "outline_panel": {
+    "button": false,
     "file_icons": true,
     "dock": "left",
   },
   "git_panel": {
+    "button": false,
     "show_count_badge": false,
     "diff_stats": true,
     "folder_icons": true,
