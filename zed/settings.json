@@ -345,7 +345,7 @@
   //   "panel.background": "#000000D9",
   //   "editor.background": "#000000D9",
   //   "status_bar.background": "#000000D9",
-  //   "editor.gutter.background": "#0kjk00000D9"
+  //   "editor.gutter.background": "#0kjk00000D9",
   //   "editor.active_line.background": "#FFF1",
-  // }
+  // },
 }
