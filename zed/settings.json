@@ -170,6 +170,7 @@
   "terminal": {
     "button": false,
     "dock": "right",
+    "font_size": 12,
   },
   "outline_panel": {
     "button": false,
