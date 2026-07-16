@@ -218,6 +218,8 @@
   },
 
   // ── AGENT (AI) ──────────────────────────────────────────────
+  "disable_ai": false,
+  "show_edit_predictions": true,
   "agent_servers": {
     "codex-acp": {
       "type": "registry",
