@@ -220,6 +220,11 @@
   // ── AGENT (AI) ──────────────────────────────────────────────
   "disable_ai": false,
   "show_edit_predictions": true,
+  "edit_predictions": {
+    "allow_data_collection": "no",
+    "provider": "zed",
+    "mode": "eager",
+  },
   "agent_servers": {
     "codex-acp": {
       "type": "registry",
