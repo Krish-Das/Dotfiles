@@ -1,6 +1,6 @@
 {
   // ── WINDOW & SESSION ─────────────────────────────────────────
-  "cursor_shape": "block",
+  "cursor_shape": null,
   "diff_view_style": "split",
   "when_closing_with_no_tabs": "keep_window_open",
   "session": {
