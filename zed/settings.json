@@ -1,7 +1,7 @@
 {
   // ── WINDOW & SESSION ─────────────────────────────────────────
   "cursor_shape": null,
-  "diff_view_style": "split",
+  "diff_view_style": "unified",
   "when_closing_with_no_tabs": "keep_window_open",
   "session": {
     "trust_all_worktrees": false,
