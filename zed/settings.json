@@ -1,5 +1,6 @@
 {
   // ── WINDOW & SESSION ─────────────────────────────────────────
+  "cli_default_open_behavior": "new_window",
   "cursor_shape": null,
   "diff_view_style": "unified",
   "when_closing_with_no_tabs": "keep_window_open",
