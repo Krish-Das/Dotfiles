@@ -39,5 +39,7 @@ in {
       libXScrnSaver
       libxkbfile
       wayland
+
+      cups
     ];
 }
