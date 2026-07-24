@@ -1,56 +1,17 @@
 // vim:fileencoding=utf-8:ft=jsonc
 [
-  /*
-   * GLOBAL DISABLES — avoid conflicts with Vim / leader system
-   */
-  {
-    "context": "Pane || Workspace || Terminal",
-    "bindings": {
-      "ctrl-w": null,
-    },
-  },
-
-  /*
-   * EDITOR — generic editor behavior overrides
-   */
-  {
-    "context": "Editor",
-    "bindings": {
-      "ctrl-k v": null, // disable side preview; use space p s in normal mode
-      "ctrl-alt-t": null,
-      "ctrl-shift-v": "editor::Paste",
-    },
-  },
-
-  /*
-   * VIM — core overrides / which-key prep
-   */
-  {
-    "context": "(VimControl && !menu)",
-    "bindings": {
-      "space": null, // Disable the default action vim::WrappingRight
-    },
-  },
-
-  /*
-   * VIM — NORMAL MODE (leader grouped)
-   * Navigation / buffers / search / files / preview / diagnostics
-   */
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
-      // diagnostics / toggle
       "space t d": "editor::ToggleInlineDiagnostics",
+      "space t h": "editor::ToggleInlayHints",
 
-      // buffers
       "space b n": "pane::ActivateNextItem",
       "space b p": "pane::ActivatePreviousItem",
 
-      // explorer / UI
-      "space e": "workspace::ToggleLeftDock",
+      "space e": "vim::ToggleProjectPanelFocus",
       "space o": "outline::Toggle",
 
-      // files / search / symbols
       "space f f": "file_finder::Toggle",
       "space f g": "pane::DeploySearch",
       "space f m": "editor::Format",
@@ -58,47 +19,52 @@
       "space f shift-s": "project_symbols::Toggle",
       "space f q": "diagnostics::Deploy",
 
-      // preview
       "space p p": "markdown::OpenPreview",
       "space p s": "markdown::OpenPreviewToTheSide",
 
-      // tabs
       "space space": "tab_switcher::ToggleAll",
 
-      // yank helpers
-      "g y": ["workspace::SendKeystrokes", "\" + y"],
+      "space g g": "git_panel::ToggleFocus",
+      "space h shift-r": "git::RestoreFile",
+
+      "space u shift-c": "theme_selector::Toggle",
     },
   },
 
-  /*
-   * VIM — VISUAL MODE
-   */
   {
     "context": "Editor && vim_mode == visual",
     "bindings": {
-      "g y": ["workspace::SendKeystrokes", "\" + y"],
       "shift-s": "vim::PushAddSurrounds",
       "shift-x": "vim::Exchange",
+      "$": ["workspace::SendKeystrokes", "$ h"],
     },
   },
 
-  /*
-   * VIM — SHARED (normal + visual)
-   */
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "ctrl-w": null,
+    },
+  },
+
   {
     "context": "Editor && (vim_mode == normal || vim_mode == visual)",
     "bindings": {
       "alt-j": "editor::MoveLineDown",
       "alt-k": "editor::MoveLineUp",
       "alt-s": "vim::PushSneakBackward",
-      "s": "vim::PushSneak",
+      "s": "vim::HelixJumpToWord",
+      // "s": "vim::PushSneak",
       "space a": "editor::SelectAll",
+      "g y": ["workspace::SendKeystrokes", "\" + y"],
     },
   },
-
-  /*
-   * WINDOW / PANE NAVIGATION
-   */
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "space": null, // Disable the default action vim::WrappingRight
+    },
+  },
   {
     "context": "Dock",
     "bindings": {
@@ -109,15 +75,13 @@
     },
   },
 
-  /*
-   * PROJECT PANEL — file explorer + netrw-style bindings
-   */
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
       // toggles
       ".": "project_panel::ToggleHideGitIgnore",
       "space e": "workspace::ToggleLeftDock",
+      "space": null,
 
       // command / creation
       ":": "command_palette::Toggle",
@@ -132,24 +96,11 @@
       "v": "project_panel::OpenPermanent",
       "p": "project_panel::Open",
 
-      // navigation
-      "j": "menu::SelectNext",
-      "k": "menu::SelectPrevious",
-      "h": "project_panel::CollapseSelectedEntry",
-      "l": "project_panel::ExpandSelectedEntry",
-      "g g": "menu::SelectFirst",
-      "shift-g": "menu::SelectLast",
-      "-": "project_panel::SelectParent",
-
       // git / diagnostics
       "] c": "project_panel::SelectNextGitEntry",
       "[ c": "project_panel::SelectPrevGitEntry",
       "] d": "project_panel::SelectNextDiagnostic",
       "[ d": "project_panel::SelectPrevDiagnostic",
-
-      // directory traversal
-      "": "project_panel::SelectNextDirectory",
-      "{": "project_panel::SelectPrevDirectory",
 
       // actions
       "shift-d": "project_panel::Delete",
@@ -158,7 +109,6 @@
       "s": "workspace::OpenWithSystem",
 
       // misc
-      "escape": "project_panel::ToggleFocus",
       "ctrl-6": "pane::AlternateFile",
     },
   },
@@ -190,6 +140,38 @@
     "context": "Pane",
     "unbind": {
       "ctrl-shift-f": "project_search::ToggleFocus",
+      "ctrl-alt-t": [
+        "pane::CloseOtherItems",
+        {
+          "close_pinned": false,
+        },
+      ],
+    },
+  },
+  {
+    "context": "Editor && extension == md",
+    "unbind": {
+      "ctrl-shift-v": "markdown::OpenPreview",
+      "ctrl-k v": "markdown::OpenPreviewToTheSide",
+    },
+  },
+  {
+    "context": "Editor && extension == svg",
+    "unbind": {
+      "ctrl-shift-v": "svg::OpenPreview",
+      "ctrl-k v": "svg::OpenPreviewToTheSide",
+    },
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-z": "editor::Undo",
+    },
+  },
+  {
+    "context": "Pane || Workspace || Terminal",
+    "bindings": {
+      "ctrl-w": null,
     },
   },
   {
