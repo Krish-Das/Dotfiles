@@ -7,8 +7,9 @@
 
   "editor.fontSize": 14,
   "editor.renderLineHighlight": "all",
-  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrains Mono', monospace, 'SF Pro Text'",
-  "editor.lineHeight": 0,
+  "editor.fontFamily": "'JetBrains Mono', monospace, 'SF Pro Text'",
+  "editor.fontLigatures": "'calt' off, 'ss01' on, 'zero' on",
+  "editor.lineHeight": 1.45,
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.detectIndentation": true,
