@@ -19,6 +19,7 @@
       ./modules/packages
       ./modules/auto-update.nix
       ./modules/desktop-environments.nix
+      ./modules/virtualization.nix
       ./boot/grub.nix
       ./drivers/amd.nix
     ]
@@ -108,6 +109,11 @@
   # services.libinput.enable = true;
 
   fonts.packages = with pkgs; [jetbrains-mono];
+
+  custom.virtualization = {
+    enable = true;
+    user = "upsher";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
