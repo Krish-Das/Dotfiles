@@ -20,6 +20,7 @@
       ./modules/auto-update.nix
       ./modules/desktop-environments.nix
       ./modules/virtualization.nix
+      ./modules/containers.nix
       ./boot/grub.nix
       ./drivers/amd.nix
     ]
@@ -114,6 +115,8 @@
     enable = true;
     user = "upsher";
   };
+
+  custom.containers.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
