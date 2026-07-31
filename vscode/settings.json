@@ -134,7 +134,7 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typst]": {
     "editor.defaultFormatter": "myriad-dreamin.tinymist"
