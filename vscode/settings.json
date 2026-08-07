@@ -285,12 +285,12 @@
       "when": "editorTextFocus && editorHasReferenceProvider"
     },
     {
-      "before": ["g", ">"],
+      "before": ["s"],
       "commands": ["leap.findForward"],
       "silent": true
     },
     {
-      "before": ["g", "<"],
+      "before": ["<A-s>"],
       "commands": ["leap.findBackward"],
       "silent": true
     },
