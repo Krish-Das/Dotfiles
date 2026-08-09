@@ -10,7 +10,8 @@
       "space b p": "pane::ActivatePreviousItem",
 
       "space e": "vim::ToggleProjectPanelFocus",
-      "space o": "outline::Toggle",
+      "space o": "vim::ToggleProjectPanelFocus",
+      "space shift-o": "outline::Toggle",
 
       "space f f": "file_finder::Toggle",
       "space f g": "pane::DeploySearch",
@@ -81,6 +82,7 @@
       // toggles
       ".": "project_panel::ToggleHideGitIgnore",
       "space e": "workspace::ToggleLeftDock",
+      "space o": "workspace::ToggleLeftDock",
       "space": null,
 
       // command / creation
