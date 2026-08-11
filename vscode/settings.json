@@ -252,6 +252,11 @@
     },
     { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
     {
+      "before": ["<leader>", "o"],
+      "commands": ["vsnetrw.open"],
+      "when": "editorLangId != vsnetrw"
+    },
+    {
       "before": ["<leader>", "y", "y"],
       "commands": ["editor.action.clipboardCopyAction"]
     },
