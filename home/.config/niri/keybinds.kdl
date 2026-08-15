@@ -250,5 +250,11 @@ binds {
     // moving the mouse or pressing any other key.
     // Mod+Shift+P { power-off-monitors; }
 
-    Mod+V hotkey-overlay-title="Select from clipboard" { spawn-sh "tofi-clip.sh"; }
+    Mod+V hotkey-overlay-title="Select from clipboard" {
+      spawn-sh "footclient --app-id=clipboard --override='font=JetBrainsMono Nerd Font:size=8' -e cliphist-fzf";
+    }
+
+    Mod+Shift+V hotkey-overlay-title="Select from pinned clipboard" {
+      spawn-sh "footclient --app-id=clipboard --override='font=JetBrainsMono Nerd Font:size=8' -e pincopy.sh";
+    }
 }
