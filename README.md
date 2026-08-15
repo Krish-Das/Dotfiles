@@ -95,3 +95,12 @@ rp() {
       feature-x/
       bugfix-y/
 ```
+
+---
+
+**Personal files:**
+
+These files contain personal data and are not tracked in this repository. Back them up manually before wiping the system:
+
+- `${HISTFILE:-$HOME/.zsh_history}` - zsh history
+- `${XDG_STATE_HOME:-$HOME/.local/state}/pincopy/clips.txt` - pinned clipboard content
