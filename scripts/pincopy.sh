@@ -34,4 +34,4 @@ esac
 }
 
 sel=$(fzf --cycle <"$f") || exit 0 # empty selection / Esc = clean exit, not error
-wl-copy <<<"$sel"
+printf '%s' "$sel" | wl-copy
