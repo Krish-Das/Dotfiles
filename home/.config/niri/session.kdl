@@ -39,6 +39,7 @@ window-rule {
 window-rule {
     match app-id=r#"^org\.gnome\.Nautilus$"#
     match app-id=r#"^Thunar$"#
+    match app-id=r#"^clipboard$"#
     open-floating true
 }
 
