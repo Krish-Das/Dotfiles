@@ -2,8 +2,11 @@
 # Set Google Chrome as the default browser
 x-scheme-handler/http=google-chrome.desktop
 x-scheme-handler/https=google-chrome.desktop
-text/html=google-chrome.desktop
-text/markdown=google-chrome.desktop
+text/html=helium.desktop
+text/markdown=helium.desktop
+text/markdown=helium.desktop
+
+application/pdf=helium.desktop
 
 # Set MPV as the default video player
 video/mp4=mpv.desktop
