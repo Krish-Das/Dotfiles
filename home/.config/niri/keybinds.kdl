@@ -16,10 +16,9 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T hotkey-overlay-title="Open a Terminal" { spawn "wezterm-gui"; }
+    Mod+T hotkey-overlay-title="Open a Terminal" { spawn "footclient"; }
     Mod+E hotkey-overlay-title="Open Thunar" { spawn "thunar"; }
-    Mod+Space hotkey-overlay-title="Run an Application: Tofi" { spawn "tofi-drun"; }
-    Mod+D repeat=false hotkey-overlay-title="Run Quickshell launcher" { spawn "qs-launcher.sh"; }
+    Mod+Space repeat=false hotkey-overlay-title="Run launcher" { spawn "fuzzel"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
