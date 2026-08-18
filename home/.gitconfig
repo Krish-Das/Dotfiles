@@ -47,10 +47,16 @@
   allowedSignersFile = /home/upsher/.ssh/allowed_signers
 
 [gitbutler]
-	aiModelProvider = anthropic
+  aiModelProvider = anthropic
+
+# Gitbutler (ubuntu distrobox)
 [credential "https://github.com"]
-	helper = 
-	helper = !/run/current-system/sw/bin/gh auth git-credential
+  helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
-	helper = !/run/current-system/sw/bin/gh auth git-credential
+  helper = !/usr/bin/gh auth git-credential
+
+# Sistem binary (NixOS)
+# [credential "https://github.com"]
+#   helper = !/run/current-system/sw/bin/gh auth git-credential
+# [credential "https://gist.github.com"]
+#   helper = !/run/current-system/sw/bin/gh auth git-credential
