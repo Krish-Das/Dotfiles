@@ -16,4 +16,8 @@
     thokr
     yazi
   ];
+
+  environment.sessionVariables = {
+    RIPGREP_CONFIG_PATH = "\${HOME}/.config/ripgrep/config";
+  };
 }
