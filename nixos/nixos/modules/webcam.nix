@@ -3,6 +3,10 @@
 # Loads v4l2loopback so a phone camera can be forwarded as a virtual webcam
 # (e.g. via scrcpy).
 #
+# NOTE: if v4l2loopback is already loaded (e.g. after changing videoNr,
+# cardLabel, or first enabling this), reload the module or reboot:
+#   sudo rmmod v4l2loopback && sudo modprobe v4l2loopback
+#
 # Usage:
 #   custom.webcam.enable = true;
 #   or
