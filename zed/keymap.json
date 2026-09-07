@@ -80,7 +80,8 @@
     "context": "ProjectPanel && not_editing",
     "bindings": {
       // toggles
-      ".": "project_panel::ToggleHideGitIgnore",
+      "g .": "project_panel::ToggleHideHidden",
+      ">": "project_panel::ToggleHideGitIgnore",
       "space e": "workspace::ToggleLeftDock",
       "space o": "workspace::ToggleLeftDock",
       "space": null,
