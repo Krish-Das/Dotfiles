@@ -22,8 +22,8 @@ gui:
   showBottomLine: false
   showListFooter: false
 git:
-  pagers:
-    - pager: delta --paging=never --diff-so-fancy --detect-dark-light=always
+  diffRenderers:
+    - command: delta --paging=never --diff-so-fancy --detect-dark-light=always
       colorArg: always
 update:
   autoUpdate: false
