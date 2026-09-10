@@ -152,6 +152,7 @@
 
   // ── PANELS & DOCKS ───────────────────────────────────────────
   "project_panel": {
+    "folder_indicator": "icon",
     "sort_mode": "directories_first",
     "hide_root": false,
     "indent_guides": {
@@ -164,7 +165,6 @@
     },
     "bold_folder_labels": true,
     "indent_size": 20.0,
-    "folder_icons": true,
     "file_icons": true,
     "button": true,
     "hide_hidden": true,
@@ -184,10 +184,10 @@
     "dock": "left",
   },
   "git_panel": {
+    "folder_indicator": "icon",
     "button": false,
     "show_count_badge": false,
     "diff_stats": true,
-    "folder_icons": true,
     "file_icons": false,
     "tree_view": true,
     "fallback_branch_name": "main",
