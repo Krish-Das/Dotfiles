@@ -7,7 +7,7 @@
   },
   "cli_default_open_behavior": "new_window",
   "cursor_shape": null,
-  "diff_view_style": "unified",
+  "diff_view_style": "split",
   "when_closing_with_no_tabs": "keep_window_open",
   "session": {
     "trust_all_worktrees": false,
@@ -15,7 +15,7 @@
 
   // ── THEME & TYPOGRAPHY ───────────────────────────────────────
   "theme": {
-    "mode": "dark",
+    "mode": "system",
     "light": "One Light",
     "dark": "One Dark",
   },
@@ -32,7 +32,7 @@
     "zero": true,
   },
   "ui_font_family": "SF Pro Text",
-  "ui_font_size": 12.0,
+  "ui_font_size": 12,
   "agent_buffer_font_size": 12.0,
   "agent_ui_font_size": 12.0,
 
@@ -110,11 +110,11 @@
     "line_numbers": true,
   },
   "indent_guides": {
+    "enabled": false,
     "background_coloring": "disabled",
     "coloring": "fixed",
     "active_line_width": 1,
     "line_width": 1,
-    "enabled": false,
   },
   "scrollbar": {
     "show": "never",
@@ -128,6 +128,7 @@
   },
 
   // ── EDITOR: TYPING, COMPLETIONS, EDITS ───────────────────────
+  "completion_menu_item_kind": "symbol",
   "show_completions_on_input": false,
   "inline_code_actions": false,
   "linked_edits": true,
@@ -224,7 +225,7 @@
   },
 
   // ── AGENT (AI) ──────────────────────────────────────────────
-  "disable_ai": false,
+  "disable_ai": true,
   "show_edit_predictions": true,
   "edit_predictions": {
     "allow_data_collection": "no",
