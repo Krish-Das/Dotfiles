@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   programs = {
     bat.enable = true;
+    foot.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
