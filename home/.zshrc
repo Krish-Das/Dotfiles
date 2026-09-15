@@ -59,6 +59,13 @@ bindkey '^[[B' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
+
+# GutButler cli (but) completions
+# Generate by running:
+# 1. mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions"
+# 2. but completions zsh > "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions/_but"
+[ -s "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions/_but" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions/_but"
+
 # Other part of profiling zsh startup time
 # this will write the output to /tmp/zprof_dump
 # zprof >/tmp/zprof_dump
