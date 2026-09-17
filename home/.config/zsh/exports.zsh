@@ -10,11 +10,11 @@ export TERMINAL="alacritty"
 export EXPLORER="thunar"
 export BROWSER="google-chrome-stable"
 
-export XDG_CONFIG_HOME="$HOME"/.config
-export XDG_CACHE_HOME="$HOME"/.cache
-export XDG_DATA_HOME="$HOME"/.local/share
-
-export TMPDIR=/tmp
+# Exported by configuration.nix systemwide
+# export XDG_CONFIG_HOME="$HOME"/.config
+# export XDG_CACHE_HOME="$HOME"/.cache
+# export XDG_DATA_HOME="$HOME"/.local/share
+# export TMPDIR=/tmp
 
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
