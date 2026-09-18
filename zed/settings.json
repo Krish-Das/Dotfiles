@@ -135,6 +135,7 @@
   "use_on_type_format": false,
   "use_autoclose": false,
   "auto_indent_on_paste": false,
+  "format_on_save": "on",
 
   // ── EDITOR: INPUT & SELECTION ────────────────────────────────
   "drag_and_drop_selection": {
