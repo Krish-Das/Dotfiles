@@ -1,5 +1,5 @@
 {...}: {
-  # Enable sound with pipewire.
+  # Pipewire
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -10,6 +10,6 @@
     wireplumber.enable = true;
   };
 
-  # Enable media-controles with playerctl
+  # Media-controls with Playerctl
   services.playerctld.enable = true;
 }
