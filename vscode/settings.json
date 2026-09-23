@@ -164,6 +164,19 @@
     "https://www.schemastore.org/": true
   },
 
+  "nix.serverSettings": {
+    "nixd": {
+      "formatting": {
+        "command": ["alejandra"]
+      },
+      "options": {
+        "nixos": {
+          "expr": "(import <nixpkgs/nixos> { configuration = /home/upsher/dotfiles/nixos/nixos/configuration.nix; }).options"
+        }
+      }
+    }
+  },
+
   // ----------------------------------
   // ---------  vim mode  -------------
   // ----------------------------------
