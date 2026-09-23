@@ -106,6 +106,7 @@
           main = {
             capslock = "esc";
             esc = "capslock";
+            rightalt = "rightmeta";
           };
         };
       };
