@@ -46,7 +46,13 @@
 [gpg "ssh"]
   allowedSignersFile = /home/upsher/.ssh/allowed_signers
 
+[but "alias"]
+  brn = branch new
+  cm = commit --empty
+  pu = push
+
 [gitbutler]
+  signCommits = true
   aiModelProvider = anthropic
 
 # Gitbutler (ubuntu distrobox)
