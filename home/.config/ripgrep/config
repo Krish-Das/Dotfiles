@@ -1,5 +1,5 @@
  --smart-case
---colors=match:fg:yellow
+--colors=match:fg:green
 --engine=auto
 --hidden
 
