@@ -64,6 +64,10 @@ alias grm="git remote"
 alias gbr="git branch"
 alias gf="git fetch"
 
+# but (GitButler cli) aliases
+alias b="but"
+alias bst="but status --files"
+
 # easier to read disk
 alias df='df -h'     # human-readable sizes
 alias free='free -m' # show sizes in MB
