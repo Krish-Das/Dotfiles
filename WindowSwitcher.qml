@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Wayland
 import Quickshell.Widgets
+import "colors" as Palette
 
 PanelWindow {
     anchors.top: true
@@ -15,7 +16,7 @@ PanelWindow {
     Rectangle {
         anchors.fill: parent
         radius: 16
-        color: "#e61e1e2e"
+        color: Qt.alpha(Palette.Mocha.base, 0.9)
 
         Row {
             id: row
@@ -30,7 +31,7 @@ PanelWindow {
                     width: 36
                     height: 36
                     radius: 10
-                    color: modelData.activated ? "#45475a" : hover.hovered ? "#313244" : "transparent"
+                    color: modelData.activated ? Palette.Mocha.surface1 : hover.hovered ? Palette.Mocha.surface0 : "transparent"
 
                     function icon(id) {
                         const e = DesktopEntries.heuristicLookup(id);
